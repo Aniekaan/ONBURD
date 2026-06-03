@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — Choose your flight</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ SEARCH LOADING SPLASH ============ -->
+<div id="searchLoader" class="search-loader">
+  <div class="sl-inner">
+    <svg class="sl-logo" viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M120.674 12.7155H120.812C120.879 12.7207 120.95 12.7309 121.017 12.7361C121.144 12.7464 121.267 12.7567 121.39 12.7772C122.002 12.9058 122.61 13.0447 123.213 13.1887C123.938 13.3636 124.653 13.7236 125.317 14.0836C126.063 14.4797 126.737 14.994 127.304 15.4415C127.825 15.8581 128.311 16.3673 128.827 17.0359C128.862 17.0873 128.898 17.1388 128.929 17.1954C129.026 17.3548 129.159 17.5657 129.358 17.7714C129.654 18.0749 129.838 18.5223 130.052 19.0418L130.104 19.1652C130.231 19.4738 130.339 19.7927 130.446 20.1116C130.497 20.2659 130.548 20.4202 130.604 20.5745L130.768 21.2483L130.778 21.3049L130.819 21.4849C130.829 21.5312 130.844 21.5775 130.849 21.6289C130.875 21.8655 130.895 22.1021 130.911 22.3387H126.717L127.34 23.4239L127.805 24.2777L127.877 24.4166C127.953 24.5657 128.03 24.7098 128.122 24.8486C128.306 25.1418 128.495 25.4298 128.684 25.7178C128.97 26.155 129.251 26.5922 129.526 27.0345C131.146 29.6371 132.755 32.2447 134.364 34.8473L134.721 35.4233C135.094 36.0302 135.584 36.1588 135.932 36.1588C136.207 36.1588 136.734 36.0662 137.132 35.4542C137.566 34.7804 138.005 34.1169 138.445 33.4483L139.068 32.5019C139.865 31.2881 140.662 30.0742 141.453 28.8604C142.271 27.6157 143.083 26.3659 143.895 25.1212C144.012 24.9361 144.13 24.7509 144.258 24.5452L144.441 24.2417L145.647 22.3027H143.113H142.991L141.402 22.3233C141.351 21.274 141.188 20.1836 140.912 19.0161C140.294 16.4239 139.323 14.0888 138.021 12.0623C137.352 11.0182 136.693 10.1336 136.008 9.35692C135.104 8.3334 134.047 7.38189 132.775 6.45609C131.299 5.38113 129.741 4.57877 128.413 3.93586C127.943 3.70955 127.458 3.54496 127.034 3.40609C126.114 3.09749 125.19 2.79404 124.178 2.64488C123.474 2.54201 122.764 2.44429 122.054 2.35171C121.67 2.30542 121.257 2.25399 120.833 2.23856C120.603 2.22827 120.368 2.22827 120.138 2.22827C119.918 2.22827 119.704 2.22827 119.484 2.22827H119.229C119.091 2.22827 118.953 2.24884 118.815 2.26427L118.728 2.27456L118.366 2.31056L116.675 2.54201C116.506 2.57802 116.343 2.60888 116.174 2.64488C115.643 2.74775 115.091 2.85576 114.535 3.03063C113.288 3.42152 112.246 3.77641 111.22 4.23417C110.152 4.7125 109.151 5.31427 108.298 5.84403C107.353 6.42523 106.623 6.99614 105.999 7.62876C105.78 7.85507 105.55 8.07109 105.32 8.28711C104.937 8.64714 104.544 9.02261 104.171 9.44436C103.573 10.1181 103.057 10.8485 102.628 11.476C101.397 13.2761 100.508 15.0506 99.9006 16.897C99.3541 18.5635 99.0272 20.1579 98.9097 21.7626C98.879 22.1587 98.8586 22.5496 98.8331 22.961L98.7973 23.5319L98.7156 24.8795H107.583C108.696 24.8795 109.284 24.3086 109.32 23.177V23.0022C109.33 22.8119 109.335 22.6318 109.355 22.5033L109.391 22.3027C109.498 21.7112 109.595 21.1506 109.738 20.6157C110.05 19.4687 110.52 18.4349 111.138 17.5451C111.358 17.2314 111.593 16.9279 111.828 16.6244C111.93 16.4907 112.032 16.3621 112.134 16.2284L112.18 16.1821L112.349 16.0021L112.44 15.8992L112.481 15.8478C113.202 15.0866 114.106 14.5311 114.897 14.0888C116.379 13.2607 118.013 12.803 119.755 12.7258H119.837L120.383 12.7155H120.562H120.659H120.674Z" />
+      <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z" />
+      <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z" />
+      <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308" />
+      <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168" />
+      <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z" />
+      <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z" />
+    </svg>
+    <div class="sl-route">
+      <span class="sl-dot"></span>
+      <span class="sl-path"><i class="ph ph-airplane-tilt sl-plane"></i></span>
+      <span class="sl-dot sl-dot-end"></span>
+    </div>
+    <p class="sl-codes"><b id="slFrom">LOS</b><span>to</span><b id="slTo">ABV</b></p>
+    <p class="sl-status" id="slStatus">Searching airlines for the best fares&hellip;</p>
+    <div class="sl-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M120.674 12.7155H120.812C120.879 12.7207 120.95 12.7309 121.017 12.7361C121.144 12.7464 121.267 12.7567 121.39 12.7772C122.002 12.9058 122.61 13.0447 123.213 13.1887C123.938 13.3636 124.653 13.7236 125.317 14.0836C126.063 14.4797 126.737 14.994 127.304 15.4415C127.825 15.8581 128.311 16.3673 128.827 17.0359C128.862 17.0873 128.898 17.1388 128.929 17.1954C129.026 17.3548 129.159 17.5657 129.358 17.7714C129.654 18.0749 129.838 18.5223 130.052 19.0418L130.104 19.1652C130.231 19.4738 130.339 19.7927 130.446 20.1116C130.497 20.2659 130.548 20.4202 130.604 20.5745L130.768 21.2483L130.778 21.3049L130.819 21.4849C130.829 21.5312 130.844 21.5775 130.849 21.6289C130.875 21.8655 130.895 22.1021 130.911 22.3387H126.717L127.34 23.4239L127.805 24.2777L127.877 24.4166C127.953 24.5657 128.03 24.7098 128.122 24.8486C128.306 25.1418 128.495 25.4298 128.684 25.7178C128.97 26.155 129.251 26.5922 129.526 27.0345C131.146 29.6371 132.755 32.2447 134.364 34.8473L134.721 35.4233C135.094 36.0302 135.584 36.1588 135.932 36.1588C136.207 36.1588 136.734 36.0662 137.132 35.4542C137.566 34.7804 138.005 34.1169 138.445 33.4483L139.068 32.5019C139.865 31.2881 140.662 30.0742 141.453 28.8604C142.271 27.6157 143.083 26.3659 143.895 25.1212C144.012 24.9361 144.13 24.7509 144.258 24.5452L144.441 24.2417L145.647 22.3027H143.113H142.991L141.402 22.3233C141.351 21.274 141.188 20.1836 140.912 19.0161C140.294 16.4239 139.323 14.0888 138.021 12.0623C137.352 11.0182 136.693 10.1336 136.008 9.35692C135.104 8.3334 134.047 7.38189 132.775 6.45609C131.299 5.38113 129.741 4.57877 128.413 3.93586C127.943 3.70955 127.458 3.54496 127.034 3.40609C126.114 3.09749 125.19 2.79404 124.178 2.64488C123.474 2.54201 122.764 2.44429 122.054 2.35171C121.67 2.30542 121.257 2.25399 120.833 2.23856C120.603 2.22827 120.368 2.22827 120.138 2.22827C119.918 2.22827 119.704 2.22827 119.484 2.22827H119.229C119.091 2.22827 118.953 2.24884 118.815 2.26427L118.728 2.27456L118.366 2.31056L116.675 2.54201C116.506 2.57802 116.343 2.60888 116.174 2.64488C115.643 2.74775 115.091 2.85576 114.535 3.03063C113.288 3.42152 112.246 3.77641 111.22 4.23417C110.152 4.7125 109.151 5.31427 108.298 5.84403C107.353 6.42523 106.623 6.99614 105.999 7.62876C105.78 7.85507 105.55 8.07109 105.32 8.28711C104.937 8.64714 104.544 9.02261 104.171 9.44436C103.573 10.1181 103.057 10.8485 102.628 11.476C101.397 13.2761 100.508 15.0506 99.9006 16.897C99.3541 18.5635 99.0272 20.1579 98.9097 21.7626C98.879 22.1587 98.8586 22.5496 98.8331 22.961L98.7973 23.5319L98.7156 24.8795H107.583C108.696 24.8795 109.284 24.3086 109.32 23.177V23.0022C109.33 22.8119 109.335 22.6318 109.355 22.5033L109.391 22.3027C109.498 21.7112 109.595 21.1506 109.738 20.6157C110.05 19.4687 110.52 18.4349 111.138 17.5451C111.358 17.2314 111.593 16.9279 111.828 16.6244C111.93 16.4907 112.032 16.3621 112.134 16.2284L112.18 16.1821L112.349 16.0021L112.44 15.8992L112.481 15.8478C113.202 15.0866 114.106 14.5311 114.897 14.0888C116.379 13.2607 118.013 12.803 119.755 12.7258H119.837L120.383 12.7155H120.562H120.659H120.674Z" />
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z" />
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z" />
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308" />
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168" />
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z" />
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z" />
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Explore</a>
+      <a href="index.html">Flights</a>
+      <a href="index.html">Hotels</a>
+      <a href="index.html">Ticket resell</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="stepper" data-step="1"></div>
+<script src="stepper.js"></script>
+
+<!-- ============ SEARCH WIDGET (mirrors home page) ============ -->
+<section class="results-top">
+  <div class="container">
+    <a class="back-link" href="index.html"><i class="ph ph-arrow-left"></i> Back to home</a>
+
+    <div class="flight-form" data-form-panel="flight">
+      <div class="radios">
+        <label class="radio"><input type="radio" name="trip" value="round" checked/> <span>Round trip</span></label>
+        <label class="radio"><input type="radio" name="trip" value="oneway"/> <span>One Way</span></label>
+        <label class="radio"><input type="radio" name="trip" value="multi"/> <span>Multi-city</span></label>
+      </div>
+
+      <div class="flight-fields">
+        <div class="field is-search" data-field="from">
+          <div class="field-ic"><i class="ph ph-airplane-tilt"></i></div>
+          <div class="field-body">
+            <p class="field-label">From where</p>
+            <input class="field-input" type="text" autocomplete="off" spellcheck="false" placeholder="City or Airport" />
+          </div>
+          <div class="field-dropdown" hidden></div>
+        </div>
+        <button class="swap" aria-label="Swap From and To">⇆</button>
+        <div class="field is-search" data-field="to">
+          <div class="field-ic"><i class="ph ph-map-pin"></i></div>
+          <div class="field-body">
+            <p class="field-label">To where</p>
+            <input class="field-input" type="text" autocomplete="off" spellcheck="false" placeholder="City or Airport" />
+          </div>
+          <div class="field-dropdown" hidden></div>
+        </div>
+        <div class="field is-popover has-value" data-field="date">
+          <div class="field-ic"><i class="ph ph-calendar-blank"></i></div>
+          <div class="field-body">
+            <p class="field-label">Date</p>
+            <p class="field-value">Sun, May 17 – May 19</p>
+          </div>
+          <div class="field-popover field-popover-date" hidden>
+            <div class="cal-grid">
+              <div class="cal-month">
+                <div class="cal-head">
+                  <button class="cal-nav" type="button" aria-label="Previous month"><i class="ph ph-caret-left"></i></button>
+                  <p class="cal-title">Month Year</p>
+                  <button class="cal-nav" type="button" aria-label="Next month"><i class="ph ph-caret-right"></i></button>
+                </div>
+                <div class="cal-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sat</span><span>Su</span></div>
+                <div class="cal-days"></div>
+              </div>
+              <div class="cal-month">
+                <div class="cal-head">
+                  <button class="cal-nav" type="button" aria-label="Previous month"><i class="ph ph-caret-left"></i></button>
+                  <p class="cal-title">Month Year</p>
+                  <button class="cal-nav" type="button" aria-label="Next month"><i class="ph ph-caret-right"></i></button>
+                </div>
+                <div class="cal-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sat</span><span>Su</span></div>
+                <div class="cal-days"></div>
+              </div>
+            </div>
+            <div class="cal-foot">
+              <div class="cal-range">
+                <div class="cal-range-box">Start date</div>
+                <span class="cal-dash">–</span>
+                <div class="cal-range-box">End date</div>
+              </div>
+              <div class="cal-actions">
+                <button class="cal-cancel" type="button">Cancel</button>
+                <button class="cal-apply" type="button">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-popover has-value" data-field="trav">
+          <div class="field-ic"><i class="ph ph-user"></i></div>
+          <div class="field-body">
+            <p class="field-label">Traveller, Class</p>
+            <p class="field-value">1 Traveller, Economy</p>
+          </div>
+          <div class="field-popover field-popover-trav" hidden>
+            <p class="trav-title">Travellers</p>
+            <div class="trav-rows">
+              <div class="trav-row">
+                <p class="trav-label">Adult(12+ years)</p>
+                <div class="trav-counter">
+                  <button class="cnt-btn" type="button" data-counter="adult" data-delta="-1" aria-label="Decrease"><i class="ph ph-minus"></i></button>
+                  <span class="cnt-val" data-counter="adult">1</span>
+                  <button class="cnt-btn" type="button" data-counter="adult" data-delta="1" aria-label="Increase"><i class="ph ph-plus"></i></button>
+                </div>
+              </div>
+              <div class="trav-row">
+                <p class="trav-label">Child (2-11 years)</p>
+                <div class="trav-counter">
+                  <button class="cnt-btn" type="button" data-counter="child" data-delta="-1" aria-label="Decrease"><i class="ph ph-minus"></i></button>
+                  <span class="cnt-val" data-counter="child">0</span>
+                  <button class="cnt-btn" type="button" data-counter="child" data-delta="1" aria-label="Increase"><i class="ph ph-plus"></i></button>
+                </div>
+              </div>
+              <div class="trav-row">
+                <p class="trav-label">Infant (Under 2)</p>
+                <div class="trav-counter">
+                  <button class="cnt-btn" type="button" data-counter="infant" data-delta="-1" aria-label="Decrease"><i class="ph ph-minus"></i></button>
+                  <span class="cnt-val" data-counter="infant">0</span>
+                  <button class="cnt-btn" type="button" data-counter="infant" data-delta="1" aria-label="Increase"><i class="ph ph-plus"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="cs-box">
+              <div class="cs-info">
+                <p class="cs-label">Class</p>
+                <p class="cs-value">Economy</p>
+              </div>
+              <i class="ph ph-caret-down cs-caret"></i>
+            </div>
+            <div class="cs-options">
+              <button class="cs-option selected" type="button" data-class="Economy">Economy</button>
+              <button class="cs-option" type="button" data-class="Business class">Business class</button>
+              <button class="cs-option" type="button" data-class="First class">First class</button>
+            </div>
+            <div class="trav-foot">
+              <button class="trav-done" type="button">Done</button>
+            </div>
+          </div>
+        </div>
+        <button class="flight-search" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </div>
+
+      <!-- Multi-city legs (shown only when "Multi-city" is selected) -->
+      <div class="multi-legs">
+        <div class="multi-main">
+          <div class="multi-rows"></div>
+          <button class="flight-search multi-search" aria-label="Search">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </div>
+        <button class="add-leg" type="button"><i class="ph ph-plus"></i> Add another city</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS LAYOUT ============ -->
+<main class="container results-layout">
+  <!-- FILTERS -->
+  <aside class="filters">
+    <h2 class="filters-head">Filter by</h2>
+
+    <div class="filter-group">
+      <p class="filter-title">Stops</p>
+      <div id="stopsFilter"></div>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-title-row">
+        <p class="filter-title">Airlines</p>
+        <label class="switch" title="Select all airlines">
+          <input type="checkbox" id="allAirlines" />
+          <span class="track"></span>
+        </label>
+      </div>
+      <div id="airlinesFilter"></div>
+    </div>
+
+    <div class="filter-group">
+      <p class="filter-title">Flight time</p>
+      <div id="timeFilter"></div>
+    </div>
+
+    <div class="filter-group">
+      <p class="filter-title">Price</p>
+      <p class="price-range-val">Up to <span id="priceVal">₦0</span></p>
+      <input type="range" class="price-range" id="priceRange" />
+      <div class="price-minmax"><span id="priceMin">₦0</span><span id="priceMax">₦0</span></div>
+    </div>
+
+    <div class="filter-group">
+      <p class="filter-title">Airports</p>
+      <div id="airportsFilter"></div>
+    </div>
+  </aside>
+
+  <!-- RESULTS -->
+  <section class="results-main">
+    <div id="selectedBar"></div>
+    <div class="results-head">
+      <h1 id="resultsTitle">Choose departure flight</h1>
+      <div class="results-sub">
+        <span id="resultCount">0 results</span> sorted by
+        <span class="sort-sel">
+          <select id="sortSelect">
+            <option value="price">Lowest price</option>
+            <option value="depart">Earliest departure</option>
+            <option value="duration">Shortest duration</option>
+          </select>
+        </span>
+      </div>
+      <p class="results-note"><i class="ph ph-info"></i> Prices displayed do not include service fees.</p>
+    </div>
+    <div class="flight-list" id="flightList"></div>
+  </section>
+</main>
+
+<!-- Share sheet -->
+<div class="share-modal" id="shareModal" hidden>
+  <div class="share-backdrop" data-share-close></div>
+  <div class="share-dialog" role="dialog" aria-modal="true" aria-label="Share this flight">
+    <button class="share-x" data-share-close aria-label="Close"><i class="ph ph-x"></i></button>
+    <h3 class="share-title">Share this flight</h3>
+    <p class="share-desc">Send it to your group and plan the trip together.</p>
+    <div class="share-preview" id="sharePreview"></div>
+    <div class="share-channels">
+      <button class="share-ch wa" data-ch="whatsapp"><span class="ch-ic"><i class="ph ph-whatsapp-logo"></i></span>WhatsApp</button>
+      <button class="share-ch tg" data-ch="telegram"><span class="ch-ic"><i class="ph ph-telegram-logo"></i></span>Telegram</button>
+      <button class="share-ch x" data-ch="x"><span class="ch-ic"><i class="ph ph-x-logo"></i></span>X</button>
+      <button class="share-ch ig" data-ch="instagram"><span class="ch-ic"><i class="ph ph-instagram-logo"></i></span>Instagram</button>
+    </div>
+    <div class="share-link">
+      <input type="text" id="shareLinkInput" readonly />
+      <button class="share-copy" id="shareCopyBtn"><i class="ph ph-link"></i> <span>Copy link</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Pre-fill the mirrored search widget from the URL (runs before the widget script) -->
+<script>
+  (function () {
+    const p = new URLSearchParams(location.search);
+    const fromCity = p.get('from') || 'Lagos';
+    const fromCode = (p.get('fromCode') || 'LOS').toUpperCase();
+    const toCity   = p.get('to') || 'Abuja';
+    const toCode   = (p.get('toCode') || 'ABV').toUpperCase();
+    const trip     = p.get('trip') || 'round';
+    const departTxt = p.get('depart') || '';
+    const returnTxt = p.get('return') || '';
+    const pax      = p.get('pax') || '';
+    const cabin    = p.get('class') || 'Economy';
+
+    const form = document.querySelector('.flight-form');
+    const fill = (which, city, code) => {
+      const field = form.querySelector(`[data-field="${which}"]`);
+      const input = field.querySelector('.field-input');
+      input.value = code ? `${city} (${code})` : city;
+      field.dataset.code = code;
+      field.classList.add('has-value');
+    };
+    fill('from', fromCity, fromCode);
+    fill('to', toCity, toCode);
+
+    const tripVal = trip === 'multi' ? 'oneway' : trip;
+    const radio = form.querySelector(`input[name="trip"][value="${tripVal}"]`);
+    if (radio) radio.checked = true;
+
+    if (departTxt) {
+      const dateField = form.querySelector('[data-field="date"]');
+      dateField.querySelector('.field-value').textContent =
+        (tripVal === 'round' && returnTxt) ? `${departTxt} – ${returnTxt}` : departTxt;
+      dateField.classList.add('has-value');
+    }
+    if (pax || cabin) {
+      const trav = form.querySelector('[data-field="trav"] .field-value');
+      const paxTxt = (pax || '1 Passenger').replace('Passenger', 'Traveller');
+      trav.textContent = `${paxTxt}, ${cabin}`;
+    }
+  })();
+</script>
+<script src="flight-widget.js?v=1"></script>
+
+<script>
+  /* ---------- read search params ---------- */
+  const params = new URLSearchParams(location.search);
+  const fromCity = params.get('from') || 'Lagos';
+  const fromCode = (params.get('fromCode') || 'LOS').toUpperCase();
+  const toCity   = params.get('to') || 'Abuja';
+  const toCode   = (params.get('toCode') || 'ABV').toUpperCase();
+  const trip     = params.get('trip') || 'round';
+  const departTxt = params.get('depart') || 'Tue, Jun 02';
+  const returnTxt = params.get('return') || 'Thu, Jun 04';
+  const pax      = params.get('pax') || '1 Passenger';
+  const cabin    = params.get('class') || 'Economy';
+
+  /* ---------- airline catalogue ---------- */
+  const AIRLINES = [
+    { name: 'Air Peace',      color: '#d22730' },
+    { name: 'Arik Air',       color: '#1f6feb' },
+    { name: 'Ibom Air',       color: '#16a34a' },
+    { name: 'Dana Air',       color: '#e0a800' },
+    { name: 'Green Africa',   color: '#65a30d' },
+    { name: 'United Nigeria', color: '#0ea5e9' },
+  ];
+  const initials = name => name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+
+  /* layover airports used by 1+ stop flights */
+  const LAYOVERS = ['KAN', 'ENU', 'PHC'];
+
+  /* ---------- sample flight dataset ----------
+     dep / arr are minutes from midnight; price in Naira */
+  const FLIGHTS = [
+    { al: 2, dep: 6*60+5,   dur: 95,  stops: 0, price: 48500 },
+    { al: 4, dep: 6*60+40,  dur: 110, stops: 0, price: 51200 },
+    { al: 2, dep: 7*60+10,  dur: 105, stops: 0, price: 52000 },
+    { al: 0, dep: 8*60,     dur: 100, stops: 0, price: 58900 },
+    { al: 1, dep: 9*60+25,  dur: 215, stops: 1, price: 44300, lay: 0 },
+    { al: 3, dep: 10*60+15, dur: 100, stops: 0, price: 61500 },
+    { al: 5, dep: 11*60+45, dur: 230, stops: 1, price: 46800, lay: 1 },
+    { al: 0, dep: 13*60+5,  dur: 95,  stops: 0, price: 67200 },
+    { al: 4, dep: 14*60+30, dur: 250, stops: 1, price: 49900, lay: 2 },
+    { al: 2, dep: 15*60+50, dur: 100, stops: 0, price: 72000 },
+    { al: 1, dep: 17*60+20, dur: 105, stops: 0, price: 69500 },
+    { al: 3, dep: 18*60+40, dur: 360, stops: 2, price: 43200, lay: 0 },
+    { al: 5, dep: 19*60+55, dur: 110, stops: 0, price: 75800 },
+    { al: 0, dep: 21*60+10, dur: 100, stops: 0, price: 81000 },
+    { al: 2, dep: 22*60+30, dur: 240, stops: 1, price: 47100, lay: 1 },
+    { al: 4, dep: 23*60+45, dur: 95,  stops: 0, price: 88500 },
+  ];
+
+  /* ---------- helpers ---------- */
+  const fmtTime = m => {
+    let h = Math.floor(m / 60) % 24, min = m % 60;
+    const ap = h < 12 ? 'AM' : 'PM';
+    h = h % 12; if (h === 0) h = 12;
+    return `${h}:${String(min).padStart(2,'0')} ${ap}`;
+  };
+  const fmtDur = m => `${Math.floor(m/60)}h ${String(m%60).padStart(2,'0')}m`;
+  const fmtNaira = n => '₦' + n.toLocaleString('en-NG');
+  const stopKey = s => s === 0 ? '0' : s === 1 ? '1' : '2';
+  const stopLabel = s => s === 0 ? 'Direct' : s === 1 ? '1 stop' : `${s} stops`;
+  const TIME_BUCKETS = [
+    { key: 'early',  label: 'Before 6 AM',     test: m => m < 6*60 },
+    { key: 'morning',label: '6 AM – 12 PM',    test: m => m >= 6*60 && m < 12*60 },
+    { key: 'aftn',   label: '12 PM – 6 PM',    test: m => m >= 12*60 && m < 18*60 },
+    { key: 'evening',label: 'After 6 PM',      test: m => m >= 18*60 },
+  ];
+  const bucketOf = m => (TIME_BUCKETS.find(b => b.test(m)) || {}).key;
+
+  FLIGHTS.forEach((f, i) => { f._i = i; });   // stable id for sharing/lookups
+
+  /* ---------- fare classes (shown when a flight is expanded) ---------- */
+  const FARES = [
+    {
+      name: 'Economy', mult: 1,
+      bags:    [['no','Check-in baggage not included'], ['ok','7kg Cabin baggage']],
+      flex:    [['no','Non-refundable'], ['fee','Changeable with fees']],
+      checkin: [['fee','Airline check-in with fees'], ['info','Online check-in opens 2 days before your flight']],
+    },
+    {
+      name: 'Premium Economy', mult: 1.35,
+      bags:    [['ok','7kg Cabin baggage'], ['ok','20kg Checked baggage']],
+      flex:    [['warn','Partial refund as airline credit'], ['fee','Changeable with fees']],
+      checkin: [['ok','Airline check-in without fees'], ['info','Online check-in opens 2 days before your flight']],
+    },
+    {
+      name: 'Business', mult: 1.9,
+      bags:    [['ok','7kg Cabin baggage'], ['ok','32kg Checked baggage']],
+      flex:    [['credit','Cancel for full airline credit'], ['ok','Changeable without fees']],
+      checkin: [['ok','Priority check-in, no fees'], ['info','Online check-in opens 10 days before your flight']],
+    },
+    {
+      name: 'First Class', mult: 2.8,
+      bags:    [['ok','7kg Cabin baggage'], ['ok','40kg Checked baggage']],
+      flex:    [['ok','Fully refundable'], ['ok','Changeable without fees']],
+      checkin: [['ok','Priority check-in & lounge access'], ['info','Online check-in opens 14 days before your flight']],
+    },
+  ];
+  const FARE_ICONS = {
+    ok:     { i: 'ph-check-circle',           c: '#16a34a' },
+    no:     { i: 'ph-x-circle',               c: '#e0443a' },
+    fee:    { i: 'ph-currency-circle-dollar', c: '#2C90FF' },
+    warn:   { i: 'ph-warning',                c: '#e0a800' },
+    credit: { i: 'ph-arrows-clockwise',       c: '#2C90FF' },
+    info:   { i: 'ph-info',                   c: '#2C90FF' },
+  };
+  const fareRow = ([type, txt]) => {
+    const ic = FARE_ICONS[type] || FARE_ICONS.info;
+    return `<li><i class="ph ${ic.i}" style="color:${ic.c}"></i><span>${txt}</span></li>`;
+  };
+  /* ---------- cabin (chosen in the search widget) drives price & baggage ---------- */
+  const CABIN_TO_FARE = {
+    'Economy': 'Economy', 'Premium Economy': 'Premium Economy',
+    'Business class': 'Business', 'Business': 'Business',
+    'First class': 'First Class', 'First Class': 'First Class',
+  };
+  const cabinFareName = CABIN_TO_FARE[cabin] || 'Economy';
+  const cabinFare = FARES.find(x => x.name === cabinFareName) || FARES[0];
+  const cabinLabel = cabinFareName;
+  const farePriceC = f => Math.round(f.price * cabinFare.mult / 100) * 100;
+  const flightNo = f => initials(AIRLINES[f.al].name) + (100 + (f._i * 37) % 800);
+  const isRound = trip === 'round';
+
+  /* ---------- pair each outbound with a same-airline return leg ---------- */
+  const byAirline = {};
+  FLIGHTS.forEach(f => { (byAirline[f.al] = byAirline[f.al] || []).push(f); });
+  function returnFor(out) {
+    const cands = (byAirline[out.al] || []).filter(f => f._i !== out._i);
+    if (cands.length) return cands[out._i % cands.length];
+    return FLIGHTS[(out._i + 5) % FLIGHTS.length];
+  }
+  const OPTIONS = FLIGHTS.map(out => {
+    const ret = isRound ? returnFor(out) : null;
+    return { out, ret, total: farePriceC(out) + (ret ? farePriceC(ret) : 0) };
+  });
+  const totals = OPTIONS.map(o => o.total);
+  const PRICE_MIN = Math.min(...totals), PRICE_MAX = Math.max(...totals);
+
+  /* ---------- collapsed leg row (one line per flight) ---------- */
+  function legSummaryRow(tag, date, f, oCode, dCode) {
+    const a = AIRLINES[f.al];
+    const lay = f.lay != null ? LAYOVERS[f.lay] : null;
+    const stopTxt = f.stops === 0
+      ? 'Direct'
+      : `<span class="stop-${f.stops === 1 ? '1' : '2'}">${stopLabel(f.stops)}${lay ? ' · ' + lay : ''}</span>`;
+    return `<div class="rt-leg">
+      <span class="rt-tag"><i class="ph ph-airplane-takeoff"></i> ${tag} · ${date}</span>
+      <div class="rt-leg-main">
+        <div class="fc-airline">
+          <span class="al-badge" style="background:${a.color}">${initials(a.name)}</span>
+          <span class="name">${a.name}</span>
+        </div>
+        <div class="rt-point"><p class="fc-time">${fmtTime(f.dep)}</p><p class="fc-code">${oCode}</p></div>
+        <div class="fc-mid">
+          <div class="fc-line"><i class="ph ph-airplane"></i></div>
+          <p class="fc-duration">${fmtDur(f.dur)} <span class="dot">·</span> ${stopTxt}</p>
+        </div>
+        <div class="rt-point rt-point-end"><p class="fc-time">${fmtTime(f.dep + f.dur)}</p><p class="fc-code">${dCode}</p></div>
+      </div>
+    </div>`;
+  }
+
+  /* ---------- expanded full itinerary for one flight ---------- */
+  function itineraryHTML(tag, date, f, oCity, oCode, dCity, dCode) {
+    const a = AIRLINES[f.al];
+    const stopRow = (time, city, code) =>
+      `<div class="itin-stop"><p class="itin-time">${fmtTime(time)}</p>
+        <div class="itin-meta"><p class="itin-airport">${city} (${code})</p><p class="itin-sub">${date}</p></div></div>`;
+    const segRow = mins =>
+      `<div class="itin-seg"><span class="itin-seg-line"></span><span class="itin-seg-dur"><i class="ph ph-airplane"></i> ${fmtDur(mins)}</span></div>`;
+    let timeline;
+    const lay = f.lay != null ? LAYOVERS[f.lay] : null;
+    if (f.stops > 0 && lay) {
+      const layMin = 70 + (f._i % 3) * 25;
+      const seg1 = Math.round((f.dur - layMin) * 0.55);
+      const seg2 = f.dur - layMin - seg1;
+      timeline =
+        stopRow(f.dep, oCity, oCode) +
+        segRow(seg1) +
+        `<div class="itin-layover"><i class="ph ph-clock"></i> ${fmtDur(layMin)} layover · ${lay}</div>` +
+        segRow(seg2) +
+        stopRow(f.dep + f.dur, dCity, dCode);
+    } else {
+      timeline = stopRow(f.dep, oCity, oCode) + segRow(f.dur) + stopRow(f.dep + f.dur, dCity, dCode);
+    }
+    return `<div class="itin-leg">
+      <div class="itin-head">
+        <span class="itin-head-tag"><i class="ph ph-airplane-tilt"></i> ${tag}</span>
+        <span class="itin-head-date">${date}</span>
+      </div>
+      <div class="itin-airline">
+        <span class="al-badge" style="background:${a.color}">${initials(a.name)}</span>
+        <div><p class="itin-al-name">${a.name}</p><p class="itin-al-sub">${cabinLabel} · Flight ${flightNo(f)}</p></div>
+      </div>
+      <div class="itin-timeline">${timeline}</div>
+      <div class="itin-facts">
+        ${cabinFare.bags.map(([t, txt]) => {
+          const ic = FARE_ICONS[t] || FARE_ICONS.info;
+          return `<span><i class="ph ${ic.i}" style="color:${ic.c}"></i> ${txt}</span>`;
+        }).join('')}
+        <span><i class="ph ph-armchair" style="color:var(--primary)"></i> Seat selection available</span>
+      </div>
+    </div>`;
+  }
+
+  /* ---------- one-way: single flight card that expands to one fare card ---------- */
+  function oneFareCardHTML(f) {
+    const fare = cabinFare;
+    const total = farePriceC(f);
+    const monthly = Math.round(total / 12 / 500) * 500;
+    return `<div class="fare-card">
+      <div class="fare-head">
+        <span class="fare-name">${fare.name}</span>
+        <button type="button" class="fare-share" aria-label="Share ${fare.name} fare"><i class="ph ph-share-network"></i></button>
+      </div>
+      <div class="fare-price">
+        <p class="fare-amt">${fmtNaira(total)}</p>
+        <p class="fare-sub">Total for one way · all passengers</p>
+        <div class="pss-price fare-pss">
+          <img class="pss-logo" src="icons/pay-small-small.svg" alt="Pay Small Small" />
+          <span class="pss-amount">${fmtNaira(monthly)}</span>
+        </div>
+      </div>
+      <button type="button" class="fare-toggle"><span>Show details</span> <i class="ph ph-caret-down"></i></button>
+      <div class="fare-details" hidden>
+        <div class="fare-group">
+          <p class="fare-group-title">Baggage allowance</p>
+          <ul>${fare.bags.map(fareRow).join('')}</ul>
+        </div>
+        <div class="fare-group">
+          <p class="fare-group-title">Changes and cancellation</p>
+          <ul>${fare.flex.map(fareRow).join('')}</ul>
+        </div>
+        <div class="fare-group">
+          <p class="fare-group-title">Check-in</p>
+          <ul>${fare.checkin.map(fareRow).join('')}</ul>
+        </div>
+      </div>
+      <button type="button" class="fare-select">Book Now</button>
+    </div>`;
+  }
+
+  function onewayCardHTML(f) {
+    const a = AIRLINES[f.al];
+    const lay = f.lay != null ? LAYOVERS[f.lay] : null;
+    const stopTxt = f.stops === 0
+      ? 'Direct'
+      : `<span class="stop-${f.stops === 1 ? '1' : '2'}">${stopLabel(f.stops)}${lay ? ' · ' + lay : ''}</span>`;
+    return `<article class="flight-card ow-card" data-oid="${f._i}">
+      <div class="fc-summary" role="button" tabindex="0" aria-expanded="false">
+        <div class="fc-airline">
+          <span class="al-badge" style="background:${a.color}">${initials(a.name)}</span>
+          <span class="name">${a.name}</span>
+        </div>
+        <div>
+          <p class="fc-time">${fmtTime(f.dep)}</p>
+          <p class="fc-code">${fromCode}</p>
+        </div>
+        <div class="fc-mid">
+          <div class="fc-line"><i class="ph ph-airplane"></i></div>
+          <p class="fc-duration">${fmtDur(f.dur)} <span class="dot">·</span> ${stopTxt}</p>
+        </div>
+        <div class="fc-end">
+          <p class="fc-time">${fmtTime(f.dep + f.dur)}</p>
+          <p class="fc-code">${toCode}</p>
+        </div>
+        <div class="fc-price">
+          <p class="amt">${fmtNaira(farePriceC(f))}</p>
+          <p class="sub">Total for one way · ${cabinLabel}</p>
+        </div>
+        <div class="fc-actions">
+          <button type="button" class="fc-share" aria-label="Share this flight"><i class="ph ph-share-network"></i></button>
+          <i class="ph ph-caret-down fc-chevron"></i>
+        </div>
+      </div>
+      <div class="fc-fares" hidden>
+        <h4 class="fares-title">Select fare</h4>
+        <div class="fare-grid">${oneFareCardHTML(f)}</div>
+      </div>
+    </article>`;
+  }
+
+  /* ---------- result card (round trip = paired legs; one way = single flight) ---------- */
+  function cardHTML(opt) {
+    if (!isRound) return onewayCardHTML(opt.out);
+    const { out, ret, total } = opt;
+    const monthly = Math.round(total / 12 / 500) * 500;
+    const legs = isRound
+      ? legSummaryRow('Departure', departTxt, out, fromCode, toCode) +
+        legSummaryRow('Return', returnTxt, ret, toCode, fromCode)
+      : legSummaryRow('Departure', departTxt, out, fromCode, toCode);
+    const itin = isRound
+      ? itineraryHTML('Departure flight', departTxt, out, fromCity, fromCode, toCity, toCode) +
+        itineraryHTML('Return flight', returnTxt, ret, toCity, toCode, fromCity, fromCode)
+      : itineraryHTML('Flight details', departTxt, out, fromCity, fromCode, toCity, toCode);
+    return `<article class="flight-card rt-card" data-oid="${out._i}"${ret ? ` data-rid="${ret._i}"` : ''}>
+      <button type="button" class="fc-share fc-share-top" aria-label="Share this trip"><i class="ph ph-share-network"></i></button>
+      <div class="fc-summary">
+        <div class="rt-legs">${legs}</div>
+        <div class="fc-rail">
+          <div class="fc-price">
+            <p class="amt">${fmtNaira(total)}</p>
+            <p class="sub">Round trip · ${cabinLabel}</p>
+            <p class="fc-pss"><img class="pss-logo" src="icons/pay-small-small.svg" alt="Pay Small Small" /> ${fmtNaira(monthly)}</p>
+          </div>
+          <button type="button" class="fc-select">Book Now</button>
+        </div>
+      </div>
+      <button type="button" class="fc-expand" aria-expanded="false">
+        <span class="fc-expand-txt">Flight details</span> <i class="ph ph-caret-down fc-chevron"></i>
+      </button>
+      <div class="fc-fares" hidden>${itin}</div>
+    </article>`;
+  }
+
+  /* ---------- filter state ---------- */
+  const state = {
+    stops: new Set(), airlines: new Set(), times: new Set(),
+    airports: new Set(), maxPrice: PRICE_MAX, sort: 'price',
+  };
+
+  /* ---------- build filter UI ---------- */
+  const countBy = fn => FLIGHTS.reduce((a, f) => (a[fn(f)] = (a[fn(f)] || 0) + 1, a), {});
+
+  function checkRow(group, value, label, count) {
+    const id = `${group}-${value}`;
+    return `<label class="check-row">
+      <input type="checkbox" data-group="${group}" value="${value}" />
+      <span class="ck"><i class="ph ph-check"></i></span>
+      <span class="ck-label">${label}</span>
+      ${count != null ? `<span class="ck-count">${count}</span>` : ''}
+    </label>`;
+  }
+
+  // Stops
+  const stopCounts = countBy(f => stopKey(f.stops));
+  document.getElementById('stopsFilter').innerHTML =
+    [['0','Non-stop'],['1','1 Stop'],['2','2+ Stops']]
+      .filter(([k]) => stopCounts[k])
+      .map(([k,l]) => checkRow('stops', k, l, stopCounts[k])).join('');
+
+  // Airlines
+  const alCounts = countBy(f => f.al);
+  document.getElementById('airlinesFilter').innerHTML =
+    AIRLINES.map((a, i) => alCounts[i]
+      ? `<label class="check-row">
+           <input type="checkbox" data-group="airlines" value="${i}" />
+           <span class="ck"><i class="ph ph-check"></i></span>
+           <span class="al-badge" style="background:${a.color}">${initials(a.name)}</span>
+           <span class="ck-label">${a.name}</span>
+           <span class="ck-count">${alCounts[i]}</span>
+         </label>`
+      : '').join('');
+
+  // Flight time
+  const timeCounts = countBy(f => bucketOf(f.dep));
+  document.getElementById('timeFilter').innerHTML =
+    TIME_BUCKETS.filter(b => timeCounts[b.key])
+      .map(b => checkRow('times', b.key, b.label, timeCounts[b.key])).join('');
+
+  // Airports (origin, destination + any layover codes present)
+  const airportCodes = new Set([fromCode, toCode]);
+  FLIGHTS.forEach(f => { if (f.lay != null) airportCodes.add(LAYOVERS[f.lay]); });
+  document.getElementById('airportsFilter').innerHTML =
+    [...airportCodes].map(c => checkRow('airports', c, c, null)).join('');
+
+  // Price slider
+  const priceRange = document.getElementById('priceRange');
+  priceRange.min = PRICE_MIN; priceRange.max = PRICE_MAX; priceRange.value = PRICE_MAX;
+  priceRange.step = 500;
+  document.getElementById('priceMin').textContent = fmtNaira(PRICE_MIN);
+  document.getElementById('priceMax').textContent = fmtNaira(PRICE_MAX);
+  document.getElementById('priceVal').textContent = fmtNaira(PRICE_MAX);
+
+  /* ---------- filtering + rendering ---------- */
+  function airportsOf(f) {
+    const set = [fromCode, toCode];
+    if (f.lay != null) set.push(LAYOVERS[f.lay]);
+    return set;
+  }
+  function passes(opt) {
+    const f = opt.out;
+    if (state.stops.size && !state.stops.has(stopKey(f.stops))) return false;
+    if (state.airlines.size && !state.airlines.has(String(f.al))) return false;
+    if (state.times.size && !state.times.has(bucketOf(f.dep))) return false;
+    if (opt.total > state.maxPrice) return false;
+    if (state.airports.size && !airportsOf(f).some(c => state.airports.has(c))) return false;
+    return true;
+  }
+  const sorters = {
+    price: (a, b) => a.total - b.total,
+    depart: (a, b) => a.out.dep - b.out.dep,
+    duration: (a, b) => a.out.dur - b.out.dur,
+  };
+
+  function render() {
+    const list = OPTIONS.filter(passes).sort(sorters[state.sort]);
+    document.getElementById('resultCount').textContent =
+      `${list.length} result${list.length !== 1 ? 's' : ''}`;
+    const wrap = document.getElementById('flightList');
+    if (!list.length) {
+      wrap.innerHTML = `<p class="no-results">No flights match your filters. Try clearing a few.</p>`;
+      return;
+    }
+    wrap.innerHTML = list.map(cardHTML).join('');
+  }
+
+  /* ---------- wire filter events ---------- */
+  document.querySelector('.filters').addEventListener('change', e => {
+    const cb = e.target.closest('input[type="checkbox"][data-group]');
+    if (!cb) return;
+    const set = state[cb.dataset.group];
+    cb.checked ? set.add(cb.value) : set.delete(cb.value);
+    if (cb.dataset.group === 'airlines') syncAllAirlines();
+    render();
+  });
+
+  const allAirlines = document.getElementById('allAirlines');
+  allAirlines.addEventListener('change', () => {
+    const boxes = document.querySelectorAll('#airlinesFilter input[type="checkbox"]');
+    state.airlines.clear();
+    boxes.forEach(b => {
+      b.checked = allAirlines.checked;
+      if (allAirlines.checked) state.airlines.add(b.value);
+    });
+    render();
+  });
+  function syncAllAirlines() {
+    const boxes = [...document.querySelectorAll('#airlinesFilter input[type="checkbox"]')];
+    allAirlines.checked = boxes.length && boxes.every(b => b.checked);
+  }
+
+  priceRange.addEventListener('input', () => {
+    state.maxPrice = +priceRange.value;
+    document.getElementById('priceVal').textContent = fmtNaira(state.maxPrice);
+    render();
+  });
+
+  document.getElementById('sortSelect').addEventListener('change', e => {
+    state.sort = e.target.value;
+    render();
+  });
+
+  /* ---------- expand / collapse itinerary, share, select ---------- */
+  const flightList = document.getElementById('flightList');
+
+  const toggleDetails = card => {
+    const panel = card.querySelector('.fc-fares');
+    const open  = panel.hasAttribute('hidden');
+    if (open) panel.removeAttribute('hidden'); else panel.setAttribute('hidden', '');
+    card.classList.toggle('open', open);
+    const exp = card.querySelector('.fc-expand');
+    if (exp) {
+      exp.setAttribute('aria-expanded', String(open));
+      exp.querySelector('.fc-expand-txt').textContent = open ? 'Hide flight details' : 'Flight details';
+    }
+  };
+
+  flightList.addEventListener('click', e => {
+    // share button (round-trip rail OR one-way fare card) — opens the share sheet
+    const shareBtn = e.target.closest('.fc-share, .fare-share');
+    if (shareBtn) { e.stopPropagation(); openShareOption(shareBtn.closest('.flight-card')); return; }
+    // select (round-trip rail OR one-way fare card) — go straight to the booking flow
+    const sel = e.target.closest('.fc-select, .fare-select');
+    if (sel) { e.stopPropagation(); selectOption(sel.closest('.flight-card')); return; }
+    // one-way fare card "Show details" toggle
+    const ft = e.target.closest('.fare-toggle');
+    if (ft) {
+      const fareCard = ft.closest('.fare-card');
+      const det = fareCard.querySelector('.fare-details');
+      const open = det.hasAttribute('hidden');
+      if (open) det.removeAttribute('hidden'); else det.setAttribute('hidden', '');
+      fareCard.classList.toggle('open', open);
+      ft.querySelector('span').textContent = open ? 'Hide details' : 'Show details';
+      return;
+    }
+    // anywhere else on the card toggles the panel (itinerary for round trip, fares for one way)
+    const card = e.target.closest('.flight-card');
+    if (card) toggleDetails(card);
+  });
+
+  flightList.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const exp = e.target.closest('.fc-expand');
+    const summary = e.target.closest('.fc-summary');
+    if (exp) { e.preventDefault(); toggleDetails(exp.closest('.flight-card')); }
+    else if (summary) { e.preventDefault(); toggleDetails(summary.closest('.flight-card')); }
+  });
+
+  /* ---------- share sheet ---------- */
+  const shareModal = document.getElementById('shareModal');
+  const sharePreview = document.getElementById('sharePreview');
+  const shareLinkInput = document.getElementById('shareLinkInput');
+  const shareCopyBtn = document.getElementById('shareCopyBtn');
+  let shareCtx = { url: '', text: '' };
+
+  const flightLine = f => {
+    const a = AIRLINES[f.al];
+    const lay = f.lay != null ? LAYOVERS[f.lay] : null;
+    const stops = f.stops === 0 ? 'Direct' : `${stopLabel(f.stops)}${lay ? ' · ' + lay : ''}`;
+    return `${a.name} · ${fmtTime(f.dep)}–${fmtTime(f.dep + f.dur)} · ${fmtDur(f.dur)} · ${stops}`;
+  };
+
+  function openShareOption(card) {
+    const out = FLIGHTS[+card.dataset.oid];
+    const ret = card.dataset.rid != null ? FLIGHTS[+card.dataset.rid] : null;
+    const total = farePriceC(out) + (ret ? farePriceC(ret) : 0);
+    const monthly = Math.round(total / 12 / 500) * 500;
+    const ao = AIRLINES[out.al];
+    const route = `${fromCity} (${fromCode}) ${ret ? '⇄' : '→'} ${toCity} (${toCode})`;
+    const outLine = flightLine(out);
+    const retLine = ret ? flightLine(ret) : '';
+    const legMeta = f => {
+      const lay = f.lay != null ? LAYOVERS[f.lay] : null;
+      const stops = f.stops === 0 ? 'Direct' : `${stopLabel(f.stops)}${lay ? ' · ' + lay : ''}`;
+      return `${fmtTime(f.dep)} – ${fmtTime(f.dep + f.dur)} · ${fmtDur(f.dur)} · ${stops}`;
+    };
+
+    sharePreview.classList.add('sp-flight');
+    sharePreview.innerHTML = `
+      <div class="sp-head">
+        <span class="al-badge" style="background:${ao.color}">${initials(ao.name)}</span>
+        <div>
+          <p class="sp-airline">${ao.name}</p>
+          <p class="sp-trip">${ret ? 'Round trip' : 'One way'} · ${cabinLabel}</p>
+        </div>
+      </div>
+      <p class="sp-route">${route}</p>
+      <div class="sp-legs">
+        <div class="sp-leg">
+          <span class="sp-leg-tag"><i class="ph ph-airplane-takeoff"></i> Departure · ${departTxt}</span>
+          <span class="sp-leg-line">${legMeta(out)}</span>
+        </div>
+        ${ret ? `<div class="sp-leg">
+          <span class="sp-leg-tag"><i class="ph ph-airplane-landing"></i> Return · ${returnTxt}</span>
+          <span class="sp-leg-line">${legMeta(ret)}</span>
+        </div>` : ''}
+      </div>
+      <div class="sp-bottom">
+        <div>
+          <p class="sp-price">${fmtNaira(total)}</p>
+          <p class="sp-pss"><img src="icons/pay-small-small.svg" alt="Pay Small Small" /> ${fmtNaira(monthly)}</p>
+        </div>
+      </div>`;
+
+    // Build a shareable link + message (prototype — points back to this search)
+    const url = new URL(location.href);
+    url.searchParams.set('oid', out._i);
+    if (ret) url.searchParams.set('rid', ret._i); else url.searchParams.delete('rid');
+    shareCtx.url = url.toString();
+    shareCtx.text =
+      `✈️ ${route} on onburd\n` +
+      `Departure: ${outLine}\n` +
+      (ret ? `Return: ${retLine}\n` : '') +
+      `${cabinLabel} · ${fmtNaira(total)} (or ${fmtNaira(monthly)} with Pay Small Small)\n` +
+      `Let's book this 👇`;
+
+    shareLinkInput.value = shareCtx.url;
+    resetCopyBtn();
+    shareModal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeShare() {
+    shareModal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  function resetCopyBtn() {
+    shareCopyBtn.querySelector('span').textContent = 'Copy link';
+    shareCopyBtn.classList.remove('copied');
+  }
+
+  shareModal.addEventListener('click', e => {
+    if (e.target.closest('[data-share-close]')) { closeShare(); return; }
+    const ch = e.target.closest('.share-ch');
+    if (ch) {
+      const msg = encodeURIComponent(shareCtx.text + '\n' + shareCtx.url);
+      const u = encodeURIComponent(shareCtx.url);
+      const t = encodeURIComponent(shareCtx.text);
+      const links = {
+        whatsapp: `https://wa.me/?text=${msg}`,
+        telegram: `https://t.me/share/url?url=${u}&text=${t}`,
+        x:        `https://twitter.com/intent/tweet?text=${t}&url=${u}`,
+      };
+      if (ch.dataset.ch === 'instagram') {
+        // Instagram has no web share intent — copy link so users can paste in a story/DM
+        copyLink('Link copied — paste in Instagram');
+      } else {
+        window.open(links[ch.dataset.ch], '_blank', 'noopener');
+      }
+    }
+  });
+
+  function copyLink(label) {
+    const done = () => {
+      shareCopyBtn.querySelector('span').textContent = label || 'Copied!';
+      shareCopyBtn.classList.add('copied');
+      setTimeout(resetCopyBtn, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(shareCtx.url).then(done).catch(() => { shareLinkInput.select(); document.execCommand('copy'); done(); });
+    } else {
+      shareLinkInput.select(); document.execCommand('copy'); done();
+    }
+  }
+
+  shareCopyBtn.addEventListener('click', () => copyLink());
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !shareModal.hasAttribute('hidden')) closeShare();
+  });
+
+  /* ---------- selection → straight into the booking flow ---------- */
+  const resultsTitle = document.getElementById('resultsTitle');
+  resultsTitle.textContent = isRound ? 'Choose your round trip' : 'Choose your flight';
+
+  function selectOption(card) {
+    const oid = +card.dataset.oid;
+    const rid = card.dataset.rid != null ? +card.dataset.rid : null;
+    const qs = new URLSearchParams({
+      from: fromCity, fromCode, to: toCity, toCode,
+      trip, depart: departTxt, return: returnTxt, pax, class: cabin,
+      df: oid, dfare: cabinFareName,
+    });
+    if (rid != null) { qs.set('rf', rid); qs.set('rfare', cabinFareName); }
+    location.href = 'travelers.html?' + qs.toString();
+  }
+
+  /* initial paint */
+  render();
+
+  /* ---------- branded search loading splash ---------- */
+  (function searchSplash() {
+    const loader = document.getElementById('searchLoader');
+    if (!loader) return;
+    document.getElementById('slFrom').textContent = fromCode;
+    document.getElementById('slTo').textContent = toCode;
+    const statusEl = document.getElementById('slStatus');
+    const msgs = [
+      `Searching airlines for ${fromCity} &rarr; ${toCity}&hellip;`,
+      'Comparing fares across carriers&hellip;',
+      'Almost there &mdash; lining up the best deals&hellip;',
+    ];
+    statusEl.innerHTML = msgs[0];
+    let i = 0;
+    const cycle = setInterval(() => {
+      i = Math.min(i + 1, msgs.length - 1);
+      statusEl.innerHTML = msgs[i];
+    }, 1150);
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      clearInterval(cycle);
+      loader.classList.add('is-hidden');
+      document.body.style.overflow = '';
+      setTimeout(() => loader.remove(), 600);
+    }, 3500);
+  })();
+</script>
+
+</body>
+</html>
