@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — Reservation Checkout</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Explore</a>
+      <a href="events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="cinema.html">Cinema</a>
+      <a href="restaurants.html" class="active">Dining</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container tv-page">
+  <a class="back-link" href="javascript:history.back()"><i class="ph ph-arrow-left"></i> Checkout</a>
+
+  <div class="tv-grid">
+    <div class="tv-main">
+      <!-- selected restaurant card -->
+      <div class="ec-event" id="rcRest"></div>
+
+      <h2 class="tv-section-title">Your details</h2>
+      <p class="tv-note">We'll send your reservation confirmation here.</p>
+
+      <div class="ec-attendee">
+        <div class="tv-fields">
+          <div class="tv-field"><label>First name</label><input type="text" id="rcFirst" placeholder="Jane" /></div>
+          <div class="tv-field"><label>Last name</label><input type="text" id="rcLast" placeholder="Doe" /></div>
+          <div class="tv-field"><label>Email *</label><input type="email" id="rcEmail" placeholder="jane@email.com" /></div>
+          <div class="tv-field"><label>Phone</label>
+            <div class="ec-phone"><span class="ec-phone-cc">+234</span><input type="tel" id="rcPhone" placeholder="801 234 5678" /></div>
+          </div>
+        </div>
+        <div class="tv-field tv-field-full">
+          <label>Special requests <span class="tv-opt">(optional)</span></label>
+          <textarea id="rcNotes" rows="2" placeholder="Allergies, seating preference, celebrating an occasion…"></textarea>
+        </div>
+      </div>
+
+      <div class="ec-discount">
+        <label class="ec-discount-label">Discount Code</label>
+        <div class="ec-discount-row">
+          <input type="text" id="rcDiscountInput" placeholder="Enter code" autocomplete="off" spellcheck="false" />
+          <button type="button" class="ec-discount-clear" id="rcDiscountClear">Clear</button>
+          <button type="button" class="ec-discount-apply" id="rcDiscountApply">Apply</button>
+        </div>
+        <p class="ec-discount-msg" id="rcDiscountMsg" hidden></p>
+      </div>
+
+      <hr class="tv-rule" />
+
+      <h2 class="tv-section-title">Pay your deposit</h2>
+      <p class="tv-note">A refundable deposit secures your table and is deducted from your final bill on the night.</p>
+
+      <div class="pm-card">
+        <div class="pm-tabs" id="pmTabs">
+          <button type="button" class="pm-tab active" data-m="card"><span>Card Payment</span><i class="ph ph-caret-right"></i></button>
+          <button type="button" class="pm-tab" data-m="bank"><span>Bank Transfer</span><i class="ph ph-caret-right"></i></button>
+          <button type="button" class="pm-tab" data-m="wallet"><span>Onburd Wallet</span><i class="ph ph-caret-right"></i></button>
+        </div>
+        <div class="pm-panel" id="pmPanel"></div>
+      </div>
+
+      <label class="tv-check tv-terms"><input type="checkbox" /> <span>By proceeding, I agree to the restaurant <a href="#">terms &amp; conditions</a> and cancellation policy</span></label>
+    </div>
+
+    <aside class="tv-side">
+      <div class="tv-summary">
+        <h2 class="tv-summary-title">Reservation Summary</h2>
+        <p class="tv-summary-pax" id="rcParty">0 guests</p>
+        <div id="rcRows"></div>
+        <div class="tv-sum-row"><span>Service fee</span><span id="rcFee">₦0</span></div>
+        <div class="tv-sum-row ec-disc-row" id="rcDiscRow" hidden><span id="rcDiscLabel">Discount</span><span id="rcDisc" class="ec-disc-amt">−₦0</span></div>
+        <div class="tv-sum-row tv-sum-due"><span>Deposit Due</span><span id="rcDue">₦0</span></div>
+        <p class="rc-credit" id="rcCredit"></p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<script>
+  const fmtNaira = x => '₦' + x.toLocaleString('en-NG');
+  const booking = JSON.parse(sessionStorage.getItem('onburd_restaurant_booking') || 'null');
+
+  /* fall back to a default if someone lands here directly */
+  const b = booking || {
+    key: 'la-taverna', name: 'La Taverna, Ikoyi', cuisine: 'Italian · Fine Dining',
+    area: 'Ikoyi, Lagos', banner: 'images/la-taverna.jpg', depositPerPerson: 5000,
+    persons: 2, date: 'Today, 9 Jun', time: '7:00 PM',
+  };
+
+  /* ---- selected restaurant header card ---- */
+  document.getElementById('rcRest').innerHTML = `
+    <div class="ec-event-img" style="background-image:url('${b.banner}')"></div>
+    <div class="ec-event-meta">
+      <span class="ec-event-tag"><i class="ph ph-fork-knife"></i> ${b.cuisine}</span>
+      <h3>${b.name}</h3>
+      <p class="ec-event-when"><i class="ph ph-map-pin"></i> ${b.area}</p>
+      <p class="ec-event-where"><i class="ph ph-calendar-blank"></i> ${b.date} · ${b.time} · ${b.persons} ${b.persons === 1 ? 'guest' : 'guests'}</p>
+    </div>`;
+
+  /* ---- reservation summary ---- */
+  const SERVICE_FEE = 1000;
+  const depositTotal = b.depositPerPerson * b.persons;
+  document.getElementById('rcRows').innerHTML =
+    `<div class="tv-sum-row"><span>Deposit <em style="color:var(--muted)">${fmtNaira(b.depositPerPerson)} × ${b.persons}</em></span><span>${fmtNaira(depositTotal)}</span></div>`;
+  document.getElementById('rcParty').textContent = `${b.persons} ${b.persons === 1 ? 'guest' : 'guests'} · ${b.date} · ${b.time}`;
+  document.getElementById('rcFee').textContent = fmtNaira(SERVICE_FEE);
+  document.getElementById('rcCredit').innerHTML =
+    `<i class="ph ph-arrow-bend-down-right"></i> ${fmtNaira(depositTotal)} is credited to your bill at the restaurant.`;
+
+  const subtotal = depositTotal;
+  const fees = SERVICE_FEE;
+
+  /* ---- discount state ---- */
+  let discount = 0, discCode = '';
+  const currentDue = () => Math.max(0, subtotal + fees - discount);
+
+  const discRow   = document.getElementById('rcDiscRow');
+  const discLabel = document.getElementById('rcDiscLabel');
+  const discAmt   = document.getElementById('rcDisc');
+  const dueEl     = document.getElementById('rcDue');
+
+  /* ---- payment method panels ---- */
+  let activeMethod = 'card';
+  const METHODS = {
+    card: {
+      title: 'Paystack Cards', amountLabel: 'Deposit', cta: 'Pay deposit',
+      desc: 'Pay your deposit instantly with your debit or credit card. We accept Visa, Mastercard and Verve.',
+      logo: `<span class="pm-logo-badge pm-logo-cards"><i class="ph ph-credit-card"></i> Visa · Mastercard · Verve</span>`,
+    },
+    bank: {
+      title: 'Bank Transfer', amountLabel: 'Deposit', cta: 'I have paid',
+      desc: 'Transfer the exact deposit to the account details shown after you continue. Your table is confirmed once payment is received.',
+      logo: `<span class="pm-logo-badge"><i class="ph ph-bank"></i> Paystack</span>`,
+    },
+    wallet: {
+      title: 'Onburd Wallet', amountLabel: 'Wallet charge', cta: 'Pay from wallet',
+      desc: 'Use your Onburd wallet balance for a one-tap deposit. Top up anytime from your account.',
+      logo: `<span class="pm-logo-badge"><i class="ph ph-wallet"></i> Wallet</span>`,
+    },
+  };
+  const pmPanel = document.getElementById('pmPanel');
+  function renderPanel(key) {
+    const m = METHODS[key];
+    pmPanel.innerHTML = `
+      <div class="pm-panel-body">
+        <div class="pm-panel-top"><h3>${m.title}</h3>${m.logo}</div>
+        <p class="pm-panel-desc">${m.desc}</p>
+      </div>
+      <div class="pm-panel-foot">
+        <div class="pm-amount"><span>${m.amountLabel}</span><b>${fmtNaira(currentDue())}</b></div>
+        <button type="button" class="pm-pay">${m.cta}</button>
+      </div>`;
+  }
+
+  document.getElementById('pmTabs').addEventListener('click', e => {
+    const tab = e.target.closest('.pm-tab');
+    if (!tab) return;
+    document.querySelectorAll('.pm-tab').forEach(t => t.classList.toggle('active', t === tab));
+    activeMethod = tab.dataset.m;
+    renderPanel(activeMethod);
+  });
+
+  /* ---- summary refresh ---- */
+  function updateSummary() {
+    if (discount > 0) {
+      discRow.hidden = false;
+      discLabel.textContent = discCode ? `Discount (${discCode})` : 'Discount';
+      discAmt.textContent = '−' + fmtNaira(discount);
+    } else {
+      discRow.hidden = true;
+    }
+    dueEl.textContent = fmtNaira(currentDue());
+    renderPanel(activeMethod);
+  }
+  updateSummary();
+
+  /* ---- discount codes ---- */
+  const CODES = {
+    ONBURD10:  { label: '10% off',    calc: s => Math.round(s * 0.10) },
+    SAVE5000:  { label: '₦5,000 off', calc: () => 5000 },
+    EARLYBIRD: { label: '15% off',    calc: s => Math.round(s * 0.15) },
+  };
+  const discInput = document.getElementById('rcDiscountInput');
+  const discMsg   = document.getElementById('rcDiscountMsg');
+
+  function setDiscMsg(text, ok) {
+    discMsg.hidden = !text;
+    discMsg.textContent = text || '';
+    discMsg.classList.toggle('ok', !!ok);
+    discMsg.classList.toggle('err', text && !ok);
+  }
+
+  document.getElementById('rcDiscountApply').addEventListener('click', () => {
+    const code = discInput.value.trim().toUpperCase();
+    if (!code) { setDiscMsg('Enter a code to apply.', false); discInput.classList.remove('ok','err'); return; }
+    const c = CODES[code];
+    if (!c) {
+      discount = 0; discCode = '';
+      discInput.classList.remove('ok'); discInput.classList.add('err');
+      setDiscMsg('That code isn’t valid. Try ONBURD10 or SAVE5000.', false);
+    } else {
+      discount = Math.min(subtotal, c.calc(subtotal));
+      discCode = code;
+      discInput.classList.remove('err'); discInput.classList.add('ok');
+      setDiscMsg(`Code ${code} applied — ${c.label}.`, true);
+    }
+    updateSummary();
+  });
+
+  document.getElementById('rcDiscountClear').addEventListener('click', () => {
+    discount = 0; discCode = '';
+    discInput.value = '';
+    discInput.classList.remove('ok','err');
+    setDiscMsg('', false);
+    updateSummary();
+  });
+
+  /* ---- complete payment -> success page ---- */
+  function ref() {
+    const s = 'ABCDEFGHJKLMNPQRSTUVWXYZ0123456789';
+    let r = 'ONB-';
+    for (let i = 0; i < 6; i++) r += s[Math.floor(Math.random() * s.length)];
+    return r;
+  }
+  function bookingId() {
+    let r = '';
+    for (let i = 0; i < 12; i++) r += Math.floor(Math.random() * 10);
+    return r;
+  }
+  pmPanel.addEventListener('click', e => {
+    if (!e.target.closest('.pm-pay')) return;
+    const success = {
+      ref: ref(),
+      bookingId: bookingId(),
+      date: new Date().toLocaleDateString('en-NG', { day: '2-digit', month: 'long', year: 'numeric' }),
+      methodLabel: METHODS[activeMethod].title,
+      amountPaid: currentDue(),
+      name: b.name, cuisine: b.cuisine, area: b.area, banner: b.banner,
+      persons: b.persons, dateStr: b.date, time: b.time,
+      depositPerPerson: b.depositPerPerson, depositTotal, fees, discount, discCode,
+      contact: {
+        first: document.getElementById('rcFirst').value.trim(),
+        last:  document.getElementById('rcLast').value.trim(),
+        email: document.getElementById('rcEmail').value.trim(),
+        phone: document.getElementById('rcPhone').value.trim(),
+        notes: document.getElementById('rcNotes').value.trim(),
+      },
+    };
+    sessionStorage.setItem('onburd_restaurant_success', JSON.stringify(success));
+    location.href = 'restaurant-success.html';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — Restaurants &amp; Bars</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Explore</a>
+      <a href="events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="cinema.html">Cinema</a>
+      <a href="restaurants.html" class="active">Dining</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO BANNER ============ -->
+<section class="exp-hero rst-hero">
+  <div class="container exp-hero-inner">
+    <div class="exp-hero-copy">
+      <h1>Reserve a table.<br><span class="accent">Savour the night</span></h1>
+      <p>From fine-dining restaurants to rooftop bars and buzzing lounges — discover Lagos&rsquo; best tables and book in seconds on Onburd.</p>
+    </div>
+    <div class="exp-hero-art rst-hero-art" aria-hidden="true">
+      <img src="images/dining-hero.png" alt="" />
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- ============ RESERVATION SEARCH WIDGET ============ -->
+  <section class="container cin-search-section rst-search">
+    <div class="cin-search-card">
+      <div class="flight-fields cinema-fields" id="rstSearch">
+        <div class="field is-popover has-value" data-field="rst-date">
+          <div class="field-ic"><i class="ph ph-calendar-blank"></i></div>
+          <div class="field-body">
+            <p class="field-label">Date</p>
+            <p class="field-value">Today, 8 Jun</p>
+          </div>
+          <i class="ph ph-caret-down field-caret"></i>
+          <div class="field-popover field-popover-date cal-oneway rst-cal" hidden>
+            <div class="cal-grid">
+              <div class="cal-month">
+                <div class="cal-head">
+                  <button class="cal-nav" type="button" aria-label="Previous month"><i class="ph ph-caret-left"></i></button>
+                  <p class="cal-title">Month Year</p>
+                  <button class="cal-nav" type="button" aria-label="Next month"><i class="ph ph-caret-right"></i></button>
+                </div>
+                <div class="cal-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sat</span><span>Su</span></div>
+                <div class="cal-days"></div>
+              </div>
+            </div>
+            <div class="cal-foot">
+              <div class="cal-range">
+                <div class="cal-range-box">Start date</div>
+                <span class="cal-dash">–</span>
+                <div class="cal-range-box">End date</div>
+              </div>
+              <div class="cal-actions">
+                <button class="cal-cancel" type="button">Cancel</button>
+                <button class="cal-apply" type="button">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-popover has-value" data-field="rst-time">
+          <div class="field-ic"><i class="ph ph-clock"></i></div>
+          <div class="field-body">
+            <p class="field-label">Time</p>
+            <p class="field-value">7:00 PM</p>
+          </div>
+          <i class="ph ph-caret-down field-caret"></i>
+          <div class="field-popover field-popover-select" hidden>
+            <button class="sel-option" type="button" data-value="5:00 PM">5:00 PM</button>
+            <button class="sel-option" type="button" data-value="6:00 PM">6:00 PM</button>
+            <button class="sel-option" type="button" data-value="6:30 PM">6:30 PM</button>
+            <button class="sel-option selected" type="button" data-value="7:00 PM">7:00 PM</button>
+            <button class="sel-option" type="button" data-value="7:30 PM">7:30 PM</button>
+            <button class="sel-option" type="button" data-value="8:00 PM">8:00 PM</button>
+            <button class="sel-option" type="button" data-value="9:00 PM">9:00 PM</button>
+          </div>
+        </div>
+
+        <div class="field is-popover has-value" data-field="rst-persons">
+          <div class="field-ic"><i class="ph ph-users"></i></div>
+          <div class="field-body">
+            <p class="field-label">Persons</p>
+            <p class="field-value">2 people</p>
+          </div>
+          <i class="ph ph-caret-down field-caret"></i>
+          <div class="field-popover field-popover-select" hidden>
+            <button class="sel-option" type="button" data-value="1 person">1 person</button>
+            <button class="sel-option selected" type="button" data-value="2 people">2 people</button>
+            <button class="sel-option" type="button" data-value="3 people">3 people</button>
+            <button class="sel-option" type="button" data-value="4 people">4 people</button>
+            <button class="sel-option" type="button" data-value="5 people">5 people</button>
+            <button class="sel-option" type="button" data-value="6+ people">6+ people</button>
+          </div>
+        </div>
+
+        <div class="field is-popover has-value" data-field="rst-location">
+          <div class="field-ic"><i class="ph ph-map-pin"></i></div>
+          <div class="field-body">
+            <p class="field-label">Location</p>
+            <p class="field-value">Lekki, Lagos</p>
+          </div>
+          <i class="ph ph-caret-down field-caret"></i>
+          <div class="field-popover field-popover-select" hidden>
+            <button class="sel-option selected" type="button" data-value="Lekki, Lagos">Lekki, Lagos</button>
+            <button class="sel-option" type="button" data-value="Ikoyi, Lagos">Ikoyi, Lagos</button>
+            <button class="sel-option" type="button" data-value="Victoria Island">Victoria Island</button>
+            <button class="sel-option" type="button" data-value="Ikeja, Lagos">Ikeja, Lagos</button>
+            <button class="sel-option" type="button" data-value="Abuja">Abuja</button>
+            <button class="sel-option" type="button" data-value="Port Harcourt">Port Harcourt</button>
+          </div>
+        </div>
+
+        <button class="flight-search" type="button" aria-label="Search restaurants">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED RESTAURANTS (carousel row) ============ -->
+  <section class="container section rst-section">
+    <div class="section-head">
+      <h3>Featured restaurants &amp; bars</h3>
+    </div>
+    <div class="row-wrap">
+      <button class="carousel-arrow left" aria-label="Previous"><i class="ph ph-caret-left"></i></button>
+      <button class="carousel-arrow right" aria-label="Next"><i class="ph ph-caret-right"></i></button>
+      <div class="card-row" id="rstFeatured"></div>
+    </div>
+  </section>
+
+  <!-- ============ ALL RESTAURANTS & BARS (grid) ============ -->
+  <section class="container section rst-section">
+    <div class="exp-head">
+      <div>
+        <h3 class="exp-title">All restaurants &amp; bars</h3>
+        <p class="exp-sub" id="rstCount">Lekki, Lagos · Today, 8 Jun</p>
+      </div>
+    </div>
+    <div class="rst-rows" id="rstGrid"></div>
+
+    <!-- pagination -->
+    <nav class="cin-pager rst-pager" id="rstPager" aria-label="Pagination"></nav>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+          <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+          <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+          <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+          <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+          <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+        </svg>
+      </div>
+      <p class="foot-desc">Welcome to your one stop travel platform where we help making your journey an experience. We love you, hear from you.</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">WhatsApp:</p>
+      <p>+234 (0)1 555 7540</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">Speak to an agent:</p>
+      <p>+234 1 700 5028, +234 1 280 3121</p>
+      <p class="foot-label spaced">Need our support:</p>
+      <p><a href="#">Support@onburd.com</a></p>
+    </div>
+
+    <div class="foot-col">
+      <p><a href="#">About</a></p>
+      <p><a href="#">Privacy Policy</a></p>
+      <p><a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 Onburd. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="X (Twitter)"><i class="ph ph-x-logo"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ===================== RESTAURANT & BAR DATA ===================== */
+  const PHOTOS = ['images/la-taverna.jpg', 'images/quilox.jpg', 'images/b21.jpg', 'images/wbar.jpg'];
+
+  const FEATURED = [
+    { key: 'la-taverna',  name: 'La Taverna, Ikoyi',     meta: 'Italian · Fine Dining',     price: '₦25,000', tag: 'Top rated', img: 0 },
+    { key: 'quilox',      name: 'Quilox Lounge',         meta: 'Lounge · Victoria Island',  price: '₦35,000', tag: 'Nightlife', img: 1 },
+    { key: 'shiro',       name: 'Shiro Lagos',           meta: 'Asian Fusion · Victoria Is.', price: '₦32,000', tag: 'Trending', img: 2 },
+    { key: 'w-bar',       name: 'W Bar Lagos',           meta: 'Rooftop · Ikoyi',           price: '₦22,000', tag: 'Rooftop',  img: 3 },
+    { key: 'nok',         name: 'Nok by Alara',          meta: 'West African · Lekki',      price: '₦28,000', tag: 'Featured',  img: 0 },
+  ];
+
+  const ALL = [
+    { key: 'la-taverna',  name: 'La Taverna, Ikoyi',     meta: 'Italian · Fine Dining',     price: '₦25,000', tag: 'Top rated', img: 0 },
+    { key: 'quilox',      name: 'Quilox Lounge',         meta: 'Lounge · Victoria Island',  price: '₦35,000', tag: 'Nightlife', img: 1 },
+    { key: 'b21',         name: 'B21 Cocktail Bar',      meta: 'Cocktails · Lekki',         price: '₦18,000', tag: '',         img: 2 },
+    { key: 'w-bar',       name: 'W Bar Lagos',           meta: 'Rooftop · Ikoyi',           price: '₦22,000', tag: 'Rooftop',  img: 3 },
+    { key: 'nok',         name: 'Nok by Alara',          meta: 'West African · Lekki',      price: '₦28,000', tag: 'Featured', img: 0 },
+    { key: 'shiro',       name: 'Shiro Lagos',           meta: 'Asian Fusion · Victoria Is.', price: '₦32,000', tag: '',       img: 1 },
+    { key: 'rsvp',        name: 'RSVP Lagos',            meta: 'Contemporary · Victoria Is.', price: '₦30,000', tag: '',       img: 2 },
+    { key: 'sip',         name: 'Sip Wine Bar',          meta: 'Wine Bar · Ikoyi',          price: '₦20,000', tag: '',         img: 3 },
+    { key: 'cactus',      name: 'Cactus Restaurant',     meta: 'Continental · Lekki',       price: '₦22,000', tag: '',         img: 0 },
+    { key: 'bature',      name: 'Bature Brewery',        meta: 'Craft Beer · Lekki',        price: '₦15,000', tag: '',         img: 1 },
+    { key: 'z-kitchen',   name: 'Z Kitchen',             meta: 'Steakhouse · Victoria Is.', price: '₦26,000', tag: '',         img: 2 },
+    { key: 'sailors',     name: 'Sailors Lounge',        meta: 'Seafood Bar · Ikoyi',       price: '₦24,000', tag: 'Trending', img: 3 },
+    { key: 'terra',       name: 'Terra Kulture',         meta: 'Nigerian · Victoria Is.',   price: '₦16,000', tag: '',         img: 0 },
+    { key: 'hard-rock',   name: 'Hard Rock Cafe',        meta: 'American · Victoria Is.',   price: '₦27,000', tag: '',         img: 1 },
+    { key: 'craft',       name: 'Craft Gourmet',         meta: 'Bistro · Lekki',            price: '₦19,000', tag: '',         img: 2 },
+    { key: 'the-view',    name: 'The View Rooftop',      meta: 'Rooftop Bar · Ikeja',       price: '₦21,000', tag: 'Rooftop',  img: 3 },
+  ];
+
+  /* ===================== RENDERERS ===================== */
+  const cardHTML = r => `
+    <article class="event-card rst-card" tabindex="0" role="link" data-key="${r.key}" aria-label="${r.name}">
+      <div class="event-img" style="background-image:url('${PHOTOS[r.img]}')">
+        ${r.tag ? `<span class="rst-badge">${r.tag}</span>` : ''}
+      </div>
+      <h4>${r.name}</h4>
+      <p class="meta">${r.meta}</p>
+      <p class="price-new">${r.price}<span class="adult">/person</span></p>
+    </article>`;
+
+  document.getElementById('rstFeatured').innerHTML = FEATURED.map(cardHTML).join('');
+
+  /* ===================== ALL RESTAURANTS — PAGINATED GRID ===================== */
+  const grid = document.getElementById('rstGrid');
+  const pager = document.getElementById('rstPager');
+  const PER_PAGE = 12, PER_ROW = 4;
+  const totalPages = Math.ceil(ALL.length / PER_PAGE);
+  let currentPage = 1;
+
+  function renderPage(page) {
+    currentPage = Math.min(totalPages, Math.max(1, page));
+    const start = (currentPage - 1) * PER_PAGE;
+    const items = ALL.slice(start, start + PER_PAGE);
+    let rows = '';
+    for (let i = 0; i < items.length; i += PER_ROW) {
+      rows += `<div class="rst-row">${items.slice(i, i + PER_ROW).map(cardHTML).join('')}</div>`;
+    }
+    grid.innerHTML = rows;
+    renderPager();
+  }
+
+  function renderPager() {
+    if (totalPages <= 1) { pager.innerHTML = ''; return; }
+    let nums = '';
+    for (let p = 1; p <= totalPages; p++) {
+      nums += `<button class="cin-page-num${p === currentPage ? ' active' : ''}" type="button" data-page="${p}">${p}</button>`;
+    }
+    pager.innerHTML = `
+      <button class="cin-page-btn" type="button" data-nav="prev" ${currentPage === 1 ? 'disabled' : ''}><i class="ph ph-arrow-left"></i> Previous</button>
+      <div class="cin-page-nums">${nums}</div>
+      <button class="cin-page-btn" type="button" data-nav="next" ${currentPage === totalPages ? 'disabled' : ''}>Next <i class="ph ph-arrow-right"></i></button>`;
+  }
+
+  function gotoPage(page) {
+    if (page === currentPage || page < 1 || page > totalPages) return;
+    renderPage(page);
+    const head = document.querySelector('.rst-section .exp-head');
+    if (head) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  pager.addEventListener('click', e => {
+    const num = e.target.closest('.cin-page-num');
+    if (num) { gotoPage(+num.dataset.page); return; }
+    const btn = e.target.closest('.cin-page-btn');
+    if (btn && !btn.disabled) gotoPage(currentPage + (btn.dataset.nav === 'prev' ? -1 : 1));
+  });
+
+  renderPage(1);
+
+  /* ===================== CARD NAVIGATION (delegated) ===================== */
+  function openRestaurant(key) {
+    if (key) location.href = 'restaurant-details.html?key=' + encodeURIComponent(key);
+  }
+  function bindNav(container) {
+    container.addEventListener('click', e => {
+      const card = e.target.closest('.rst-card[data-key]');
+      if (card) openRestaurant(card.dataset.key);
+    });
+    container.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.rst-card[data-key]');
+      if (card && card === e.target) { e.preventDefault(); openRestaurant(card.dataset.key); }
+    });
+  }
+  bindNav(document.getElementById('rstFeatured'));
+  bindNav(grid);
+
+  /* ===================== SEARCH WIDGET (select popovers) ===================== */
+  const searchBar = document.getElementById('rstSearch');
+  function closeAllPops() {
+    searchBar.querySelectorAll('.field-popover').forEach(p => { p.hidden = true; });
+    searchBar.querySelectorAll('.field').forEach(f => f.classList.remove('is-open'));
+  }
+  searchBar.querySelectorAll('.field.is-popover').forEach(field => {
+    const pop = field.querySelector('.field-popover');
+    const valueEl = field.querySelector('.field-value');
+    field.addEventListener('click', e => {
+      if (e.target.closest('.field-popover')) return;
+      const wasOpen = !pop.hidden;
+      closeAllPops();
+      if (!wasOpen) { pop.hidden = false; field.classList.add('is-open'); }
+    });
+    field.querySelectorAll('.sel-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        field.querySelectorAll('.sel-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        valueEl.textContent = opt.dataset.value || opt.textContent.trim();
+        closeAllPops();
+        syncSub();
+      });
+    });
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.cinema-fields .field')) closeAllPops(); });
+
+  /* ===================== DATE FIELD — SINGLE-DATE CALENDAR ===================== */
+  const dateField = searchBar.querySelector('[data-field="rst-date"]');
+  const calPop = dateField.querySelector('.field-popover-date');
+  const parseISO = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+  function buildMonth(year, monthIdx) {
+    const firstDay = new Date(year, monthIdx, 1);
+    const startOffset = (firstDay.getDay() + 6) % 7;            /* Monday = 0 */
+    const lastDate = new Date(year, monthIdx + 1, 0).getDate();
+    let html = '';
+    for (let i = 0; i < startOffset; i++) html += '<button class="cal-day cal-day-blank" type="button" disabled></button>';
+    for (let d = 1; d <= lastDate; d++) html += `<button class="cal-day" type="button" data-date="${year}-${monthIdx + 1}-${d}">${d}</button>`;
+    const trail = (7 - ((startOffset + lastDate) % 7)) % 7;
+    for (let i = 0; i < trail; i++) html += '<button class="cal-day cal-day-blank" type="button" disabled></button>';
+    return { title: firstDay.toLocaleString('en-US', { month: 'long', year: 'numeric' }), html };
+  }
+  function renderCal() {
+    const { title, html } = buildMonth(calPop._base.getFullYear(), calPop._base.getMonth());
+    calPop.querySelector('.cal-title').textContent = title;
+    calPop.querySelector('.cal-days').innerHTML = html;
+    calPop.querySelectorAll('.cal-day:not(.cal-day-blank)').forEach(d => {
+      d.classList.toggle('selected', d.dataset.date === calPop._sel);
+    });
+    calPop.querySelector('.cal-range-box').textContent = calPop._sel
+      ? parseISO(calPop._sel).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      : '';
+  }
+  calPop._base = new Date(2026, 5, 1);   /* June 2026 — matches the prototype's "today" */
+  calPop._sel = '2026-6-8';              /* default: Today, 8 Jun */
+  renderCal();
+  calPop.addEventListener('click', e => {
+    const nav = e.target.closest('.cal-nav');
+    if (nav) {
+      const isPrev = nav === nav.parentElement.firstElementChild;
+      calPop._base = new Date(calPop._base.getFullYear(), calPop._base.getMonth() + (isPrev ? -1 : 1), 1);
+      renderCal();
+      return;
+    }
+    const day = e.target.closest('.cal-day:not(.cal-day-blank)');
+    if (day) { calPop._sel = day.dataset.date; renderCal(); return; }
+    if (e.target.closest('.cal-cancel')) { closeAllPops(); return; }
+    if (e.target.closest('.cal-apply')) {
+      if (calPop._sel) {
+        dateField.querySelector('.field-value').textContent =
+          parseISO(calPop._sel).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        syncSub();
+      }
+      closeAllPops();
+      return;
+    }
+  });
+
+  /* keep the grid subtitle in sync with location + date (visual only) */
+  function syncSub() {
+    const loc = searchBar.querySelector('[data-field="rst-location"] .field-value').textContent.trim();
+    const date = searchBar.querySelector('[data-field="rst-date"] .field-value').textContent.trim();
+    document.getElementById('rstCount').textContent = loc + ' · ' + date;
+  }
+</script>
+
+</body>
+</html>

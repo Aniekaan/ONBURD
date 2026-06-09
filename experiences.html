@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — Experiences</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M120.674 12.7155H120.812C120.879 12.7207 120.95 12.7309 121.017 12.7361C121.144 12.7464 121.267 12.7567 121.39 12.7772C122.002 12.9058 122.61 13.0447 123.213 13.1887C123.938 13.3636 124.653 13.7236 125.317 14.0836C126.063 14.4797 126.737 14.994 127.304 15.4415C127.825 15.8581 128.311 16.3673 128.827 17.0359C128.862 17.0873 128.898 17.1388 128.929 17.1954C129.026 17.3548 129.159 17.5657 129.358 17.7714C129.654 18.0749 129.838 18.5223 130.052 19.0418L130.104 19.1652C130.231 19.4738 130.339 19.7927 130.446 20.1116C130.497 20.2659 130.548 20.4202 130.604 20.5745L130.768 21.2483L130.778 21.3049L130.819 21.4849C130.829 21.5312 130.844 21.5775 130.849 21.6289C130.875 21.8655 130.895 22.1021 130.911 22.3387H126.717L127.34 23.4239L127.805 24.2777L127.877 24.4166C127.953 24.5657 128.03 24.7098 128.122 24.8486C128.306 25.1418 128.495 25.4298 128.684 25.7178C128.97 26.155 129.251 26.5922 129.526 27.0345C131.146 29.6371 132.755 32.2447 134.364 34.8473L134.721 35.4233C135.094 36.0302 135.584 36.1588 135.932 36.1588C136.207 36.1588 136.734 36.0662 137.132 35.4542C137.566 34.7804 138.005 34.1169 138.445 33.4483L139.068 32.5019C139.865 31.2881 140.662 30.0742 141.453 28.8604C142.271 27.6157 143.083 26.3659 143.895 25.1212C144.012 24.9361 144.13 24.7509 144.258 24.5452L144.441 24.2417L145.647 22.3027H143.113H142.991L141.402 22.3233C141.351 21.274 141.188 20.1836 140.912 19.0161C140.294 16.4239 139.323 14.0888 138.021 12.0623C137.352 11.0182 136.693 10.1336 136.008 9.35692C135.104 8.3334 134.047 7.38189 132.775 6.45609C131.299 5.38113 129.741 4.57877 128.413 3.93586C127.943 3.70955 127.458 3.54496 127.034 3.40609C126.114 3.09749 125.19 2.79404 124.178 2.64488C123.474 2.54201 122.764 2.44429 122.054 2.35171C121.67 2.30542 121.257 2.25399 120.833 2.23856C120.603 2.22827 120.368 2.22827 120.138 2.22827C119.918 2.22827 119.704 2.22827 119.484 2.22827H119.229C119.091 2.22827 118.953 2.24884 118.815 2.26427L118.728 2.27456L118.366 2.31056L116.675 2.54201C116.506 2.57802 116.343 2.60888 116.174 2.64488C115.643 2.74775 115.091 2.85576 114.535 3.03063C113.288 3.42152 112.246 3.77641 111.22 4.23417C110.152 4.7125 109.151 5.31427 108.298 5.84403C107.353 6.42523 106.623 6.99614 105.999 7.62876C105.78 7.85507 105.55 8.07109 105.32 8.28711C104.937 8.64714 104.544 9.02261 104.171 9.44436C103.573 10.1181 103.057 10.8485 102.628 11.476C101.397 13.2761 100.508 15.0506 99.9006 16.897C99.3541 18.5635 99.0272 20.1579 98.9097 21.7626C98.879 22.1587 98.8586 22.5496 98.8331 22.961L98.7973 23.5319L98.7156 24.8795H107.583C108.696 24.8795 109.284 24.3086 109.32 23.177V23.0022C109.33 22.8119 109.335 22.6318 109.355 22.5033L109.391 22.3027C109.498 21.7112 109.595 21.1506 109.738 20.6157C110.05 19.4687 110.52 18.4349 111.138 17.5451C111.358 17.2314 111.593 16.9279 111.828 16.6244C111.93 16.4907 112.032 16.3621 112.134 16.2284L112.18 16.1821L112.349 16.0021L112.44 15.8992L112.481 15.8478C113.202 15.0866 114.106 14.5311 114.897 14.0888C116.379 13.2607 118.013 12.803 119.755 12.7258H119.837L120.383 12.7155H120.562H120.659H120.674Z" />
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z" />
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z" />
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308" />
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168" />
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z" />
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z" />
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html" class="active">Explore</a>
+      <a href="events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="index.html">Hotels</a>
+      <a href="index.html">Ticket resell</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO BANNER ============ -->
+<section class="exp-hero">
+  <div class="container exp-hero-inner">
+    <div class="exp-hero-copy">
+      <h1>Go beyond ordinary.<br><span class="accent">Live Extraordinary</span></h1>
+      <p>Find your next adventure with Onburd. From relaxing retreats to exciting explorations, we've got the perfect destination for you!</p>
+    </div>
+    <div class="exp-hero-art" aria-hidden="true">
+      <img src="images/experiences-hero.png" alt="" />
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- ============ FILTER BAR + GRID ============ -->
+  <section class="container section">
+    <div class="exp-head">
+      <div>
+        <h3 class="exp-title">Curated Experiences</h3>
+        <p class="exp-sub" id="expCount">Showing 9 experiences</p>
+      </div>
+    </div>
+
+    <!-- filters -->
+    <div class="exp-filters" id="expFilters">
+      <div class="exp-filter exp-filter-search">
+        <div class="exp-search">
+          <i class="ph ph-magnifying-glass"></i>
+          <input type="text" id="expSearch" placeholder="Search experiences or places" autocomplete="off" spellcheck="false" />
+          <button type="button" class="exp-search-clear" id="expSearchClear" aria-label="Clear search" hidden><i class="ph ph-x"></i></button>
+        </div>
+      </div>
+
+      <div class="exp-filter">
+        <div class="tv-select" data-filter="location">
+          <button type="button" class="tv-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="tv-select-value is-placeholder">Any location</span>
+            <i class="ph ph-caret-down"></i>
+          </button>
+          <input type="hidden" data-pf="location" value="" />
+          <div class="tv-select-panel" hidden>
+            <div class="tv-select-list" role="listbox">
+              <button type="button" class="tv-select-opt selected" role="option" data-val="">Any location</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="maldives">Maldives</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="italy">Italy</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="kenya">Kenya</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="nigeria">Nigeria</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="france">France</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="uk">United Kingdom</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-filter">
+        <div class="tv-select exp-date" data-filter="date">
+          <button type="button" class="tv-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="tv-select-value is-placeholder">Any date</span>
+            <i class="ph ph-caret-down"></i>
+          </button>
+          <input type="hidden" data-pf="date" value="" />
+          <div class="tv-select-panel" hidden>
+            <!-- quick presets -->
+            <div class="tv-select-list exp-date-presets" role="listbox">
+              <button type="button" class="tv-select-opt selected" role="option" data-val="" data-label="Any date">Any date</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="today" data-label="Today">Today</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="tomorrow" data-label="Tomorrow">Tomorrow</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="weekend" data-label="This weekend">This weekend</button>
+              <button type="button" class="tv-select-opt exp-date-custom" role="option" data-custom>
+                <span><i class="ph ph-calendar-dots"></i> Custom date</span>
+                <i class="ph ph-caret-right"></i>
+              </button>
+            </div>
+            <!-- custom calendar (date range) -->
+            <div class="exp-date-cal" hidden>
+              <button type="button" class="exp-cal-back"><i class="ph ph-caret-left"></i> Quick options</button>
+              <div class="cal-grid">
+                <div class="cal-month">
+                  <div class="cal-head">
+                    <button class="cal-nav exp-cal-prev" type="button" aria-label="Previous month"><i class="ph ph-caret-left"></i></button>
+                    <p class="cal-title">Month Year</p>
+                    <span class="cal-nav-spacer" aria-hidden="true"></span>
+                  </div>
+                  <div class="cal-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+                  <div class="cal-days"></div>
+                </div>
+                <div class="cal-month">
+                  <div class="cal-head">
+                    <span class="cal-nav-spacer" aria-hidden="true"></span>
+                    <p class="cal-title">Month Year</p>
+                    <button class="cal-nav exp-cal-next" type="button" aria-label="Next month"><i class="ph ph-caret-right"></i></button>
+                  </div>
+                  <div class="cal-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+                  <div class="cal-days"></div>
+                </div>
+              </div>
+              <div class="cal-foot">
+                <div class="cal-range">
+                  <div class="cal-range-box exp-cal-start"></div>
+                  <span class="cal-dash">–</span>
+                  <div class="cal-range-box exp-cal-end"></div>
+                </div>
+                <div class="cal-actions">
+                  <button class="cal-cancel exp-cal-cancel" type="button">Cancel</button>
+                  <button class="cal-apply exp-cal-apply" type="button">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-filter">
+        <div class="tv-select" data-filter="category">
+          <button type="button" class="tv-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="tv-select-value is-placeholder">Any category</span>
+            <i class="ph ph-caret-down"></i>
+          </button>
+          <input type="hidden" data-pf="category" value="" />
+          <div class="tv-select-panel" hidden>
+            <div class="tv-select-list" role="listbox">
+              <button type="button" class="tv-select-opt selected" role="option" data-val="">Any category</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="beach">Beach</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="safari">Safari</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="city">City Break</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="resort">Resort</button>
+              <button type="button" class="tv-select-opt" role="option" data-val="staycation">Staycation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- grid -->
+    <div class="exp-grid" id="expGrid">
+      <article class="event-card" tabindex="0" role="link" data-key="maldives-5day" data-location="maldives" data-month="2026-07" data-category="beach">
+        <div class="event-img c1"></div>
+        <h4>5 days in the Maldives</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> Maldives · Jul 2026</p>
+        <p class="price-new">₦2,050,000<span class="adult">/adult</span></p>
+      </article>
+
+      <article class="event-card" tabindex="0" role="link" data-key="florence" data-location="italy" data-month="2026-08" data-category="city">
+        <div class="event-img c2"></div>
+        <h4>Explore Florence, Italy</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> Italy · Aug 2026</p>
+        <p class="price-new">₦1,850,000<span class="adult">/adult</span></p>
+      </article>
+
+      <article class="event-card" tabindex="0" role="link" data-key="kenya-safari" data-location="kenya" data-month="2026-09" data-category="safari">
+        <div class="event-img c3"></div>
+        <h4>Safari in Kenya</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> Kenya · Sep 2026</p>
+        <p class="price-new">₦1,650,000<span class="adult">/adult</span></p>
+      </article>
+
+      <article class="event-card" tabindex="0" role="link" data-key="lakowe" data-location="nigeria" data-month="2026-06" data-category="resort">
+        <div class="event-img c4"></div>
+        <h4>3 days at Lakowe Lake Resort</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> Nigeria · Jun 2026</p>
+        <p class="price-new">₦450,000<span class="adult">/adult</span></p>
+      </article>
+
+      <article class="event-card" tabindex="0" role="link" data-key="paris" data-location="france" data-month="2026-08" data-category="city">
+        <div class="event-img x5"></div>
+        <h4>Romantic Paris Getaway</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> France · Aug 2026</p>
+        <p class="price-new">₦2,400,000<span class="adult">/adult</span></p>
+      </article>
+
+      <article class="event-card" tabindex="0" role="link" data-key="masai-mara" data-location="kenya" data-month="2026-07" data-category="safari">
+        <div class="event-img x6"></div>
+        <h4>Masai Mara Wildlife Trail</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> Kenya · Jul 2026</p>
+        <p class="price-new">₦1,950,000<span class="adult">/adult</span></p>
+      </article>
+
+      <article class="event-card" tabindex="0" role="link" data-key="london" data-location="uk" data-month="2026-09" data-category="city">
+        <div class="event-img x7"></div>
+        <h4>London City Break</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> United Kingdom · Sep 2026</p>
+        <p class="price-new">₦2,700,000<span class="adult">/adult</span></p>
+      </article>
+
+      <article class="event-card" tabindex="0" role="link" data-key="abuja" data-location="nigeria" data-month="2026-06" data-category="staycation">
+        <div class="event-img x8"></div>
+        <h4>Abuja Weekend Retreat</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> Nigeria · Jun 2026</p>
+        <p class="price-new">₦320,000<span class="adult">/adult</span></p>
+      </article>
+
+      <article class="event-card" tabindex="0" role="link" data-key="maldives-honeymoon" data-location="maldives" data-month="2026-08" data-category="beach">
+        <div class="event-img x9"></div>
+        <h4>Island Bliss Honeymoon</h4>
+        <p class="meta">Curated by: YellowLyfe Tours</p>
+        <p class="exp-loc"><i class="ph ph-map-pin"></i> Maldives · Aug 2026</p>
+        <p class="price-new">₦3,100,000<span class="adult">/adult</span></p>
+      </article>
+    </div>
+
+    <!-- empty state -->
+    <div class="exp-empty" id="expEmpty" hidden>
+      <i class="ph ph-magnifying-glass"></i>
+      <p>No experiences match your filters.</p>
+      <button type="button" class="exp-empty-clear" id="expEmptyClear">Clear filters</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+          <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+          <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+          <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+          <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+          <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+        </svg>
+      </div>
+      <p class="foot-desc">Welcome to your one stop travel platform where we help making your journey an experience. We love you, hear from you.</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">WhatsApp:</p>
+      <p>+234 (0)1 555 7540</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">Speak to an agent:</p>
+      <p>+234 1 700 5028, +234 1 280 3121</p>
+      <p class="foot-label spaced">Need our support:</p>
+      <p><a href="#">Support@onburd.com</a></p>
+    </div>
+
+    <div class="foot-col">
+      <p><a href="#">About</a></p>
+      <p><a href="#">Privacy Policy</a></p>
+      <p><a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 Onburd. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="X (Twitter)"><i class="ph ph-x-logo"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ SHARE SHEET ============ -->
+<div class="share-modal" id="shareModal" hidden>
+  <div class="share-backdrop" data-share-close></div>
+  <div class="share-dialog" role="dialog" aria-modal="true" aria-label="Share">
+    <button class="share-x" data-share-close aria-label="Close"><i class="ph ph-x"></i></button>
+    <h3 class="share-title">Share with friends</h3>
+    <p class="share-desc">Send it to your group and plan it together.</p>
+    <div class="share-preview" id="sharePreview"></div>
+    <div class="share-channels">
+      <button class="share-ch wa" data-ch="whatsapp"><span class="ch-ic"><i class="ph ph-whatsapp-logo"></i></span>WhatsApp</button>
+      <button class="share-ch tg" data-ch="telegram"><span class="ch-ic"><i class="ph ph-telegram-logo"></i></span>Telegram</button>
+      <button class="share-ch x" data-ch="x"><span class="ch-ic"><i class="ph ph-x-logo"></i></span>X</button>
+      <button class="share-ch ig" data-ch="instagram"><span class="ch-ic"><i class="ph ph-instagram-logo"></i></span>Instagram</button>
+    </div>
+    <div class="share-link">
+      <input type="text" id="shareLinkInput" readonly />
+      <button class="share-copy" id="shareCopyBtn"><i class="ph ph-link"></i> <span>Copy link</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ---- make every experience card social: share button + social proof ---- */
+  (function () {
+    const AV_COLORS = ['#2C90FF','#d22730','#16a34a','#e0a800','#7c3aed','#0ea5e9'];
+    const AV_INITIALS = ['TA','CN','BO','KS','IY','EM','AD','NJ'];
+
+    function socialProof(i) {
+      const booked = 9 + (i*7+4) % 38;
+      const viewing = 2 + (i*3+1) % 7;
+      let avs = '';
+      for (let k = 0; k < 3; k++) {
+        const idx = (i + k) % AV_INITIALS.length;
+        avs += `<span class="sp-av" style="background:${AV_COLORS[(i+k)%AV_COLORS.length]}">${AV_INITIALS[idx]}</span>`;
+      }
+      return `<div class="social-proof"><span class="sp-stack">${avs}</span>` +
+        `<span class="sp-proof"><i class="ph ph-fire"></i> ${booked} booked this week · ${viewing} viewing now</span></div>`;
+    }
+
+    let cardSeq = 0;
+    document.querySelectorAll('.exp-grid .event-card').forEach(card => {
+      const i = cardSeq++;
+      const img = card.querySelector('.event-img');
+      if (img && !img.querySelector('.deal-share')) {
+        const btn = document.createElement('button');
+        btn.className = 'deal-share';
+        btn.type = 'button';
+        btn.setAttribute('aria-label', 'Share this');
+        btn.dataset.shareIdx = i;
+        btn.innerHTML = '<i class="ph ph-share-network"></i>';
+        img.appendChild(btn);
+      }
+      if (!card.querySelector('.social-proof')) {
+        const price = card.querySelector('.price-new');
+        const sp = document.createElement('div');
+        sp.innerHTML = socialProof(i);
+        const node = sp.firstChild;
+        if (price) card.insertBefore(node, price);
+        else card.appendChild(node);
+      }
+    });
+
+    /* ---- share sheet ---- */
+    const shareModal = document.getElementById('shareModal');
+    const sharePreview = document.getElementById('sharePreview');
+    const shareLinkInput = document.getElementById('shareLinkInput');
+    const shareCopyBtn = document.getElementById('shareCopyBtn');
+    const shareCtx = { url: '', text: '' };
+
+    function openShareCard(card) {
+      const title = (card.querySelector('h4')?.textContent || 'Onburd').trim();
+      const metas = [...card.querySelectorAll('.meta, .exp-loc')].map(m => m.textContent.trim());
+      const sub = metas.join(' · ');
+      const priceEl = card.querySelector('.price-new');
+      const price = priceEl ? priceEl.textContent.trim() : '';
+      sharePreview.innerHTML = `
+        <div class="sp-top">
+          <span class="al-badge sp-badge"><i class="ph ph-compass"></i></span>
+          <div>
+            <p class="sp-route">${title}</p>
+            <p class="sp-meta">${sub}</p>
+          </div>
+        </div>
+        <div class="sp-bottom">
+          <div><p class="sp-price">${price}</p></div>
+        </div>`;
+      const url = new URL(location.pathname, location.href).toString();
+      shareCtx.url = url;
+      shareCtx.text =
+        `🌍 ${title} on onburd\n` +
+        (sub ? sub + '\n' : '') +
+        (price ? price + '\n' : '') +
+        `Let's do this 👇`;
+      shareLinkInput.value = shareCtx.url;
+      resetCopyBtn();
+      shareModal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeShare() { shareModal.setAttribute('hidden', ''); document.body.style.overflow = ''; }
+    function resetCopyBtn() { shareCopyBtn.querySelector('span').textContent = 'Copy link'; shareCopyBtn.classList.remove('copied'); }
+    function copyLink(label) {
+      const done = () => { shareCopyBtn.querySelector('span').textContent = label || 'Copied!'; shareCopyBtn.classList.add('copied'); setTimeout(resetCopyBtn, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareCtx.url).then(done).catch(() => { shareLinkInput.select(); document.execCommand('copy'); done(); });
+      } else { shareLinkInput.select(); document.execCommand('copy'); done(); }
+    }
+
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.deal-share');
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const card = btn.closest('.event-card');
+      if (card) openShareCard(card);
+    });
+
+    /* ---- card -> experience details navigation ---- */
+    function openExperience(card) {
+      const key = card.dataset.key || '';
+      location.href = 'experience-details.html?key=' + encodeURIComponent(key);
+    }
+    document.getElementById('expGrid').addEventListener('click', e => {
+      if (e.target.closest('.deal-share')) return;          // share button never navigates
+      const card = e.target.closest('.event-card');
+      if (card && card.dataset.key) openExperience(card);
+    });
+    document.getElementById('expGrid').addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.event-card');
+      if (card && card === e.target && card.dataset.key) { e.preventDefault(); openExperience(card); }
+    });
+    shareModal.addEventListener('click', e => {
+      if (e.target.closest('[data-share-close]')) { closeShare(); return; }
+      const ch = e.target.closest('.share-ch');
+      if (!ch) return;
+      const msg = encodeURIComponent(shareCtx.text + '\n' + shareCtx.url);
+      const u = encodeURIComponent(shareCtx.url);
+      const t = encodeURIComponent(shareCtx.text);
+      const links = {
+        whatsapp: `https://wa.me/?text=${msg}`,
+        telegram: `https://t.me/share/url?url=${u}&text=${t}`,
+        x:        `https://twitter.com/intent/tweet?text=${t}&url=${u}`,
+      };
+      if (ch.dataset.ch === 'instagram') copyLink('Link copied — paste in Instagram');
+      else window.open(links[ch.dataset.ch], '_blank', 'noopener');
+    });
+    shareCopyBtn.addEventListener('click', () => copyLink());
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !shareModal.hasAttribute('hidden')) closeShare(); });
+  })();
+
+  /* ---- Experiences filters (search + custom onburd dropdowns + grid filtering) ---- */
+  (function () {
+    const filtersWrap = document.getElementById('expFilters');
+    const grid = document.getElementById('expGrid');
+    const cards = [...grid.querySelectorAll('.event-card')];
+    const countEl = document.getElementById('expCount');
+    const emptyEl = document.getElementById('expEmpty');
+    const searchInput = document.getElementById('expSearch');
+    const searchClear = document.getElementById('expSearchClear');
+    const dateSel = filtersWrap.querySelector('.exp-date');
+
+    function closeAllSelects(except) {
+      filtersWrap.querySelectorAll('.tv-select').forEach(sel => {
+        if (sel === except) return;
+        sel.classList.remove('open');
+        sel.querySelector('.tv-select-trigger').setAttribute('aria-expanded', 'false');
+        sel.querySelector('.tv-select-panel').hidden = true;
+        if (sel === dateSel) showDatePresets();   // reset date panel view when closing
+      });
+    }
+
+    /* ---- date custom calendar (two-month range, demonstrative) ---- */
+    const calTitles   = dateSel.querySelectorAll('.exp-date-cal .cal-title');
+    const calDayEls   = dateSel.querySelectorAll('.exp-date-cal .cal-days');
+    const startBox    = dateSel.querySelector('.exp-cal-start');
+    const endBox      = dateSel.querySelector('.exp-cal-end');
+    const presetsView = dateSel.querySelector('.exp-date-presets');
+    const calView     = dateSel.querySelector('.exp-date-cal');
+    let calBase = new Date(); calBase = new Date(calBase.getFullYear(), calBase.getMonth(), 1);
+    let rangeStart = null, rangeEnd = null;     // 'YYYY-M-D'
+
+    const toDate   = iso => { const [y,m,d] = iso.split('-').map(Number); return new Date(y, m-1, d); };
+    const fmtShort = iso => toDate(iso).toLocaleDateString('en-US', { month:'short', day:'numeric' });
+    const fmtLong  = iso => toDate(iso).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+
+    function monthHTML(y, mo) {
+      const startOffset = (new Date(y, mo, 1).getDay() + 6) % 7;   // Monday = 0
+      const last = new Date(y, mo + 1, 0).getDate();
+      const sT = rangeStart && toDate(rangeStart).getTime();
+      const eT = rangeEnd && toDate(rangeEnd).getTime();
+      let html = '';
+      for (let i = 0; i < startOffset; i++) html += '<button class="cal-day cal-day-blank" type="button" disabled></button>';
+      for (let d = 1; d <= last; d++) {
+        const iso = y + '-' + (mo + 1) + '-' + d;
+        const t = new Date(y, mo, d).getTime();
+        let cls = 'cal-day';
+        if (iso === rangeStart || iso === rangeEnd) cls += ' selected';
+        else if (sT && eT && t > sT && t < eT) cls += ' in-range';
+        html += `<button class="${cls}" type="button" data-date="${iso}">${d}</button>`;
+      }
+      return html;
+    }
+    function renderCal() {
+      [0, 1].forEach(i => {
+        const dt = new Date(calBase.getFullYear(), calBase.getMonth() + i, 1);
+        calTitles[i].textContent = dt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+        calDayEls[i].innerHTML = monthHTML(dt.getFullYear(), dt.getMonth());
+      });
+      startBox.textContent = rangeStart ? fmtLong(rangeStart) : '';
+      endBox.textContent   = rangeEnd ? fmtLong(rangeEnd) : '';
+    }
+    function pickDate(iso) {
+      if (!rangeStart || (rangeStart && rangeEnd)) { rangeStart = iso; rangeEnd = null; }
+      else if (toDate(iso).getTime() < toDate(rangeStart).getTime()) { rangeEnd = rangeStart; rangeStart = iso; }
+      else { rangeEnd = iso; }
+      renderCal();
+    }
+    function showDateCalendar() { presetsView.hidden = true; calView.hidden = false; dateSel.classList.add('cal-open'); renderCal(); }
+    function showDatePresets()  { calView.hidden = true; presetsView.hidden = false; dateSel.classList.remove('cal-open'); }
+
+    function setDateValue(val, label) {
+      const valueSpan = dateSel.querySelector('.tv-select-value');
+      valueSpan.textContent = label;
+      valueSpan.classList.toggle('is-placeholder', val === '');
+      dateSel.querySelector('input[data-pf]').value = val;
+      // reflect selection state on presets
+      presetsView.querySelectorAll('.tv-select-opt').forEach(o =>
+        o.classList.toggle('selected', !o.dataset.custom && (o.dataset.val || '') === val));
+    }
+
+    // open / close triggers + option handling
+    filtersWrap.addEventListener('click', e => {
+      const trigger = e.target.closest('.tv-select-trigger');
+      if (trigger) {
+        const sel = trigger.closest('.tv-select');
+        const willOpen = !sel.classList.contains('open');
+        closeAllSelects(sel);
+        sel.classList.toggle('open', willOpen);
+        trigger.setAttribute('aria-expanded', String(willOpen));
+        sel.querySelector('.tv-select-panel').hidden = !willOpen;
+        if (sel === dateSel) showDatePresets();
+        return;
+      }
+
+      /* --- date calendar controls --- */
+      if (e.target.closest('.exp-date-custom')) { showDateCalendar(); return; }
+      if (e.target.closest('.exp-cal-back'))    { showDatePresets();  return; }
+      if (e.target.closest('.exp-cal-prev'))    { calBase = new Date(calBase.getFullYear(), calBase.getMonth() - 1, 1); renderCal(); return; }
+      if (e.target.closest('.exp-cal-next'))    { calBase = new Date(calBase.getFullYear(), calBase.getMonth() + 1, 1); renderCal(); return; }
+      const day = e.target.closest('.exp-date-cal .cal-day:not(.cal-day-blank)');
+      if (day) { pickDate(day.dataset.date); return; }
+      if (e.target.closest('.exp-cal-cancel')) { closeAllSelects(null); return; }
+      if (e.target.closest('.exp-cal-apply')) {
+        if (rangeStart) {
+          const label = rangeEnd ? (fmtShort(rangeStart) + ' – ' + fmtLong(rangeEnd)) : fmtLong(rangeStart);
+          setDateValue('custom', label);
+        }
+        closeAllSelects(null);
+        applyFilters();
+        return;
+      }
+
+      // standard option selected (location / category / date presets)
+      const opt = e.target.closest('.tv-select-opt');
+      if (opt) {
+        const sel = opt.closest('.tv-select');
+        if (sel === dateSel) {
+          rangeStart = null; rangeEnd = null;
+          setDateValue(opt.dataset.val || '', opt.dataset.label || opt.textContent.trim());
+        } else {
+          sel.querySelectorAll('.tv-select-opt').forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          const val = opt.dataset.val || '';
+          const valueSpan = sel.querySelector('.tv-select-value');
+          valueSpan.textContent = opt.textContent;
+          valueSpan.classList.toggle('is-placeholder', val === '');
+          sel.querySelector('input[data-pf]').value = val;
+        }
+        closeAllSelects(null);
+        applyFilters();
+      }
+    });
+
+    // click outside closes
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.tv-select')) closeAllSelects(null);
+    });
+
+    /* ---- live search ---- */
+    searchInput.addEventListener('input', () => {
+      searchClear.hidden = searchInput.value.trim() === '';
+      applyFilters();
+    });
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchClear.hidden = true;
+      searchInput.focus();
+      applyFilters();
+    });
+
+    function applyFilters() {
+      const q   = searchInput.value.trim().toLowerCase();
+      const loc = filtersWrap.querySelector('[data-filter="location"] input[data-pf]').value;
+      const cat = filtersWrap.querySelector('[data-filter="category"] input[data-pf]').value;
+      // NOTE: date filter is demonstrative — it sets the label but does not narrow results
+
+      let shown = 0;
+      cards.forEach(card => {
+        const hay = (card.querySelector('h4').textContent + ' ' +
+                     card.querySelector('.exp-loc').textContent + ' ' +
+                     (card.dataset.location || '')).toLowerCase();
+        const ok =
+          (!q   || hay.includes(q)) &&
+          (!loc || card.dataset.location === loc) &&
+          (!cat || card.dataset.category === cat);
+        card.hidden = !ok;
+        if (ok) shown++;
+      });
+
+      grid.classList.toggle('is-filtered', !!(q || loc || cat));
+      countEl.textContent = 'Showing ' + shown + ' experience' + (shown === 1 ? '' : 's');
+      emptyEl.hidden = shown !== 0;
+      grid.hidden = shown === 0;
+    }
+
+    function resetFilters() {
+      searchInput.value = '';
+      searchClear.hidden = true;
+      filtersWrap.querySelectorAll('.tv-select').forEach(sel => {
+        if (sel === dateSel) {
+          rangeStart = null; rangeEnd = null;
+          setDateValue('', 'Any date');
+          showDatePresets();
+        } else {
+          const allOpts = sel.querySelectorAll('.tv-select-opt');
+          allOpts.forEach((o, i) => o.classList.toggle('selected', i === 0));
+          const valueSpan = sel.querySelector('.tv-select-value');
+          valueSpan.textContent = allOpts[0].textContent;
+          valueSpan.classList.add('is-placeholder');
+          sel.querySelector('input[data-pf]').value = '';
+        }
+      });
+      applyFilters();
+    }
+
+    document.getElementById('expEmptyClear').addEventListener('click', resetFilters);
+  })();
+</script>
+
+</body>
+</html>

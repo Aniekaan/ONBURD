@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — Movie</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Explore</a>
+      <a href="events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="cinema.html" class="active">Cinema</a>
+      <a href="index.html">Hotels</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container mv-page">
+  <a class="back-link" href="cinema.html"><i class="ph ph-arrow-left"></i> Back to cinema</a>
+
+  <!-- banner -->
+  <div class="mv-banner"><img id="mvBanner" src="" alt="" /></div>
+
+  <!-- toolbar -->
+  <div class="mv-toolbar">
+    <button class="mv-trailer" type="button"><span class="mv-trailer-ic"><i class="ph-fill ph-play"></i></span> Play Trailer</button>
+    <span class="mv-tag" id="mvTag">MOVIE</span>
+    <button class="mv-share" type="button"><i class="ph ph-share-network"></i> Share</button>
+  </div>
+
+  <!-- body -->
+  <div class="mv-body">
+    <!-- poster + meta -->
+    <aside class="mv-poster-col">
+      <div class="mv-poster"><img id="mvPoster" src="" alt="" /></div>
+      <div class="mv-meta">
+        <div class="mv-meta-row">
+          <span class="mv-meta-label">Release Date</span>
+          <span class="mv-meta-value" id="mvRelease">—</span>
+        </div>
+        <div class="mv-meta-row">
+          <span class="mv-meta-label">Duration</span>
+          <span class="mv-meta-value" id="mvDuration">—</span>
+        </div>
+        <div class="mv-meta-row">
+          <span class="mv-meta-label">Rating</span>
+          <span class="mv-meta-value mv-meta-rating"><i class="ph-fill ph-star"></i> <span id="mvRating">—</span></span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- title + booking -->
+    <section class="mv-main">
+      <h1 class="mv-title" id="mvTitle">Movie</h1>
+      <p class="mv-desc" id="mvDesc"></p>
+
+      <hr class="mv-rule" />
+
+      <div class="mv-book">
+        <!-- cinema + location -->
+        <div class="mv-fields" id="mvFields">
+          <div class="field is-popover has-value" data-field="cinema">
+            <div class="field-ic"><i class="ph ph-film-slate"></i></div>
+            <div class="field-body">
+              <p class="field-label">Select Cinema</p>
+              <p class="field-value">Filmhouse</p>
+            </div>
+            <i class="ph ph-caret-down field-caret"></i>
+            <div class="field-popover field-popover-select" hidden>
+              <button class="sel-option selected" type="button" data-value="Filmhouse">Filmhouse</button>
+              <button class="sel-option" type="button" data-value="Genesis Cinemas">Genesis Cinemas</button>
+              <button class="sel-option" type="button" data-value="Silverbird">Silverbird</button>
+              <button class="sel-option" type="button" data-value="EbonyLife Cinemas">EbonyLife Cinemas</button>
+              <button class="sel-option" type="button" data-value="Viva Cinemas">Viva Cinemas</button>
+            </div>
+          </div>
+
+          <div class="field is-popover has-value" data-field="location">
+            <div class="field-ic"><i class="ph ph-map-pin"></i></div>
+            <div class="field-body">
+              <p class="field-label">Select Cinema Location</p>
+              <p class="field-value">Oniru, Lagos</p>
+            </div>
+            <i class="ph ph-caret-down field-caret"></i>
+            <div class="field-popover field-popover-select" hidden>
+              <button class="sel-option selected" type="button" data-value="Oniru, Lagos">Oniru, Lagos</button>
+              <button class="sel-option" type="button" data-value="Lekki, Lagos">Lekki, Lagos</button>
+              <button class="sel-option" type="button" data-value="Ikeja, Lagos">Ikeja, Lagos</button>
+              <button class="sel-option" type="button" data-value="Victoria Island">Victoria Island</button>
+              <button class="sel-option" type="button" data-value="Abuja">Abuja</button>
+              <button class="sel-option" type="button" data-value="Port Harcourt">Port Harcourt</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- date -->
+        <div class="mv-pick">
+          <p class="mv-pick-label">Select Date</p>
+          <div class="mv-dates" id="mvDates"></div>
+        </div>
+
+        <!-- time -->
+        <div class="mv-pick">
+          <p class="mv-pick-label">Select Time</p>
+          <div class="mv-times" id="mvTimes">
+            <button class="mv-chip mv-time active" type="button">12:00 PM</button>
+            <button class="mv-chip mv-time" type="button">03:00 PM</button>
+            <button class="mv-chip mv-time" type="button">07:00 PM</button>
+            <button class="mv-chip mv-time" type="button">10:00 PM</button>
+          </div>
+        </div>
+
+        <!-- tickets -->
+        <div class="mv-pick">
+          <p class="mv-pick-label">Select Ticket</p>
+          <div class="mv-tickets" id="mvTickets"></div>
+        </div>
+      </div>
+
+      <!-- cta -->
+      <div class="mv-cta-row">
+        <div class="mv-total">
+          <span class="mv-total-label">Total</span>
+          <span class="mv-total-value" id="mvTotal">₦0</span>
+        </div>
+        <button class="mv-buy" type="button" id="mvBuy" disabled>Buy Tickets</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+          <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+          <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+          <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+          <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+          <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+        </svg>
+      </div>
+      <p class="foot-desc">Welcome to your one stop travel platform where we help making your journey an experience. We love you, hear from you.</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">WhatsApp:</p>
+      <p>+234 (0)1 555 7540</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">Speak to an agent:</p>
+      <p>+234 1 700 5028, +234 1 280 3121</p>
+      <p class="foot-label spaced">Need our support:</p>
+      <p><a href="#">Support@onburd.com</a></p>
+    </div>
+
+    <div class="foot-col">
+      <p><a href="#">About</a></p>
+      <p><a href="#">Privacy Policy</a></p>
+      <p><a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 Onburd. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="X (Twitter)"><i class="ph ph-x-logo"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ===================== MOVIE CATALOG ===================== */
+  const CATALOG = {
+    'captain-america': {
+      title: 'Captain America: Brave New World',
+      tag: 'SCI-FI MOVIE', cert: 'PG-13', rating: 7.8,
+      banner: 'images/movie-captain-america-banner.png',
+      poster: 'images/movie-captain-america-poster.png',
+      release: '21/11/2025', duration: '02hr 45mins',
+      desc: 'After meeting with newly elected U.S. President Thaddeus Ross, Sam finds himself in the middle of an international incident. He must discover the reason behind a nefarious global plot before the true mastermind has the entire world seeing red.',
+    },
+    'hail-mary': {
+      title: 'Project Hail Mary',
+      tag: 'SCI-FI MOVIE', cert: 'PG-13', rating: 8.6,
+      banner: 'images/movie-hail-mary.jpeg',
+      poster: 'images/movie-hail-mary.jpeg',
+      release: '20/03/2026', duration: '02hr 20mins',
+      desc: 'A lone astronaut wakes with no memory aboard a spacecraft millions of miles from home, the sole survivor of a desperate mission to save humanity. As the truth returns to him, he must use science, grit and an unlikely friendship to stop an extinction-level threat.',
+    },
+    'avatar': {
+      title: 'Avatar: The Last Airbender',
+      tag: 'FANTASY MOVIE', cert: 'PG', rating: 8.1,
+      banner: 'images/movie-avatar.webp',
+      poster: 'images/movie-avatar.webp',
+      release: '14/02/2026', duration: '02hr 05mins',
+      desc: 'In a world divided into four nations bending the elements, a young boy reawakens as the Avatar — the only one able to master all four. With friends at his side, he sets out to bring balance back to a world threatened by a relentless fire nation.',
+    },
+    'joker': {
+      title: 'Joker',
+      tag: 'CRIME · DRAMA', cert: '18', rating: 8.4,
+      banner: 'images/movie-joker.jpg',
+      poster: 'images/movie-joker.jpg',
+      release: '04/10/2025', duration: '02hr 02mins',
+      desc: 'A failed comedian descends into madness on the streets of a fractured Gotham City, becoming the criminal mastermind known as the Joker. A haunting, character-driven origin story about isolation, society and the thin line between sanity and chaos.',
+    },
+    'bullet-train': {
+      title: 'Bullet Train',
+      tag: 'ACTION · COMEDY', cert: '15', rating: 7.3,
+      banner: 'images/movie-bullet-train.png',
+      poster: 'images/movie-bullet-train.png',
+      release: '05/08/2025', duration: '02hr 06mins',
+      desc: 'Five assassins aboard a fast-moving bullet train discover their missions are intertwined in unexpected and lethal ways. A stylish, fast and funny ride packed with twists as the bodies — and the laughs — pile up between Tokyo and Kyoto.',
+    },
+  };
+
+  const params = new URLSearchParams(location.search);
+  const key = params.get('key');
+  const movie = CATALOG[key] || CATALOG['captain-america'];
+
+  /* ---- populate header ---- */
+  document.getElementById('mvBanner').src = movie.banner;
+  document.getElementById('mvBanner').alt = movie.title + ' banner';
+  document.getElementById('mvPoster').src = movie.poster;
+  document.getElementById('mvPoster').alt = movie.title + ' poster';
+  document.getElementById('mvTag').textContent = movie.tag;
+  document.getElementById('mvTitle').textContent = movie.title;
+  document.getElementById('mvDesc').textContent = movie.desc;
+  document.getElementById('mvRelease').textContent = movie.release;
+  document.getElementById('mvDuration').textContent = movie.duration;
+  document.getElementById('mvRating').textContent = movie.rating.toFixed(1);
+  document.title = 'Onburd — ' + movie.title;
+
+  const fmtNaira = x => '₦' + x.toLocaleString('en-NG');
+
+  /* ===================== DATE CHIPS ===================== */
+  const datesWrap = document.getElementById('mvDates');
+  const DAY = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const MON = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
+  const today = new Date();
+  let dateHTML = '';
+  for (let i = 0; i < 8; i++) {
+    const d = new Date(today);
+    d.setDate(today.getDate() + i);
+    dateHTML += `
+      <button class="mv-date ${i === 0 ? 'active' : ''}" type="button">
+        <span class="mv-date-dow">${DAY[d.getDay()]}</span>
+        <span class="mv-date-num">${d.getDate()}</span>
+        <span class="mv-date-mon">${MON[d.getMonth()]}</span>
+      </button>`;
+  }
+  datesWrap.innerHTML = dateHTML;
+
+  /* single-select helper for chip groups */
+  function singleSelect(container, sel) {
+    container.addEventListener('click', e => {
+      const btn = e.target.closest(sel);
+      if (!btn) return;
+      container.querySelectorAll(sel).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  }
+  singleSelect(datesWrap, '.mv-date');
+  singleSelect(document.getElementById('mvTimes'), '.mv-time');
+
+  /* ===================== TICKETS ===================== */
+  const TICKETS = [
+    { name: 'Adult', price: 10000, qty: 1 },
+    { name: 'Child (under 12)', price: 6000, qty: 0 },
+    { name: 'Student', price: 7500, qty: 0 },
+  ];
+  const ticketsWrap = document.getElementById('mvTickets');
+  function renderTickets() {
+    ticketsWrap.innerHTML = TICKETS.map((t, i) => `
+      <div class="mv-ticket">
+        <div class="mv-ticket-info">
+          <span class="mv-ticket-name">${t.name}</span>
+          <span class="mv-ticket-price">${fmtNaira(t.price)}</span>
+        </div>
+        <div class="mv-stepper">
+          <button class="mv-step" type="button" data-i="${i}" data-d="-1" ${t.qty === 0 ? 'disabled' : ''} aria-label="Remove one"><i class="ph ph-minus"></i></button>
+          <span class="mv-step-qty">${t.qty}</span>
+          <button class="mv-step" type="button" data-i="${i}" data-d="1" aria-label="Add one"><i class="ph ph-plus"></i></button>
+        </div>
+      </div>`).join('');
+  }
+  renderTickets();
+
+  const totalEl = document.getElementById('mvTotal');
+  const buyBtn = document.getElementById('mvBuy');
+  function updateTotal() {
+    const total = TICKETS.reduce((s, t) => s + t.price * t.qty, 0);
+    const count = TICKETS.reduce((s, t) => s + t.qty, 0);
+    totalEl.textContent = fmtNaira(total);
+    buyBtn.disabled = count === 0;
+  }
+  updateTotal();
+
+  ticketsWrap.addEventListener('click', e => {
+    const btn = e.target.closest('.mv-step');
+    if (!btn) return;
+    const i = +btn.dataset.i, d = +btn.dataset.d;
+    TICKETS[i].qty = Math.max(0, Math.min(10, TICKETS[i].qty + d));
+    renderTickets();
+    updateTotal();
+  });
+
+  /* ===================== CINEMA / LOCATION POPOVERS ===================== */
+  const fieldsWrap = document.getElementById('mvFields');
+  function closeAllPops() {
+    fieldsWrap.querySelectorAll('.field-popover').forEach(p => { p.hidden = true; });
+    fieldsWrap.querySelectorAll('.field').forEach(f => f.classList.remove('is-open'));
+  }
+  fieldsWrap.querySelectorAll('.field.is-popover').forEach(field => {
+    const pop = field.querySelector('.field-popover');
+    const valueEl = field.querySelector('.field-value');
+    field.addEventListener('click', e => {
+      if (e.target.closest('.field-popover')) return;
+      const wasOpen = !pop.hidden;
+      closeAllPops();
+      if (!wasOpen) { pop.hidden = false; field.classList.add('is-open'); }
+    });
+    field.querySelectorAll('.sel-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        field.querySelectorAll('.sel-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        valueEl.textContent = opt.dataset.value || opt.textContent.trim();
+        closeAllPops();
+      });
+    });
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.mv-fields .field')) closeAllPops(); });
+
+  /* ===================== BUY → CHECKOUT ===================== */
+  buyBtn.addEventListener('click', () => {
+    const count = TICKETS.reduce((s, t) => s + t.qty, 0);
+    if (count === 0) return;
+    const cinema = fieldsWrap.querySelector('[data-field="cinema"] .field-value').textContent.trim();
+    const location_ = fieldsWrap.querySelector('[data-field="location"] .field-value').textContent.trim();
+    const date = datesWrap.querySelector('.mv-date.active');
+    const dateStr = date ? date.textContent.replace(/\s+/g, ' ').trim() : '';
+    const time = document.querySelector('#mvTimes .mv-time.active');
+    const timeStr = time ? time.textContent.trim() : '';
+
+    const booking = {
+      key, title: movie.title, poster: movie.poster, tag: movie.tag, cert: movie.cert,
+      duration: movie.duration, cinema, location: location_, date: dateStr, time: timeStr,
+      tickets: TICKETS.filter(t => t.qty > 0).map(t => ({ name: t.name, price: t.price, qty: t.qty })),
+    };
+    sessionStorage.setItem('onburd_movie_booking', JSON.stringify(booking));
+    location.href = 'movie-checkout.html';
+  });
+</script>
+
+</body>
+</html>

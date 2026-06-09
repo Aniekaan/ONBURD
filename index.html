@@ -96,15 +96,15 @@
     <!-- ============ CATEGORY ICONS (Phosphor Icons) ============ -->
     <div class="cats">
       <button class="cat"><i class="ph ph-calendar-blank cat-ic"></i><span>Today</span></button>
-      <button class="cat"><i class="ph ph-ticket cat-ic"></i><span>Things to do</span></button>
+      <button class="cat" onclick="location.href='experiences.html'"><i class="ph ph-ticket cat-ic"></i><span>Things to do</span></button>
       <button class="cat"><i class="ph ph-trophy cat-ic"></i><span>Sports</span></button>
       <button class="cat"><i class="ph ph-soccer-ball cat-ic"></i><span>Football</span></button>
       <button class="cat"><i class="ph ph-calendar-dots cat-ic"></i><span>Weekend</span></button>
       <button class="cat" onclick="location.href='flights-home.html'"><i class="ph ph-airplane-tilt cat-ic"></i><span>Flights</span></button>
       <button class="cat"><i class="ph ph-buildings cat-ic"></i><span>Hotels</span></button>
       <button class="cat"><i class="ph ph-music-notes cat-ic"></i><span>Concerts</span></button>
-      <button class="cat"><i class="ph ph-mask-happy cat-ic"></i><span>Theater</span></button>
-      <button class="cat"><i class="ph ph-fork-knife cat-ic"></i><span>Restaurants</span></button>
+      <button class="cat" onclick="location.href='cinema.html'"><i class="ph ph-mask-happy cat-ic"></i><span>Cinema</span></button>
+      <button class="cat" onclick="location.href='restaurants.html'"><i class="ph ph-fork-knife cat-ic"></i><span>Restaurants</span></button>
       <button class="cat"><i class="ph ph-gavel cat-ic"></i><span>Auctions</span></button>
     </div>
   </section>
@@ -785,34 +785,34 @@
   </section>
 
   <!-- ============ CURATED EXPERIENCES ============ -->
-  <section class="container section">
+  <section class="container section" id="curatedExp">
     <div class="section-head">
       <h3>Curated Experiences</h3>
-      <a href="#" class="link">View More</a>
+      <a href="experiences.html" class="link">View More</a>
     </div>
     <div class="row-wrap">
     <button class="carousel-arrow left" aria-label="Previous"><i class="ph ph-caret-left"></i></button>
     <button class="carousel-arrow right" aria-label="Next"><i class="ph ph-caret-right"></i></button>
     <div class="card-row">
-      <article class="event-card">
+      <article class="event-card" data-key="maldives-5day">
         <div class="event-img c1"></div>
         <h4>5 days in the Maldives</h4>
         <p class="meta">Curated by: YellowLyfe Tours</p>
         <p class="price-new">₦2,050,000<span class="adult">/adult</span></p>
       </article>
-      <article class="event-card">
+      <article class="event-card" data-key="florence">
         <div class="event-img c2"></div>
         <h4>Explore Florence, Italy</h4>
         <p class="meta">Curated by: YellowLyfe Tours</p>
         <p class="price-new">₦1,850,000<span class="adult">/adult</span></p>
       </article>
-      <article class="event-card">
+      <article class="event-card" data-key="kenya-safari">
         <div class="event-img c3"></div>
         <h4>Safari in Kenya</h4>
         <p class="meta">Curated by: YellowLyfe Tours</p>
         <p class="price-new">₦1,650,000<span class="adult">/adult</span></p>
       </article>
-      <article class="event-card peek">
+      <article class="event-card peek" data-key="lakowe">
         <div class="event-img c4"></div>
         <h4>3 days at Lakowe Lake Resort</h4>
         <p class="meta">Curated by: YellowLyfe Tours</p>
@@ -826,31 +826,31 @@
   <section class="container section">
     <div class="section-head">
       <h3>Dining</h3>
-      <a href="#" class="link">View More</a>
+      <a href="restaurants.html" class="link">View More</a>
     </div>
     <div class="row-wrap">
     <button class="carousel-arrow left" aria-label="Previous"><i class="ph ph-caret-left"></i></button>
     <button class="carousel-arrow right" aria-label="Next"><i class="ph ph-caret-right"></i></button>
-    <div class="card-row">
-      <article class="event-card">
+    <div class="card-row" id="diningRow">
+      <article class="event-card is-clickable" tabindex="0" role="link" data-key="la-taverna" aria-label="La Taverna, Ikoyi">
         <div class="event-img d1"></div>
         <h4>La Taverna, Ikoyi</h4>
         <p class="meta">Italian · Fine Dining</p>
         <p class="price-new">₦25,000<span class="adult">/person</span></p>
       </article>
-      <article class="event-card">
+      <article class="event-card is-clickable" tabindex="0" role="link" data-key="quilox" aria-label="Quilox Lounge">
         <div class="event-img d2"></div>
         <h4>Quilox Lounge</h4>
         <p class="meta">Lounge · Victoria Island</p>
         <p class="price-new">₦35,000<span class="adult">/person</span></p>
       </article>
-      <article class="event-card">
+      <article class="event-card is-clickable" tabindex="0" role="link" data-key="b21" aria-label="B21 Cocktail Bar">
         <div class="event-img d3"></div>
         <h4>B21 Cocktail Bar</h4>
         <p class="meta">Cocktails · Lekki</p>
         <p class="price-new">₦18,000<span class="adult">/person</span></p>
       </article>
-      <article class="event-card peek">
+      <article class="event-card is-clickable peek" tabindex="0" role="link" data-key="w-bar" aria-label="W Bar Lagos">
         <div class="event-img d4"></div>
         <h4>W Bar Lagos</h4>
         <p class="meta">Rooftop · Ikoyi</p>
@@ -870,10 +870,10 @@
       </div>
     </div>
     <div class="cat-grid">
-      <div class="cat-tile t1"><span>Experiences</span></div>
-      <div class="cat-tile t2"><span>Travel</span></div>
-      <div class="cat-tile t3"><span>Music Events</span></div>
-      <div class="cat-tile t4"><span>Theatre</span></div>
+      <a class="cat-tile t1" href="experiences.html"><span>Experiences</span></a>
+      <a class="cat-tile t2" href="flights-home.html"><span>Travel</span></a>
+      <a class="cat-tile t3" href="events.html"><span>Music Events</span></a>
+      <a class="cat-tile t4" href="cinema.html"><span>Theatre</span></a>
     </div>
   </section>
 
@@ -1004,6 +1004,25 @@
     });
   });
 
+  /* ---- Dining cards → restaurant details flow ---- */
+  (function () {
+    const diningRow = document.getElementById('diningRow');
+    if (!diningRow) return;
+    const openRestaurant = key => {
+      if (key) location.href = 'restaurant-details.html?key=' + encodeURIComponent(key);
+    };
+    diningRow.addEventListener('click', e => {
+      if (e.target.closest('.deal-share')) return; // let share button do its thing
+      const card = e.target.closest('.event-card[data-key]');
+      if (card) openRestaurant(card.dataset.key);
+    });
+    diningRow.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.event-card[data-key]');
+      if (card && card === e.target) { e.preventDefault(); openRestaurant(card.dataset.key); }
+    });
+  })();
+
   /* ---- make every offering card social: share button + social proof ---- */
   const AV_COLORS = ['#2C90FF','#d22730','#16a34a','#e0a800','#7c3aed','#0ea5e9'];
   const AV_INITIALS = ['TA','CN','BO','KS','IY','EM','AD','NJ'];
@@ -1080,6 +1099,27 @@
       if (e.key !== 'Enter' && e.key !== ' ') return;
       const card = e.target.closest('.event-card');
       if (card && card === e.target) { e.preventDefault(); openEvent(card); }
+    });
+  }
+
+  /* ---- "Curated Experiences" cards -> experience details page ---- */
+  const curated = document.getElementById('curatedExp');
+  if (curated) {
+    const openExperience = card =>
+      { location.href = 'experience-details.html?key=' + encodeURIComponent(card.dataset.key); };
+    curated.querySelectorAll('.event-card[data-key]').forEach(card => {
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+    });
+    curated.addEventListener('click', e => {
+      if (e.target.closest('.deal-share')) return;          // share button never navigates
+      const card = e.target.closest('.event-card[data-key]');
+      if (card) openExperience(card);
+    });
+    curated.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.event-card[data-key]');
+      if (card && card === e.target) { e.preventDefault(); openExperience(card); }
     });
   }
 

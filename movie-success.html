@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — Booking Successful</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Explore</a>
+      <a href="events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="cinema.html" class="active">Cinema</a>
+      <a href="index.html">Hotels</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container es-page">
+  <!-- ===== success banner ===== -->
+  <section class="es-banner">
+    <div class="es-banner-top">
+      <div class="es-check"><i class="ph ph-check"></i></div>
+      <h1>Booking Successful</h1>
+      <p>Your cinema booking is confirmed. We've sent a confirmation email with your e-tickets and showtime details.</p>
+      <div class="es-bookingid">
+        <span>Booking ID: <b id="esBookingId">—</b></span>
+        <button type="button" class="es-copy" id="esCopy"><i class="ph ph-copy"></i> Copy</button>
+      </div>
+    </div>
+    <div class="es-refbar">
+      <div><span>Booking ref</span><b id="esRef">—</b></div>
+      <div><span>Payment date</span><b id="esDate">—</b></div>
+      <div><span>Payment status</span><b class="es-status"><i class="ph ph-circle-fill"></i> Payment successful</b></div>
+    </div>
+  </section>
+
+  <!-- ===== details ===== -->
+  <section class="es-card">
+    <h2 class="es-h2">Movie Details</h2>
+    <div class="es-event">
+      <div class="es-event-img" id="esPoster"></div>
+      <div class="es-detailgrid" id="esMovieGrid"></div>
+    </div>
+    <div class="es-location">
+      <span>Cinema</span>
+      <p id="esCinema">—</p>
+    </div>
+
+    <hr class="es-rule" />
+
+    <h2 class="es-h2">Booking Contact</h2>
+    <div class="es-attendees" id="esContact"></div>
+
+    <hr class="es-rule" />
+
+    <div class="es-summary">
+      <h2 class="es-h2">Ticket Summary</h2>
+      <div id="esSummaryRows"></div>
+      <div class="es-sum-row es-sum-due"><span>Amount Paid</span><span id="esPaid">₦0</span></div>
+    </div>
+
+    <p class="es-support">
+      <i class="ph ph-headset"></i> Need help with your booking?
+      Hotline <b>+234 (0) 80 1234 5678</b> · Email <b>support@onburd.com</b>
+    </p>
+  </section>
+
+  <div class="es-actions">
+    <button type="button" class="tv-cta es-download" id="esDownload"><i class="ph ph-download-simple"></i> Download tickets</button>
+    <a class="es-home" href="cinema.html"><i class="ph ph-arrow-left"></i> Back to cinema</a>
+  </div>
+</main>
+
+<script>
+  const fmtNaira = x => '₦' + (Number(x) || 0).toLocaleString('en-NG');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  let b;
+  try { b = JSON.parse(sessionStorage.getItem('onburd_movie_success')); } catch (e) { b = null; }
+
+  /* fallback sample so the page is never empty in the prototype */
+  if (!b) {
+    b = {
+      ref: 'ONB-7K2QPA', bookingId: '445045621001', date: 'June 05, 2026',
+      methodLabel: 'Paystack Cards', amountPaid: 17000,
+      title: 'Captain America: Brave New World', poster: 'images/movie-captain-america-poster.png',
+      tag: 'SCI-FI MOVIE', cert: 'PG-13', duration: '02hr 45mins',
+      cinema: 'Filmhouse', location: 'Oniru, Lagos', dateStr: 'Friday 5 June', time: '12:00 PM',
+      tickets: [{ name: 'Adult', price: 10000, qty: 1 }, { name: 'Child (under 12)', price: 6000, qty: 1 }],
+      fees: 1000, discount: 0, discCode: '', totalTickets: 2,
+      contact: { first: 'Aniekan', last: 'Obot', email: 'annie@gmail.com', phone: '7067421332' },
+    };
+  }
+
+  /* ---- banner ---- */
+  document.getElementById('esBookingId').textContent = b.bookingId || '—';
+  document.getElementById('esRef').textContent = b.ref || '—';
+  document.getElementById('esDate').textContent = b.date || '—';
+
+  document.getElementById('esCopy').addEventListener('click', () => {
+    const btn = document.getElementById('esCopy');
+    navigator.clipboard?.writeText(b.bookingId || '').catch(() => {});
+    btn.innerHTML = '<i class="ph ph-check"></i> Copied';
+    setTimeout(() => { btn.innerHTML = '<i class="ph ph-copy"></i> Copy'; }, 1600);
+  });
+
+  /* ---- movie details ---- */
+  if (b.poster) document.getElementById('esPoster').style.backgroundImage = `url('${b.poster}')`;
+  const facts = [
+    ['Movie', b.title || 'Movie'],
+    ['Rating', b.cert || '—'],
+    ['Runtime', b.duration || '—'],
+    ['Showtime', b.dateStr || '—'],
+    ['Time', b.time || '—'],
+    ['Tickets', String(b.totalTickets || 0)],
+  ];
+  document.getElementById('esMovieGrid').innerHTML = facts.map(([l, v]) =>
+    `<div class="es-fact"><span>${esc(l)}</span><b>${esc(v)}</b></div>`).join('');
+  document.getElementById('esCinema').textContent = [b.cinema, b.location].filter(Boolean).join(' · ') || '—';
+
+  /* ---- booking contact ---- */
+  const c = b.contact || {};
+  const fullName = [c.first, c.last].filter(Boolean).join(' ').trim() || 'Guest';
+  const phone = c.phone ? `+234 ${c.phone}` : '—';
+  document.getElementById('esContact').innerHTML = `
+    <div class="es-attendee">
+      <div class="es-att-cell"><span>Name</span><b>${esc(fullName)}</b></div>
+      <div class="es-att-cell"><span>Email address</span><b>${esc(c.email || '—')}</b></div>
+      <div class="es-att-cell"><span>Phone number</span><b>${esc(phone)}</b></div>
+      <div class="es-att-cell es-att-tickets"><span>Tickets</span><b>${b.totalTickets || 0}</b></div>
+    </div>`;
+
+  /* ---- ticket summary ---- */
+  let rows = (b.tickets || []).map(t =>
+    `<div class="es-sum-row"><span>${esc(t.name)} <em>×${t.qty}</em></span><span>${fmtNaira(t.price * t.qty)}</span></div>`).join('');
+  rows += `<div class="es-sum-row"><span>Booking fee</span><span>${fmtNaira(b.fees || 0)}</span></div>`;
+  if (b.discount > 0) {
+    rows += `<div class="es-sum-row es-sum-disc"><span>Discount${b.discCode ? ` (${esc(b.discCode)})` : ''}</span><span>−${fmtNaira(b.discount)}</span></div>`;
+  }
+  document.getElementById('esSummaryRows').innerHTML = rows;
+  document.getElementById('esPaid').textContent = fmtNaira(b.amountPaid || 0);
+
+  /* ---- download tickets (simulated) ---- */
+  document.getElementById('esDownload').addEventListener('click', () => {
+    const lines = [
+      'ONBURD CINEMA E-TICKET',
+      '======================',
+      `Movie:     ${b.title || ''}`,
+      `Cinema:    ${[b.cinema, b.location].filter(Boolean).join(' · ')}`,
+      `Showtime:  ${b.dateStr || ''} · ${b.time || ''}`,
+      `Booking:   ${b.ref}  (ID ${b.bookingId})`,
+      `Tickets:   ${b.totalTickets}`,
+      `Paid:      ${fmtNaira(b.amountPaid)}`,
+      '',
+      'Show this ticket and a valid ID at the cinema entrance.',
+    ].filter(Boolean).join('\n');
+    const url = URL.createObjectURL(new Blob([lines], { type: 'text/plain' }));
+    const a = document.createElement('a');
+    a.href = url; a.download = `onburd-ticket-${b.ref || 'booking'}.txt`;
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+  });
+</script>
+
+</body>
+</html>

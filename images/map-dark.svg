@@ -1,0 +1,56 @@
+<svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <!-- land base -->
+  <rect width="800" height="400" fill="#0e131c"/>
+
+  <!-- parks / green spaces -->
+  <g fill="#11241a">
+    <path d="M50 30 Q150 14 190 70 Q210 134 120 152 Q30 142 34 86 Z"/>
+    <rect x="600" y="60" width="150" height="90" rx="14"/>
+    <path d="M620 270 Q720 250 756 308 Q772 372 672 384 Q596 366 600 318 Z"/>
+  </g>
+
+  <!-- water along the bottom and a river -->
+  <path d="M-40 372 C120 340 220 392 340 350 C460 308 540 372 660 340 C730 322 780 350 840 330 L840 440 L-40 440 Z"
+        fill="#112a40"/>
+  <path d="M250 -40 C280 90 210 150 250 250 C282 330 250 410 280 460"
+        stroke="#112a40" stroke-width="26" fill="none"/>
+
+  <!-- minor street grid -->
+  <g stroke="#191f2b" stroke-width="3">
+    <path d="M-40 70 H840"/><path d="M-40 120 H840"/><path d="M-40 170 H840"/>
+    <path d="M-40 220 H840"/><path d="M-40 270 H840"/><path d="M-40 320 H840"/>
+    <path d="M70 -40 V440"/><path d="M150 -40 V440"/><path d="M330 -40 V440"/>
+    <path d="M410 -40 V440"/><path d="M490 -40 V440"/><path d="M570 -40 V440"/>
+    <path d="M650 -40 V440"/><path d="M730 -40 V440"/>
+  </g>
+
+  <!-- major arteries -->
+  <g stroke="#28313f" stroke-width="8" stroke-linecap="round">
+    <path d="M-40 170 H840"/>
+    <path d="M490 -40 V440"/>
+  </g>
+
+  <!-- building blocks -->
+  <g fill="#141b27">
+    <rect x="86" y="82" width="44" height="28" rx="3"/>
+    <rect x="166" y="80" width="46" height="32" rx="3"/>
+    <rect x="346" y="82" width="44" height="28" rx="3"/>
+    <rect x="426" y="80" width="46" height="32" rx="3"/>
+    <rect x="506" y="84" width="42" height="26" rx="3"/>
+    <rect x="666" y="178" width="44" height="30" rx="3"/>
+    <rect x="86" y="182" width="44" height="28" rx="3"/>
+    <rect x="166" y="180" width="46" height="32" rx="3"/>
+    <rect x="346" y="182" width="44" height="28" rx="3"/>
+    <rect x="426" y="232" width="46" height="30" rx="3"/>
+    <rect x="506" y="234" width="42" height="26" rx="3"/>
+    <rect x="86" y="282" width="44" height="28" rx="3"/>
+    <rect x="166" y="280" width="46" height="30" rx="3"/>
+    <rect x="346" y="282" width="44" height="28" rx="3"/>
+    <rect x="666" y="84" width="44" height="28" rx="3"/>
+  </g>
+
+  <!-- highlighted route -->
+  <path d="M150 320 C240 300 270 230 350 215 C440 198 470 130 430 60"
+        stroke="#2C90FF" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.95"/>
+  <circle cx="150" cy="320" r="8" fill="#2C90FF"/>
+</svg>

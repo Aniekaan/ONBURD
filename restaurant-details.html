@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — Restaurant</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Explore</a>
+      <a href="events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="cinema.html">Cinema</a>
+      <a href="restaurants.html" class="active">Dining</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container mv-page rd-page">
+  <a class="back-link" href="restaurants.html"><i class="ph ph-arrow-left"></i> Back to dining</a>
+
+  <!-- banner -->
+  <div class="mv-banner rd-banner"><img id="rdBanner" src="" alt="" /></div>
+
+  <!-- toolbar -->
+  <div class="mv-toolbar rd-toolbar">
+    <span class="rd-rating"><i class="ph-fill ph-star"></i> <b id="rdRating">4.7</b> <span id="rdReviewCount">(0 reviews)</span></span>
+    <span class="mv-tag" id="rdCuisine">RESTAURANT</span>
+    <button class="mv-share" type="button"><i class="ph ph-share-network"></i> Share</button>
+  </div>
+
+  <!-- body -->
+  <div class="mv-body rd-body">
+
+    <!-- ===== main content ===== -->
+    <section class="rd-content">
+      <h1 class="mv-title rd-title" id="rdName">Restaurant</h1>
+      <p class="rd-subline" id="rdSubline"></p>
+
+      <hr class="mv-rule" />
+
+      <!-- about -->
+      <h2 class="rd-h2">About</h2>
+      <p class="rd-about" id="rdAbout"></p>
+      <div class="rd-highlights" id="rdHighlights"></div>
+
+      <hr class="mv-rule" />
+
+      <!-- photo gallery -->
+      <h2 class="rd-h2">Photos</h2>
+      <div class="rd-gallery" id="rdGallery"></div>
+
+      <hr class="mv-rule" />
+
+      <!-- popular dishes -->
+      <h2 class="rd-h2">Popular dishes</h2>
+      <div class="rd-menu" id="rdMenu"></div>
+      <a class="rd-menu-link" href="#" target="_blank" rel="noopener">
+        View menu on restaurant website <i class="ph ph-arrow-up-right"></i>
+      </a>
+
+      <hr class="mv-rule" />
+
+      <!-- reviews -->
+      <div class="rd-reviews-head">
+        <h2 class="rd-h2">Reviews</h2>
+        <span class="rd-reviews-score"><i class="ph-fill ph-star"></i> <b id="rdRating2">4.7</b> · <span id="rdReviewCount2">0 reviews</span></span>
+      </div>
+      <div class="rd-reviews" id="rdReviews"></div>
+    </section>
+
+    <!-- ===== reservation card ===== -->
+    <aside class="rd-reserve-col">
+      <div class="rd-reserve">
+        <h2 class="rd-reserve-title">Make a reservation</h2>
+
+        <!-- persons -->
+        <div class="rd-pick">
+          <p class="rd-pick-label">Party size</p>
+          <div class="rd-persons">
+            <button class="rd-step" type="button" id="rdMinus" aria-label="Fewer guests"><i class="ph ph-minus"></i></button>
+            <span class="rd-persons-val"><b id="rdPersons">2</b> guests</span>
+            <button class="rd-step" type="button" id="rdPlus" aria-label="More guests"><i class="ph ph-plus"></i></button>
+          </div>
+        </div>
+
+        <!-- date -->
+        <div class="rd-pick">
+          <p class="rd-pick-label">Select date</p>
+          <div class="field is-popover has-value rd-datefield" id="rdDateField" data-field="rd-date">
+            <div class="field-ic"><i class="ph ph-calendar-blank"></i></div>
+            <div class="field-body">
+              <p class="field-label">Date</p>
+              <p class="field-value">Today</p>
+            </div>
+            <i class="ph ph-caret-down field-caret"></i>
+            <div class="field-popover field-popover-date cal-oneway rst-cal rd-cal" hidden>
+              <div class="cal-grid">
+                <div class="cal-month">
+                  <div class="cal-head">
+                    <button class="cal-nav" type="button" aria-label="Previous month"><i class="ph ph-caret-left"></i></button>
+                    <p class="cal-title">Month Year</p>
+                    <button class="cal-nav" type="button" aria-label="Next month"><i class="ph ph-caret-right"></i></button>
+                  </div>
+                  <div class="cal-dow"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sat</span><span>Su</span></div>
+                  <div class="cal-days"></div>
+                </div>
+              </div>
+              <div class="cal-foot">
+                <div class="cal-range">
+                  <div class="cal-range-box">Start date</div>
+                  <span class="cal-dash">–</span>
+                  <div class="cal-range-box">End date</div>
+                </div>
+                <div class="cal-actions">
+                  <button class="cal-cancel" type="button">Cancel</button>
+                  <button class="cal-apply" type="button">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- time -->
+        <div class="rd-pick">
+          <p class="rd-pick-label">Select time</p>
+          <div class="rd-times" id="rdTimes">
+            <button class="rd-chip rd-time" type="button">5:30 PM</button>
+            <button class="rd-chip rd-time" type="button">6:00 PM</button>
+            <button class="rd-chip rd-time active" type="button">7:00 PM</button>
+            <button class="rd-chip rd-time" type="button">7:30 PM</button>
+            <button class="rd-chip rd-time" type="button">8:00 PM</button>
+            <button class="rd-chip rd-time" type="button">9:00 PM</button>
+          </div>
+        </div>
+
+        <!-- deposit note -->
+        <div class="rd-deposit-note">
+          <i class="ph ph-info"></i>
+          <p>A refundable deposit of <b id="rdDepEach">₦5,000</b> per guest secures your table. It goes towards your final bill on the night.</p>
+        </div>
+
+        <div class="rd-reserve-foot">
+          <div class="rd-deposit-total">
+            <span>Deposit due</span>
+            <b id="rdDepTotal">₦10,000</b>
+          </div>
+          <button class="rd-reserve-btn" type="button" id="rdReserve">Reserve table</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+          <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+          <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+          <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+          <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+          <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+        </svg>
+      </div>
+      <p class="foot-desc">Welcome to your one stop travel platform where we help making your journey an experience. We love you, hear from you.</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">WhatsApp:</p>
+      <p>+234 (0)1 555 7540</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">Speak to an agent:</p>
+      <p>+234 1 700 5028, +234 1 280 3121</p>
+      <p class="foot-label spaced">Need our support:</p>
+      <p><a href="#">Support@onburd.com</a></p>
+    </div>
+
+    <div class="foot-col">
+      <p><a href="#">About</a></p>
+      <p><a href="#">Privacy Policy</a></p>
+      <p><a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 Onburd. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="X (Twitter)"><i class="ph ph-x-logo"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ===================== RESTAURANT CATALOG ===================== */
+  const PHOTOS = ['images/la-taverna.jpg', 'images/quilox.jpg', 'images/b21.jpg', 'images/wbar.jpg'];
+  const DEPOSIT_PER_PERSON = 5000;
+
+  /* shared building blocks (kept light for the prototype) */
+  const DEF_HIGHLIGHTS = ['Outdoor seating', 'Full bar', 'Valet parking', 'Live music', 'Private dining', 'Vegetarian options'];
+  const DEF_DISHES = [
+    { name: 'Chef’s signature platter', desc: 'A curated selection of the kitchen’s most-loved plates, made for sharing.', price: 18500 },
+    { name: 'Grilled tiger prawns', desc: 'Char-grilled prawns, garlic butter, fresh herbs and a squeeze of lime.', price: 14000 },
+    { name: 'Truffle pasta', desc: 'Hand-rolled pasta tossed in a rich black truffle and parmesan cream.', price: 12500 },
+    { name: 'Jollof & smoked chicken', desc: 'Smoky party jollof, grilled chicken and fried plantain.', price: 9500 },
+    { name: 'Signature cocktail flight', desc: 'A tasting trio of the bar’s house cocktails, mixed to order.', price: 11000 },
+  ];
+  const DEF_REVIEWS = [
+    { name: 'Chidinma A.', rating: 5, date: 'Mar 2026', text: 'Absolutely stunning ambience and the service was flawless. Our table was ready right on time and the food came out beautifully plated.' },
+    { name: 'Tunde O.', rating: 5, date: 'Feb 2026', text: 'Perfect spot for date night. The deposit-to-reserve made it so easy and it came right off our final bill. Will be back.' },
+    { name: 'Zainab M.', rating: 4, date: 'Feb 2026', text: 'Great cocktails and lovely vibe. Got a little loud later in the evening but the staff were super attentive throughout.' },
+    { name: 'Emeka I.', rating: 5, date: 'Jan 2026', text: 'One of the best dinners I’ve had in Lagos this year. Booking on Onburd took less than a minute.' },
+  ];
+
+  const mk = o => Object.assign({
+    rating: 4.7, reviewCount: 320,
+    gallery: [0, 1, 2, 3, 0, 2],
+    highlights: DEF_HIGHLIGHTS, dishes: DEF_DISHES, reviews: DEF_REVIEWS,
+    deposit: DEPOSIT_PER_PERSON,
+  }, o);
+
+  const CATALOG = {
+    'la-taverna': mk({ name: 'La Taverna, Ikoyi', cuisine: 'Italian · Fine Dining', area: 'Ikoyi, Lagos', price: '₦25,000', img: 0, rating: 4.8, reviewCount: 412,
+      about: 'A romantic Italian fine-dining room in the heart of Ikoyi. La Taverna pairs hand-made pasta and wood-fired classics with one of Lagos’ deepest wine lists, set against warm candlelight and attentive table service.' }),
+    'quilox': mk({ name: 'Quilox Lounge', cuisine: 'Lounge · Nightlife', area: 'Victoria Island, Lagos', price: '₦35,000', img: 1, rating: 4.6, reviewCount: 530,
+      about: 'Lagos’ most iconic luxury lounge. Quilox blends a high-energy nightlife floor with intimate VIP booths, a premium bar and a kitchen that keeps the small plates coming until late.' }),
+    'b21': mk({ name: 'B21 Cocktail Bar', cuisine: 'Cocktails · Bar', area: 'Lekki, Lagos', price: '₦18,000', img: 2, rating: 4.5, reviewCount: 188,
+      about: 'An intimate craft cocktail bar in Lekki where the bartenders treat every drink like a recipe. Low lighting, deep playlists and a seasonal menu of inventive cocktails and bar bites.' }),
+    'w-bar': mk({ name: 'W Bar Lagos', cuisine: 'Rooftop · Bar', area: 'Ikoyi, Lagos', price: '₦22,000', img: 3, rating: 4.7, reviewCount: 274,
+      about: 'A breezy rooftop bar with skyline views over Ikoyi. W Bar is the sunset spot — signature cocktails, shareable plates and a soundtrack that carries you from golden hour into the night.' }),
+    'nok': mk({ name: 'Nok by Alara', cuisine: 'West African · Fine Dining', area: 'Lekki, Lagos', price: '₦28,000', img: 0, rating: 4.8, reviewCount: 356,
+      about: 'A celebration of modern West African cuisine inside the Alara concept space. Nok reimagines regional classics with refined technique, bold spice and beautiful plating.' }),
+    'shiro': mk({ name: 'Shiro Lagos', cuisine: 'Asian Fusion · Fine Dining', area: 'Victoria Island, Lagos', price: '₦32,000', img: 1, rating: 4.7, reviewCount: 298,
+      about: 'Dramatic pan-Asian dining on Victoria Island. Shiro brings together Japanese, Thai and Chinese influences under soaring interiors, with a sushi counter and a buzzing bar.' }),
+    'rsvp': mk({ name: 'RSVP Lagos', cuisine: 'Contemporary · Fine Dining', area: 'Victoria Island, Lagos', price: '₦30,000', img: 2, rating: 4.6, reviewCount: 241,
+      about: 'A stylish contemporary restaurant and lounge known for its glamorous crowd. RSVP serves a globally-inspired menu alongside a serious cocktail and champagne programme.' }),
+    'sip': mk({ name: 'Sip Wine Bar', cuisine: 'Wine Bar', area: 'Ikoyi, Lagos', price: '₦20,000', img: 3, rating: 4.5, reviewCount: 162,
+      about: 'A cosy wine bar with an ever-rotating list by the glass. Sip pairs old-world and new-world bottles with charcuterie, cheese boards and small plates in a relaxed setting.' }),
+    'cactus': mk({ name: 'Cactus Restaurant', cuisine: 'Continental', area: 'Lekki, Lagos', price: '₦22,000', img: 0, rating: 4.4, reviewCount: 209,
+      about: 'A long-standing Lekki favourite by the water. Cactus is a relaxed all-day continental spot famous for its pastries, brunch and easygoing waterfront terrace.' }),
+    'bature': mk({ name: 'Bature Brewery', cuisine: 'Craft Beer · Gastropub', area: 'Lekki, Lagos', price: '₦15,000', img: 1, rating: 4.6, reviewCount: 187,
+      about: 'Nigeria’s pioneering craft brewery and beer garden. Bature pours small-batch brews on tap alongside wood-fired pizzas and live music in a lively open-air courtyard.' }),
+    'z-kitchen': mk({ name: 'Z Kitchen', cuisine: 'Steakhouse', area: 'Victoria Island, Lagos', price: '₦26,000', img: 2, rating: 4.6, reviewCount: 233,
+      about: 'A modern steakhouse on Victoria Island specialising in dry-aged cuts grilled over open flame, with a polished bar and a warm, low-lit dining room.' }),
+    'sailors': mk({ name: 'Sailors Lounge', cuisine: 'Seafood · Bar', area: 'Ikoyi, Lagos', price: '₦24,000', img: 3, rating: 4.5, reviewCount: 178,
+      about: 'A nautical-themed seafood bar and lounge in Ikoyi. Sailors serves the day’s freshest catch alongside rum-forward cocktails and a breezy, relaxed atmosphere.' }),
+    'terra': mk({ name: 'Terra Kulture', cuisine: 'Nigerian', area: 'Victoria Island, Lagos', price: '₦16,000', img: 0, rating: 4.5, reviewCount: 314,
+      about: 'A cultural landmark serving authentic Nigerian cuisine. Terra Kulture pairs hearty regional dishes with art galleries and live theatre under one roof.' }),
+    'hard-rock': mk({ name: 'Hard Rock Cafe', cuisine: 'American', area: 'Victoria Island, Lagos', price: '₦27,000', img: 1, rating: 4.4, reviewCount: 401,
+      about: 'The legendary American diner on the Lagos beachfront. Hard Rock Cafe brings burgers, ribs and classic cocktails together with music memorabilia and a lively bar.' }),
+    'craft': mk({ name: 'Craft Gourmet', cuisine: 'Bistro', area: 'Lekki, Lagos', price: '₦19,000', img: 2, rating: 4.5, reviewCount: 156,
+      about: 'A charming neighbourhood bistro in Lekki known for its house-baked breads, brunch boards and seasonal European plates in a bright, welcoming room.' }),
+    'the-view': mk({ name: 'The View Rooftop', cuisine: 'Rooftop · Bar', area: 'Ikeja, Lagos', price: '₦21,000', img: 3, rating: 4.6, reviewCount: 198,
+      about: 'A panoramic rooftop bar above Ikeja with some of the best sunset views in the city. Expect signature cocktails, grills and a DJ as the lights come on.' }),
+  };
+
+  const params = new URLSearchParams(location.search);
+  const key = params.get('key');
+  const r = CATALOG[key] || CATALOG['la-taverna'];
+
+  const fmtNaira = x => '₦' + x.toLocaleString('en-NG');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  /* ---- populate header ---- */
+  document.getElementById('rdBanner').src = PHOTOS[r.img];
+  document.getElementById('rdBanner').alt = r.name;
+  document.getElementById('rdCuisine').textContent = r.cuisine.toUpperCase();
+  document.getElementById('rdName').textContent = r.name;
+  document.getElementById('rdSubline').innerHTML =
+    `<i class="ph ph-map-pin"></i> ${esc(r.area)} <span class="rd-dot">·</span> ${esc(r.cuisine)} <span class="rd-dot">·</span> ${esc(r.price)} avg / guest`;
+  document.getElementById('rdRating').textContent = r.rating.toFixed(1);
+  document.getElementById('rdRating2').textContent = r.rating.toFixed(1);
+  document.getElementById('rdReviewCount').textContent = `(${r.reviewCount} reviews)`;
+  document.getElementById('rdReviewCount2').textContent = `${r.reviewCount} reviews`;
+  document.getElementById('rdAbout').textContent = r.about;
+  document.title = 'Onburd — ' + r.name;
+
+  /* ---- highlights ---- */
+  const HL_ICONS = {
+    'Outdoor seating': 'ph-umbrella', 'Full bar': 'ph-martini', 'Valet parking': 'ph-car',
+    'Live music': 'ph-music-notes', 'Private dining': 'ph-users-three', 'Vegetarian options': 'ph-leaf',
+  };
+  document.getElementById('rdHighlights').innerHTML = r.highlights.map(h =>
+    `<span class="rd-hl"><i class="ph ${HL_ICONS[h] || 'ph-check-circle'}"></i> ${esc(h)}</span>`).join('');
+
+  /* ---- gallery ---- */
+  document.getElementById('rdGallery').innerHTML = r.gallery.map(i =>
+    `<div class="rd-photo" style="background-image:url('${PHOTOS[i]}')"></div>`).join('');
+
+  /* ---- popular dishes ---- */
+  document.getElementById('rdMenu').innerHTML = r.dishes.map(d => `
+    <div class="rd-dish">
+      <div class="rd-dish-info">
+        <h4>${esc(d.name)}</h4>
+        <p>${esc(d.desc)}</p>
+      </div>
+      <span class="rd-dish-price">${fmtNaira(d.price)}</span>
+    </div>`).join('');
+
+  /* ---- reviews ---- */
+  const stars = n => '<i class="ph-fill ph-star"></i>'.repeat(n) + '<i class="ph ph-star"></i>'.repeat(5 - n);
+  document.getElementById('rdReviews').innerHTML = r.reviews.map(rv => `
+    <div class="rd-review">
+      <div class="rd-review-top">
+        <span class="rd-avatar">${esc(rv.name.charAt(0))}</span>
+        <div>
+          <b>${esc(rv.name)}</b>
+          <span class="rd-review-meta"><span class="rd-stars">${stars(rv.rating)}</span> · ${esc(rv.date)}</span>
+        </div>
+      </div>
+      <p>${esc(rv.text)}</p>
+    </div>`).join('');
+
+  /* ===================== RESERVATION WIDGET ===================== */
+  function singleSelect(container, sel) {
+    container.addEventListener('click', e => {
+      const btn = e.target.closest(sel);
+      if (!btn) return;
+      container.querySelectorAll(sel).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  }
+  singleSelect(document.getElementById('rdTimes'), '.rd-time');
+
+  /* ===================== DATE FIELD — CALENDAR DROPDOWN ===================== */
+  const dateField = document.getElementById('rdDateField');
+  const calPop = dateField.querySelector('.field-popover-date');
+  const dateValueEl = dateField.querySelector('.field-value');
+
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const MIN_DATE = new Date(today);
+  const MAX_DATE = new Date(today); MAX_DATE.setDate(MAX_DATE.getDate() + 90);
+  const iso = d => `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+  const parseISO = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+
+  function fmtDate(d) {
+    if (d.getTime() === today.getTime()) return 'Today';
+    return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  }
+
+  function buildMonth(year, monthIdx) {
+    const firstDay = new Date(year, monthIdx, 1);
+    const startOffset = (firstDay.getDay() + 6) % 7;            /* Monday = 0 */
+    const lastDate = new Date(year, monthIdx + 1, 0).getDate();
+    let html = '';
+    for (let i = 0; i < startOffset; i++) html += '<button class="cal-day cal-day-blank" type="button" disabled></button>';
+    for (let d = 1; d <= lastDate; d++) {
+      const cur = new Date(year, monthIdx, d);
+      const off = cur < MIN_DATE || cur > MAX_DATE;
+      html += `<button class="cal-day${off ? ' cal-day-off' : ''}" type="button" ${off ? 'disabled' : `data-date="${year}-${monthIdx + 1}-${d}"`}>${d}</button>`;
+    }
+    const trail = (7 - ((startOffset + lastDate) % 7)) % 7;
+    for (let i = 0; i < trail; i++) html += '<button class="cal-day cal-day-blank" type="button" disabled></button>';
+    return { title: firstDay.toLocaleString('en-US', { month: 'long', year: 'numeric' }), html };
+  }
+
+  function renderCal() {
+    const { title, html } = buildMonth(calPop._base.getFullYear(), calPop._base.getMonth());
+    calPop.querySelector('.cal-title').textContent = title;
+    calPop.querySelector('.cal-days').innerHTML = html;
+    calPop.querySelectorAll('.cal-day[data-date]').forEach(d => {
+      d.classList.toggle('selected', d.dataset.date === calPop._sel);
+    });
+    calPop.querySelector('.cal-range-box').textContent = calPop._sel
+      ? parseISO(calPop._sel).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      : '';
+    /* disable prev nav when we'd page before the current (today's) month */
+    const prevBtn = calPop.querySelector('.cal-nav');
+    const atMinMonth = calPop._base.getFullYear() === today.getFullYear() && calPop._base.getMonth() === today.getMonth();
+    prevBtn.disabled = atMinMonth;
+    const nextBtn = calPop.querySelectorAll('.cal-nav')[1];
+    const atMaxMonth = calPop._base.getFullYear() === MAX_DATE.getFullYear() && calPop._base.getMonth() === MAX_DATE.getMonth();
+    nextBtn.disabled = atMaxMonth;
+  }
+
+  calPop._base = new Date(today.getFullYear(), today.getMonth(), 1);
+  calPop._sel = iso(today);
+  renderCal();
+
+  function closeCal() { calPop.hidden = true; dateField.classList.remove('is-open'); }
+
+  dateField.addEventListener('click', e => {
+    if (e.target.closest('.field-popover')) return;
+    const wasOpen = !calPop.hidden;
+    if (wasOpen) { closeCal(); } else { calPop.hidden = false; dateField.classList.add('is-open'); }
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('#rdDateField')) closeCal(); });
+
+  calPop.addEventListener('click', e => {
+    const nav = e.target.closest('.cal-nav');
+    if (nav) {
+      if (nav.disabled) return;
+      const isPrev = nav === nav.parentElement.firstElementChild;
+      calPop._base = new Date(calPop._base.getFullYear(), calPop._base.getMonth() + (isPrev ? -1 : 1), 1);
+      renderCal();
+      return;
+    }
+    const day = e.target.closest('.cal-day[data-date]');
+    if (day) { calPop._sel = day.dataset.date; renderCal(); return; }
+    if (e.target.closest('.cal-cancel')) { closeCal(); return; }
+    if (e.target.closest('.cal-apply')) {
+      if (calPop._sel) dateValueEl.textContent = fmtDate(parseISO(calPop._sel));
+      closeCal();
+      return;
+    }
+  });
+
+  /* persons stepper */
+  let persons = 2;
+  const personsEl = document.getElementById('rdPersons');
+  const depTotalEl = document.getElementById('rdDepTotal');
+  document.getElementById('rdDepEach').textContent = fmtNaira(r.deposit);
+  function syncDeposit() {
+    personsEl.textContent = persons;
+    depTotalEl.textContent = fmtNaira(persons * r.deposit);
+    document.getElementById('rdMinus').disabled = persons <= 1;
+    document.getElementById('rdPlus').disabled = persons >= 20;
+  }
+  document.getElementById('rdMinus').addEventListener('click', () => { persons = Math.max(1, persons - 1); syncDeposit(); });
+  document.getElementById('rdPlus').addEventListener('click', () => { persons = Math.min(20, persons + 1); syncDeposit(); });
+  syncDeposit();
+
+  /* ---- reserve → checkout ---- */
+  document.getElementById('rdReserve').addEventListener('click', () => {
+    const d = dateValueEl.textContent.trim();
+    const timeBtn = document.querySelector('#rdTimes .rd-time.active');
+    const time = timeBtn ? timeBtn.textContent.trim() : '';
+
+    const booking = {
+      key, name: r.name, cuisine: r.cuisine, area: r.area, img: r.img,
+      banner: PHOTOS[r.img], depositPerPerson: r.deposit,
+      persons, date: d, time,
+    };
+    sessionStorage.setItem('onburd_restaurant_booking', JSON.stringify(booking));
+    location.href = 'restaurant-checkout.html';
+  });
+</script>
+
+</body>
+</html>

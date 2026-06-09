@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — Cinema</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Explore</a>
+      <a href="events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="cinema.html" class="active">Cinema</a>
+      <a href="index.html">Hotels</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO BANNER ============ -->
+<section class="exp-hero cin-hero">
+  <div class="container exp-hero-inner">
+    <div class="exp-hero-copy">
+      <h1>Big Screen Magic.<br><span class="accent">Your seat awaits</span></h1>
+      <p>Book the latest blockbusters at your favourite cinema. Pick a film, choose your seats and pay in seconds — all on Onburd.</p>
+    </div>
+    <div class="exp-hero-art cin-hero-art" aria-hidden="true">
+      <img src="images/cinema-banner.png" alt="" />
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- ============ CINEMA SEARCH WIDGET ============ -->
+  <section class="container cin-search-section">
+    <div class="cin-search-card">
+      <div class="flight-fields cinema-fields" id="cinSearch">
+        <div class="field is-popover has-value" data-field="cinema-name">
+          <div class="field-ic"><i class="ph ph-film-slate"></i></div>
+          <div class="field-body">
+            <p class="field-label">Select cinema</p>
+            <p class="field-value">Film House</p>
+          </div>
+          <i class="ph ph-caret-down field-caret"></i>
+          <div class="field-popover field-popover-select" hidden>
+            <button class="sel-option selected" type="button" data-value="Film House">Film House</button>
+            <button class="sel-option" type="button" data-value="Genesis Cinemas">Genesis Cinemas</button>
+            <button class="sel-option" type="button" data-value="Silverbird">Silverbird</button>
+            <button class="sel-option" type="button" data-value="EbonyLife Cinemas">EbonyLife Cinemas</button>
+            <button class="sel-option" type="button" data-value="Viva Cinemas">Viva Cinemas</button>
+          </div>
+        </div>
+
+        <div class="field is-popover has-value" data-field="cinema-location">
+          <div class="field-ic"><i class="ph ph-map-pin"></i></div>
+          <div class="field-body">
+            <p class="field-label">Location</p>
+            <p class="field-value">Lekki, Lagos</p>
+          </div>
+          <i class="ph ph-caret-down field-caret"></i>
+          <div class="field-popover field-popover-select" hidden>
+            <button class="sel-option selected" type="button" data-value="Lekki, Lagos">Lekki, Lagos</button>
+            <button class="sel-option" type="button" data-value="Ikeja, Lagos">Ikeja, Lagos</button>
+            <button class="sel-option" type="button" data-value="Victoria Island">Victoria Island</button>
+            <button class="sel-option" type="button" data-value="Abuja">Abuja</button>
+            <button class="sel-option" type="button" data-value="Port Harcourt">Port Harcourt</button>
+            <button class="sel-option" type="button" data-value="Ibadan">Ibadan</button>
+          </div>
+        </div>
+
+        <div class="field is-popover has-value" data-field="cinema-genre">
+          <div class="field-ic"><i class="ph ph-funnel"></i></div>
+          <div class="field-body">
+            <p class="field-label">Genre</p>
+            <p class="field-value">All genres</p>
+          </div>
+          <i class="ph ph-caret-down field-caret"></i>
+          <div class="field-popover field-popover-select" hidden>
+            <button class="sel-option selected" type="button" data-value="All genres">All genres</button>
+            <button class="sel-option" type="button" data-value="Action">Action</button>
+            <button class="sel-option" type="button" data-value="Adventure">Adventure</button>
+            <button class="sel-option" type="button" data-value="Sci-fi">Sci-fi</button>
+            <button class="sel-option" type="button" data-value="Drama">Drama</button>
+            <button class="sel-option" type="button" data-value="Comedy">Comedy</button>
+            <button class="sel-option" type="button" data-value="Thriller">Thriller</button>
+          </div>
+        </div>
+
+        <div class="field is-popover has-value" data-field="cinema-date">
+          <div class="field-ic"><i class="ph ph-calendar-blank"></i></div>
+          <div class="field-body">
+            <p class="field-label">Date</p>
+            <p class="field-value">Today, 5 Jun</p>
+          </div>
+          <i class="ph ph-caret-down field-caret"></i>
+          <div class="field-popover field-popover-select" hidden>
+            <button class="sel-option selected" type="button" data-value="Today, 5 Jun">Today, 5 Jun</button>
+            <button class="sel-option" type="button" data-value="Sat, 6 Jun">Sat, 6 Jun</button>
+            <button class="sel-option" type="button" data-value="Sun, 7 Jun">Sun, 7 Jun</button>
+            <button class="sel-option" type="button" data-value="Mon, 8 Jun">Mon, 8 Jun</button>
+            <button class="sel-option" type="button" data-value="Tue, 9 Jun">Tue, 9 Jun</button>
+          </div>
+        </div>
+
+        <button class="flight-search" type="button" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOW SHOWING ============ -->
+  <section class="container section cin-showing">
+    <div class="exp-head">
+      <div>
+        <h3 class="exp-title">Now Showing</h3>
+        <p class="exp-sub" id="cinCount">Film House · Lekki, Lagos</p>
+      </div>
+    </div>
+
+    <div class="cin-grid" id="cinGrid"></div>
+
+    <!-- pagination -->
+    <nav class="cin-pager" aria-label="Pagination">
+      <button class="cin-page-btn" type="button"><i class="ph ph-arrow-left"></i> Previous</button>
+      <div class="cin-page-nums">
+        <button class="cin-page-num active" type="button">1</button>
+        <button class="cin-page-num" type="button">2</button>
+        <button class="cin-page-num" type="button">3</button>
+        <span class="cin-page-dots">…</span>
+        <button class="cin-page-num" type="button">8</button>
+        <button class="cin-page-num" type="button">9</button>
+        <button class="cin-page-num" type="button">10</button>
+      </div>
+      <button class="cin-page-btn" type="button">Next <i class="ph ph-arrow-right"></i></button>
+    </nav>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+          <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+          <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+          <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+          <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+          <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+        </svg>
+      </div>
+      <p class="foot-desc">Welcome to your one stop travel platform where we help making your journey an experience. We love you, hear from you.</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">WhatsApp:</p>
+      <p>+234 (0)1 555 7540</p>
+    </div>
+
+    <div class="foot-col">
+      <p class="foot-label">Speak to an agent:</p>
+      <p>+234 1 700 5028, +234 1 280 3121</p>
+      <p class="foot-label spaced">Need our support:</p>
+      <p><a href="#">Support@onburd.com</a></p>
+    </div>
+
+    <div class="foot-col">
+      <p><a href="#">About</a></p>
+      <p><a href="#">Privacy Policy</a></p>
+      <p><a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 Onburd. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="X (Twitter)"><i class="ph ph-x-logo"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ===================== NOW SHOWING DATA ===================== */
+  const MOVIES = [
+    { key: 'captain-america', title: 'Captain America: Brave New World', genre: 'Action · Sci-fi · Adventure', rating: 7.8, cert: 'PG-13', img: 'images/movie-captain-america-poster.png' },
+    { key: 'hail-mary', title: 'Project Hail Mary', genre: 'Adventure · Sci-fi · Drama', rating: 8.6, cert: 'PG-13', img: 'images/movie-hail-mary.jpeg' },
+    { key: 'avatar', title: 'Avatar: The Last Airbender', genre: 'Adventure · Fantasy · Action', rating: 8.1, cert: 'PG', img: 'images/movie-avatar.webp' },
+    { key: 'joker', title: 'Joker', genre: 'Crime · Drama · Thriller', rating: 8.4, cert: '18', img: 'images/movie-joker.jpg' },
+    { key: 'bullet-train', title: 'Bullet Train', genre: 'Action · Comedy · Thriller', rating: 7.3, cert: '15', img: 'images/movie-bullet-train.png' },
+  ];
+
+  /* render a populated board (cycle the four films so the grid reads full) */
+  const grid = document.getElementById('cinGrid');
+  const board = [];
+  for (let i = 0; i < 8; i++) board.push(MOVIES[i % MOVIES.length]);
+
+  const cardHTML = m => `
+    <article class="cin-card" tabindex="0" data-key="${m.key}">
+      <div class="cin-poster">
+        <img src="${m.img}" alt="${m.title} poster" loading="lazy" />
+        <span class="cin-cert">${m.cert}</span>
+        <div class="cin-actions">
+          <button class="cin-btn cin-btn-ghost" type="button" data-action="trailer"><i class="ph ph-play-circle"></i> Watch trailer</button>
+          <button class="cin-btn cin-btn-primary" type="button" data-action="buy"><i class="ph ph-ticket"></i> Buy ticket</button>
+        </div>
+      </div>
+      <div class="cin-card-body">
+        <h4 class="cin-title">${m.title}</h4>
+        <p class="cin-genre">${m.genre}</p>
+      </div>
+    </article>`;
+
+  /* group into rows of 4 so each row gets its own separator + breathing room */
+  const PER_ROW = 4;
+  let rows = '';
+  for (let i = 0; i < board.length; i += PER_ROW) {
+    rows += `<div class="cin-row">${board.slice(i, i + PER_ROW).map(cardHTML).join('')}</div>`;
+  }
+  grid.innerHTML = rows;
+
+  /* ===================== CARD → MOVIE DETAILS NAVIGATION ===================== */
+  const openMovie = key => { location.href = 'movie-details.html?key=' + encodeURIComponent(key); };
+  grid.addEventListener('click', e => {
+    const card = e.target.closest('.cin-card[data-key]');
+    if (!card) return;
+    if (e.target.closest('[data-action="trailer"]')) return; /* trailer stays on page (static) */
+    openMovie(card.dataset.key);
+  });
+  grid.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('.cin-card[data-key]');
+    if (card && card === e.target) { e.preventDefault(); openMovie(card.dataset.key); }
+  });
+
+  /* ===================== SEARCH WIDGET (select popovers) ===================== */
+  const searchBar = document.getElementById('cinSearch');
+  function closeAllPops() {
+    searchBar.querySelectorAll('.field-popover').forEach(p => { p.hidden = true; });
+    searchBar.querySelectorAll('.field').forEach(f => f.classList.remove('is-open'));
+  }
+  searchBar.querySelectorAll('.field.is-popover').forEach(field => {
+    const pop = field.querySelector('.field-popover');
+    const valueEl = field.querySelector('.field-value');
+    field.addEventListener('click', e => {
+      if (e.target.closest('.field-popover')) return;
+      const wasOpen = !pop.hidden;
+      closeAllPops();
+      if (!wasOpen) { pop.hidden = false; field.classList.add('is-open'); }
+    });
+    field.querySelectorAll('.sel-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        field.querySelectorAll('.sel-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        valueEl.textContent = opt.dataset.value || opt.textContent.trim();
+        closeAllPops();
+      });
+    });
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.cinema-fields .field')) closeAllPops(); });
+
+  /* keep the "Now Showing" subtitle in sync with cinema + location */
+  function syncSub() {
+    const name = searchBar.querySelector('[data-field="cinema-name"] .field-value').textContent.trim();
+    const loc = searchBar.querySelector('[data-field="cinema-location"] .field-value').textContent.trim();
+    document.getElementById('cinCount').textContent = name + ' · ' + loc;
+  }
+  searchBar.addEventListener('click', e => { if (e.target.closest('.sel-option')) syncSub(); });
+</script>
+
+</body>
+</html>

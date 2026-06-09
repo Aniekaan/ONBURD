@@ -111,12 +111,14 @@
     when:  params.get('when')  || 'Sun, Dec 28 · 8:00 PM',
     venue: params.get('venue') || 'Eko Convention Centre',
     session: params.get('session') || '',
+    tag:   params.get('tag')   || 'Event ticket',
+    tagIcon: params.get('tagIcon') || 'ph-ticket',
   };
   const n = k => Math.max(0, parseInt(params.get(k), 10) || 0);
   const TIERS = [
-    { name: 'Regular', qty: n('r'), price: n('rp') || 50000, fee: n('rf') },
-    { name: 'Classic', qty: n('c'), price: n('cp'), fee: n('cf') },
-    { name: 'VIP',     qty: n('v'), price: n('vp'), fee: n('vf') },
+    { name: params.get('rn') || 'Regular', qty: n('r'), price: n('rp') || 50000, fee: n('rf') },
+    { name: params.get('cn') || 'Classic', qty: n('c'), price: n('cp'), fee: n('cf') },
+    { name: params.get('vn') || 'VIP',     qty: n('v'), price: n('vp'), fee: n('vf') },
   ].filter(t => t.qty > 0);
 
   const fmtNaira = x => '₦' + x.toLocaleString('en-NG');
@@ -125,7 +127,7 @@
   document.getElementById('ecEvent').innerHTML = `
     <div class="ec-event-img" style="background-image:url('${ev.img}')"></div>
     <div class="ec-event-meta">
-      <span class="ec-event-tag"><i class="ph ph-ticket"></i> Event ticket</span>
+      <span class="ec-event-tag"><i class="ph ${ev.tagIcon}"></i> ${ev.tag}</span>
       <h3>${ev.title}</h3>
       ${ev.session ? `<p class="ec-event-session"><i class="ph ph-calendar-check"></i> ${ev.session}</p>` : ''}
       <p class="ec-event-when"><i class="ph ph-calendar-blank"></i> ${ev.when}</p>
