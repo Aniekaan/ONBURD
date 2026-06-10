@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — This Weekend</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+        <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+        <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+        <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+        <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+        <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+      </svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html" class="active">Explore</a>
+      <a href="events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="cinema.html">Cinema</a>
+      <a href="index.html">Hotels</a>
+      <a href="index.html">Subscriptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted">Our blog</a>
+      <button class="icon-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container wk-page">
+
+  <!-- ============ PAGE HEAD ============ -->
+  <div class="wk-head">
+    <a href="index.html" class="wk-back"><i class="ph ph-arrow-left"></i> Back to Explore</a>
+    <h1>This Weekend in <span id="wkCity">Lagos</span> <span class="wk-spark">✦</span></h1>
+    <p class="wk-sub"><i class="ph ph-calendar-dots"></i> Fri 12 – Sun 14 June 2026 · Concerts, comedy, theatre, dining, cinema &amp; getaways</p>
+  </div>
+
+  <!-- ============ LAYOUT ============ -->
+  <div class="wk-layout">
+
+    <!-- ---------- SIDEBAR FILTERS ---------- -->
+    <aside class="wk-sidebar" aria-label="Filters">
+      <div class="wk-sidebar-head">
+        <h2>Filters</h2>
+        <button type="button" class="wk-clear" id="wkClear">Clear all</button>
+      </div>
+
+      <!-- Day within weekend -->
+      <div class="wk-fgroup">
+        <h3>Day</h3>
+        <div class="wk-days" id="wkDays" role="group" aria-label="Day">
+          <button type="button" class="wk-day active" data-day="all">All</button>
+          <button type="button" class="wk-day" data-day="Fri">Fri 12</button>
+          <button type="button" class="wk-day" data-day="Sat">Sat 13</button>
+          <button type="button" class="wk-day" data-day="Sun">Sun 14</button>
+        </div>
+      </div>
+
+      <!-- Category -->
+      <div class="wk-fgroup">
+        <h3>Category</h3>
+        <div class="wk-checks" id="wkCats"></div>
+      </div>
+
+      <!-- City -->
+      <div class="wk-fgroup">
+        <h3>City</h3>
+        <div class="wk-checks" id="wkCities"></div>
+      </div>
+
+      <!-- Price range -->
+      <div class="wk-fgroup">
+        <h3>Price range</h3>
+        <div class="wk-range">
+          <div class="wk-range-track"><div class="wk-range-fill" id="wkFill"></div></div>
+          <input type="range" id="wkMin" min="0" max="150000" step="1000" value="0" aria-label="Minimum price" />
+          <input type="range" id="wkMax" min="0" max="150000" step="1000" value="150000" aria-label="Maximum price" />
+        </div>
+        <div class="wk-range-vals">
+          <span id="wkMinVal">₦0</span>
+          <span id="wkMaxVal">₦150,000</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ---------- RESULTS ---------- -->
+    <section class="wk-main">
+      <div class="wk-toolbar">
+        <p class="wk-count" id="wkCount">Loading…</p>
+        <div class="wk-sort" id="wkSort">
+          <span class="wk-sort-label">Sort by</span>
+          <button type="button" class="wk-sort-btn" id="wkSortBtn" aria-haspopup="listbox" aria-expanded="false">
+            <span id="wkSortVal">Most Popular</span>
+            <i class="ph ph-caret-down"></i>
+          </button>
+          <div class="wk-sort-menu" id="wkSortMenu" role="listbox" hidden>
+            <button type="button" class="wk-sort-opt active" role="option" data-sort="popular">Most Popular</button>
+            <button type="button" class="wk-sort-opt" role="option" data-sort="price-asc">Price: Low to High</button>
+            <button type="button" class="wk-sort-opt" role="option" data-sort="price-desc">Price: High to Low</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="wk-active" id="wkActive" hidden></div>
+
+      <div class="wk-grid" id="wkGrid"></div>
+
+      <div class="wk-empty" id="wkEmpty" hidden>
+        <i class="ph ph-calendar-x"></i>
+        <h3>No plans match your filters</h3>
+        <p>Try widening your price range or clearing a filter.</p>
+        <button type="button" class="wk-empty-clear" id="wkEmptyClear">Clear all filters</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <svg viewBox="0 0 218 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z"/>
+          <path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z"/>
+          <path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308"/>
+          <path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168"/>
+          <path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z"/>
+          <path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z"/>
+        </svg>
+      </div>
+      <p class="foot-desc">Welcome to your one stop travel platform where we help making your journey an experience. We love you, hear from you.</p>
+    </div>
+    <div class="foot-col">
+      <p class="foot-label">WhatsApp:</p>
+      <p>+234 (0)1 555 7540</p>
+    </div>
+    <div class="foot-col">
+      <p class="foot-label">Speak to an agent:</p>
+      <p>+234 1 700 5028, +234 1 280 3121</p>
+      <p class="foot-label spaced">Need our support:</p>
+      <p><a href="#">Support@onburd.com</a></p>
+    </div>
+    <div class="foot-col">
+      <p><a href="#">About</a></p>
+      <p><a href="#">Privacy Policy</a></p>
+      <p><a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Onburd. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="X (Twitter)"><i class="ph ph-x-logo"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ---------- Weekend dataset (mixed across categories) ---------- */
+  // kind drives the detail-page link; type drives the badge + category filter.
+  const ITEMS = [
+    // ---- Music (events) ----
+    { type:'Music', kind:'event', title:'Burna Boy Live in Lagos', img:'images/burnaboy-concert.jpg', days:['Sat'], when:'Sat, Jun 13 · 9:00 PM', venue:'Eko Hotel & Suites', city:'Lagos', price:75000 },
+    { type:'Music', kind:'event', title:'Davido: Timeless Live', img:'images/davido.png', days:['Fri'], when:'Fri, Jun 12 · 8:30 PM', venue:'Tafawa Balewa Square', city:'Lagos', price:65000 },
+    { type:'Music', kind:'event', title:'Ayra Starr Live', img:'images/ayra-starr-lagos.png', days:['Fri'], when:'Fri, Jun 12 · 7:30 PM', venue:'Hard Rock Cafe', city:'Lagos', price:40000 },
+    { type:'Music', kind:'event', title:'Wizkid Live', img:'images/wizkid-lagos.jpeg', days:['Sat'], when:'Sat, Jun 13 · 9:00 PM', venue:'Landmark Beach', city:'Lagos', price:80000 },
+    { type:'Music', kind:'event', title:'Adekunle Gold Live', img:'images/adekunle-gold-2.jpeg', days:['Sun'], when:'Sun, Jun 14 · 7:00 PM', venue:'National Theatre', city:'Lagos', price:60000 },
+    { type:'Music', kind:'event', title:'Flavour Live in PH', img:'images/adekunle-gold.jpeg', days:['Sat'], when:'Sat, Jun 13 · 8:00 PM', venue:'Adokiye Amiesimaka Stadium', city:'Port Harcourt', price:45000 },
+
+    // ---- Comedy (events) ----
+    { type:'Comedy', kind:'event', title:'Lagos Laugh Festival', img:'images/cat-music.jpg', days:['Fri'], when:'Fri, Jun 12 · 7:00 PM', venue:'Eko Convention Centre', city:'Lagos', price:20000 },
+    { type:'Comedy', kind:'event', title:'Comedy Tarab Nights', img:'images/b21.jpg', days:['Sat'], when:'Sat, Jun 13 · 8:00 PM', venue:'Terra Kulture', city:'Lagos', price:25000 },
+
+    // ---- Theatre (events) ----
+    { type:'Theatre', kind:'event', title:'Fela! The Musical', img:'images/cat-theatre.jpg', days:['Sun'], when:'Sun, Jun 14 · 4:00 PM', venue:'National Theatre', city:'Lagos', price:35000 },
+    { type:'Theatre', kind:'event', title:'Wakaa The Musical', img:'images/cat-theatre.jpg', days:['Sat'], when:'Sat, Jun 13 · 6:00 PM', venue:'Terra Kulture', city:'Lagos', price:30000 },
+
+    // ---- Sports (events) ----
+    { type:'Sports', kind:'event', title:'Super Eagles Friendly', img:'images/cat-experiences.jpg', days:['Sat'], when:'Sat, Jun 13 · 5:00 PM', venue:'MKO Abiola Stadium', city:'Abuja', price:15000 },
+
+    // ---- Experiences (getaways) ----
+    { type:'Experience', kind:'experience', key:'lakowe', title:'3 Days at Lakowe Lake Resort', img:'images/lakowe.jpg', days:['Fri','Sat','Sun'], when:'Fri 12 – Sun 14 Jun', venue:'Lakowe Lakes', city:'Lagos', price:120000 },
+    { type:'Experience', kind:'experience', key:'abuja', title:'Abuja Weekend Retreat', img:'images/lagos-abuja.jpg', days:['Sat','Sun'], when:'Sat 13 – Sun 14 Jun', venue:'Central Abuja', city:'Abuja', price:95000 },
+
+    // ---- Dining ----
+    { type:'Dining', kind:'dining', key:'la-taverna', title:'La Taverna, Ikoyi', img:'images/la-taverna.jpg', days:['Sat'], when:'Sat, Jun 13 · 7:30 PM', venue:'Ikoyi', city:'Lagos', price:25000, unit:'/person' },
+    { type:'Dining', kind:'dining', key:'quilox', title:'Quilox Lounge', img:'images/quilox.jpg', days:['Fri'], when:'Fri, Jun 12 · 10:00 PM', venue:'Victoria Island', city:'Lagos', price:35000, unit:'/person' },
+    { type:'Dining', kind:'dining', key:'w-bar', title:'W Bar Lagos', img:'images/wbar.jpg', days:['Sun'], when:'Sun, Jun 14 · 6:00 PM', venue:'Ikoyi', city:'Lagos', price:22000, unit:'/person' },
+    { type:'Dining', kind:'dining', key:'the-view', title:'The View Rooftop', img:'images/wbar.jpg', days:['Sat'], when:'Sat, Jun 13 · 8:00 PM', venue:'Ikeja', city:'Lagos', price:21000, unit:'/person' },
+
+    // ---- Cinema ----
+    { type:'Cinema', kind:'cinema', key:'captain-america', title:'Captain America: Brave New World', img:'images/movie-captain-america-poster.png', days:['Fri','Sat','Sun'], when:'All weekend · Multiple times', venue:'Filmhouse, Lekki', city:'Lagos', price:5000 },
+    { type:'Cinema', kind:'cinema', key:'joker', title:'Joker', img:'images/movie-joker.jpg', days:['Sat'], when:'Sat, Jun 13 · 7:00 PM', venue:'Genesis, VI', city:'Lagos', price:5000 },
+    { type:'Cinema', kind:'cinema', key:'bullet-train', title:'Bullet Train', img:'images/movie-bullet-train.png', days:['Sun'], when:'Sun, Jun 14 · 8:00 PM', venue:'Silverbird, Ikeja', city:'Lagos', price:4500 }
+  ];
+
+  const CATS = ['Music','Comedy','Theatre','Sports','Experience','Dining','Cinema'];
+  const CITIES = ['Lagos','Abuja','Port Harcourt'];
+  const PRICE_MAX = 150000;
+  const naira = n => '₦' + n.toLocaleString('en-NG');
+
+  function detailHref(it) {
+    if (it.kind === 'event') {
+      const q = new URLSearchParams({
+        img: it.img, title: it.title, when: it.when,
+        venue: it.venue + ', ' + it.city, price: String(it.price)
+      });
+      return 'event-details.html?' + q.toString();
+    }
+    const pages = { experience: 'experience-details.html', dining: 'restaurant-details.html', cinema: 'movie-details.html' };
+    return pages[it.kind] + '?key=' + encodeURIComponent(it.key);
+  }
+
+  /* ---------- State ---------- */
+  const state = { day: 'all', cats: new Set(), city: 'all', min: 0, max: PRICE_MAX, sort: 'popular' };
+  const cityHeadEl = document.getElementById('wkCity');
+  function updateHeader() { cityHeadEl.textContent = state.city === 'all' ? 'Lagos' : state.city; }
+
+  /* ---------- Build checkbox filters ---------- */
+  const catsBox = document.getElementById('wkCats');
+  const citiesBox = document.getElementById('wkCities');
+  const counts = {};
+  CATS.forEach(c => counts[c] = ITEMS.filter(i => i.type === c).length);
+  catsBox.innerHTML = CATS.map(c =>
+    `<label class="wk-check"><input type="checkbox" data-cat="${c}"><span class="wk-box"><i class="ph ph-check"></i></span><span class="wk-check-label">${c}</span><span class="wk-check-count">${counts[c]}</span></label>`
+  ).join('');
+  const cityOpts = [{ label: 'All cities', val: 'all', n: ITEMS.length }]
+    .concat(CITIES.map(c => ({ label: c, val: c, n: ITEMS.filter(i => i.city === c).length })));
+  citiesBox.innerHTML = cityOpts.map(o =>
+    `<label class="wk-check"><input type="radio" name="wkCity" data-city="${o.val}"${o.val === 'all' ? ' checked' : ''}><span class="wk-box wk-box--radio"><i class="ph ph-check"></i></span><span class="wk-check-label">${o.label}</span><span class="wk-check-count">${o.n}</span></label>`
+  ).join('');
+
+  /* ---------- Card markup ---------- */
+  function cardHTML(it) {
+    const badgeCls = 'wk-badge wk-badge--' + it.type.toLowerCase();
+    const unit = it.unit ? `<span class="wk-unit">${it.unit}</span>` : '';
+    return `
+      <a class="wk-card" href="${detailHref(it)}" aria-label="${it.title}">
+        <div class="wk-card-img" style="background-image:url('${it.img}')">
+          <span class="${badgeCls}">${it.type}</span>
+        </div>
+        <div class="wk-card-body">
+          <p class="wk-when"><i class="ph ph-calendar-blank"></i> ${it.when}</p>
+          <h4 class="wk-title">${it.title}</h4>
+          <p class="wk-venue"><i class="ph ph-map-pin"></i> ${it.venue}, ${it.city}</p>
+          <div class="wk-card-foot">
+            <p class="wk-price">From ${naira(it.price)}${unit}</p>
+            <span class="wk-instant"><i class="ph ph-lightning"></i> Instant booking</span>
+          </div>
+        </div>
+      </a>`;
+  }
+
+  /* ---------- Filtering + sorting + render ---------- */
+  const grid = document.getElementById('wkGrid');
+  const empty = document.getElementById('wkEmpty');
+  const countEl = document.getElementById('wkCount');
+  const activeEl = document.getElementById('wkActive');
+
+  function apply() {
+    let list = ITEMS.filter(it => {
+      if (state.day !== 'all' && !it.days.includes(state.day)) return false;
+      if (state.cats.size && !state.cats.has(it.type)) return false;
+      if (state.city !== 'all' && it.city !== state.city) return false;
+      if (it.price < state.min || it.price > state.max) return false;
+      return true;
+    });
+
+    if (state.sort === 'price-asc') list.sort((a, b) => a.price - b.price);
+    else if (state.sort === 'price-desc') list.sort((a, b) => b.price - a.price);
+
+    grid.innerHTML = list.map(cardHTML).join('');
+    empty.hidden = list.length !== 0;
+    grid.hidden = list.length === 0;
+    countEl.textContent = list.length === 1 ? '1 result' : `${list.length} results`;
+    renderActive();
+  }
+
+  /* ---------- Active filter chips ---------- */
+  function renderActive() {
+    const chips = [];
+    if (state.day !== 'all') {
+      const lbl = { Fri: 'Fri 12', Sat: 'Sat 13', Sun: 'Sun 14' }[state.day];
+      chips.push(`<button class="wk-chip" data-clear="day">${lbl} <i class="ph ph-x"></i></button>`);
+    }
+    state.cats.forEach(c => chips.push(`<button class="wk-chip" data-clear="cat" data-val="${c}">${c} <i class="ph ph-x"></i></button>`));
+    if (state.city !== 'all') chips.push(`<button class="wk-chip" data-clear="city">${state.city} <i class="ph ph-x"></i></button>`);
+    if (state.min > 0 || state.max < PRICE_MAX) {
+      chips.push(`<button class="wk-chip" data-clear="price">${naira(state.min)} – ${naira(state.max)} <i class="ph ph-x"></i></button>`);
+    }
+    activeEl.innerHTML = chips.join('');
+    activeEl.hidden = chips.length === 0;
+  }
+
+  activeEl.addEventListener('click', e => {
+    const chip = e.target.closest('.wk-chip');
+    if (!chip) return;
+    const what = chip.dataset.clear;
+    if (what === 'day') { state.day = 'all'; document.querySelectorAll('.wk-day').forEach(b => b.classList.toggle('active', b.dataset.day === 'all')); }
+    if (what === 'cat') { state.cats.delete(chip.dataset.val); syncChecks(); }
+    if (what === 'city') { state.city = 'all'; syncChecks(); updateHeader(); }
+    if (what === 'price') { state.min = 0; state.max = PRICE_MAX; minEl.value = 0; maxEl.value = PRICE_MAX; updateRange(); }
+    apply();
+  });
+
+  function syncChecks() {
+    document.querySelectorAll('[data-cat]').forEach(cb => cb.checked = state.cats.has(cb.dataset.cat));
+    document.querySelectorAll('[data-city]').forEach(rb => rb.checked = (rb.dataset.city === state.city));
+  }
+
+  /* ---------- Day chips ---------- */
+  document.getElementById('wkDays').addEventListener('click', e => {
+    const btn = e.target.closest('.wk-day');
+    if (!btn) return;
+    document.querySelectorAll('.wk-day').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.day = btn.dataset.day;
+    apply();
+  });
+
+  /* ---------- Checkboxes ---------- */
+  catsBox.addEventListener('change', e => {
+    const cb = e.target.closest('[data-cat]'); if (!cb) return;
+    cb.checked ? state.cats.add(cb.dataset.cat) : state.cats.delete(cb.dataset.cat);
+    apply();
+  });
+  citiesBox.addEventListener('change', e => {
+    const rb = e.target.closest('[data-city]'); if (!rb) return;
+    state.city = rb.dataset.city;
+    updateHeader();
+    apply();
+  });
+
+  /* ---------- Dual-handle price slider ---------- */
+  const minEl = document.getElementById('wkMin');
+  const maxEl = document.getElementById('wkMax');
+  const fill = document.getElementById('wkFill');
+  const minVal = document.getElementById('wkMinVal');
+  const maxVal = document.getElementById('wkMaxVal');
+  const GAP = 5000;
+
+  function updateRange() {
+    let lo = +minEl.value, hi = +maxEl.value;
+    if (lo > hi - GAP) { // keep handles from crossing
+      if (document.activeElement === minEl) { lo = hi - GAP; minEl.value = lo; }
+      else { hi = lo + GAP; maxEl.value = hi; }
+    }
+    state.min = lo; state.max = hi;
+    const lp = (lo / PRICE_MAX) * 100, hp = (hi / PRICE_MAX) * 100;
+    fill.style.left = lp + '%';
+    fill.style.right = (100 - hp) + '%';
+    minVal.textContent = naira(lo);
+    maxVal.textContent = naira(hi);
+  }
+  function onRange() { updateRange(); apply(); }
+  minEl.addEventListener('input', onRange);
+  maxEl.addEventListener('input', onRange);
+
+  /* ---------- Sort dropdown ---------- */
+  const sortBtn = document.getElementById('wkSortBtn');
+  const sortMenu = document.getElementById('wkSortMenu');
+  const sortVal = document.getElementById('wkSortVal');
+  sortBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = sortMenu.hidden;
+    sortMenu.hidden = !open;
+    sortBtn.setAttribute('aria-expanded', String(open));
+  });
+  sortMenu.addEventListener('click', e => {
+    const opt = e.target.closest('.wk-sort-opt'); if (!opt) return;
+    state.sort = opt.dataset.sort;
+    sortVal.textContent = opt.textContent;
+    sortMenu.querySelectorAll('.wk-sort-opt').forEach(o => o.classList.toggle('active', o === opt));
+    sortMenu.hidden = true;
+    sortBtn.setAttribute('aria-expanded', 'false');
+    apply();
+  });
+  document.addEventListener('click', () => { sortMenu.hidden = true; sortBtn.setAttribute('aria-expanded', 'false'); });
+
+  /* ---------- Clear all ---------- */
+  function clearAll() {
+    state.day = 'all'; state.cats.clear(); state.city = 'all';
+    state.min = 0; state.max = PRICE_MAX;
+    document.querySelectorAll('.wk-day').forEach(b => b.classList.toggle('active', b.dataset.day === 'all'));
+    syncChecks();
+    updateHeader();
+    minEl.value = 0; maxEl.value = PRICE_MAX; updateRange();
+    apply();
+  }
+  document.getElementById('wkClear').addEventListener('click', clearAll);
+  document.getElementById('wkEmptyClear').addEventListener('click', clearAll);
+
+  /* ---------- Init ---------- */
+  updateRange();
+  apply();
+})();
+</script>
+</body>
+</html>

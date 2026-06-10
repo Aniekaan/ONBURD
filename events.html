@@ -150,8 +150,8 @@
 <!-- ============ EVENTS GRID ============ -->
 <section class="container events-section">
   <div class="events-head">
-    <h2>Upcoming Events</h2>
-    <span class="events-count" id="eventsCount">16 events</span>
+    <h2 id="eventsHeading">Upcoming Events</h2>
+    <span class="events-count" id="eventsCount">23 events</span>
   </div>
 
   <div class="events-grid" id="eventsGrid">
@@ -266,6 +266,55 @@
       <p class="meta">Thu, Dec 18 · 7:00 PM</p>
       <p class="meta">La Taverna, Ikoyi</p>
       <p class="price-new">₦40,000</p>
+    </article>
+    <article class="event-card" data-category="Comedy" data-search="basketmouth uncensored comedy stand up eko hotel suites">
+      <div class="event-img" style="background-image:url('images/cat-music.jpg')"></div>
+      <h4>Basketmouth: Uncensored</h4>
+      <p class="meta">Sat, Dec 20 · 8:00 PM</p>
+      <p class="meta">Eko Hotel &amp; Suites</p>
+      <p class="price-new">₦30,000</p>
+    </article>
+    <article class="event-card" data-category="Comedy" data-search="ay live comedy show stand up eko convention centre">
+      <div class="event-img" style="background-image:url('images/biz-collage.jpg')"></div>
+      <h4>AY Live: The Comedy Show</h4>
+      <p class="meta">Sun, Dec 28 · 6:00 PM</p>
+      <p class="meta">Eko Convention Centre</p>
+      <p class="price-new">₦25,000</p>
+    </article>
+    <article class="event-card" data-category="Sports" data-search="super eagles friendly football match mko abiola stadium">
+      <div class="event-img" style="background-image:url('images/cat-experiences.jpg')"></div>
+      <h4>Super Eagles Friendly</h4>
+      <p class="meta">Sat, Dec 13 · 5:00 PM</p>
+      <p class="meta">MKO Abiola Stadium</p>
+      <p class="price-new">₦15,000</p>
+    </article>
+    <article class="event-card" data-category="Sports" data-search="lagos city marathon run race lagos island">
+      <div class="event-img" style="background-image:url('images/biz-crowd.png')"></div>
+      <h4>Lagos City Marathon</h4>
+      <p class="meta">Sat, Jan 17 · 7:00 AM</p>
+      <p class="meta">Lagos Island</p>
+      <p class="price-new">₦10,000</p>
+    </article>
+    <article class="event-card" data-category="Theatre" data-search="fela the musical theatre play national theatre">
+      <div class="event-img" style="background-image:url('images/cat-theatre.jpg')"></div>
+      <h4>Fela! The Musical</h4>
+      <p class="meta">Sun, Dec 14 · 4:00 PM</p>
+      <p class="meta">National Theatre</p>
+      <p class="price-new">₦35,000</p>
+    </article>
+    <article class="event-card" data-category="Theatre" data-search="wakaa the musical theatre play terra kulture">
+      <div class="event-img" style="background-image:url('images/cat-theatre.jpg')"></div>
+      <h4>Wakaa: The Musical</h4>
+      <p class="meta">Sat, Dec 27 · 6:00 PM</p>
+      <p class="meta">Terra Kulture</p>
+      <p class="price-new">₦30,000</p>
+    </article>
+    <article class="event-card" data-category="Conferences" data-search="lagos tech summit conference business landmark centre">
+      <div class="event-img" style="background-image:url('images/biz-5stars.png')"></div>
+      <h4>Lagos Tech Summit</h4>
+      <p class="meta">Fri, Jan 16 · 9:00 AM</p>
+      <p class="meta">Landmark Centre</p>
+      <p class="price-new">₦50,000</p>
     </article>
   </div>
 
@@ -524,14 +573,58 @@
       pager.innerHTML = html;
     }
 
-    function applyFilter() {
+    /* ---- category filtering ---- */
+    const catField = form.querySelector('[data-field="event-category"]');
+    const headingEl = document.getElementById('eventsHeading');
+    const VALID_CATS = ['All', 'Concerts', 'Festivals', 'Sports', 'Theatre', 'Comedy', 'Conferences'];
+    // existing cards get categorised by title (new cards already carry data-category)
+    const CARD_CAT = {
+      'Wizkid Musical Fest': 'Concerts', 'Burna Boy Live in Lagos': 'Concerts',
+      'Davido: Timeless Live': 'Concerts', 'Ayra Starr Live': 'Concerts',
+      'Adekunle Gold Live': 'Concerts', 'Ayra Starr: New Year Concert': 'Concerts',
+      'Burna Boy: Outside': 'Concerts', 'Adekunle Gold: Acoustic': 'Concerts',
+      'Ayra Starr: Sabi Girl Tour': 'Concerts', 'Jazz & Wine Night': 'Concerts',
+      'Wizkid: Detty December': 'Festivals', 'Detty December: Quilox': 'Festivals',
+      'Sunset Sessions': 'Festivals', 'B21 Live Lounge': 'Festivals',
+      'Felabration Music Fest': 'Festivals', 'Afro House Rooftop': 'Festivals'
+    };
+    cards.forEach(c => {
+      if (c.dataset.category) return;
+      const t = (c.querySelector('h4')?.textContent || '').trim();
+      if (CARD_CAT[t]) c.dataset.category = CARD_CAT[t];
+    });
+    let category = 'All';
+
+    function applyFilter(scroll) {
       const q = (nameInput.value || '').trim().toLowerCase();
       filtered = cards.filter(c => {
         const hay = (c.dataset.search || c.querySelector('h4').textContent).toLowerCase();
-        return !q || hay.includes(q);
+        const okQ = !q || hay.includes(q);
+        const okCat = category === 'All' || c.dataset.category === category;
+        return okQ && okCat;
       });
       page = 1;
-      render(true);
+      render(scroll);
+    }
+
+    function setCategory(cat, scroll) {
+      category = VALID_CATS.includes(cat) ? cat : 'All';
+      if (catField) {
+        const fv = catField.querySelector('.field-value');
+        if (fv) fv.textContent = category;
+        catField.querySelectorAll('.sel-option').forEach(o =>
+          o.classList.toggle('selected', o.dataset.value === category));
+      }
+      if (headingEl) headingEl.textContent = category === 'All' ? 'Upcoming Events' : category;
+      applyFilter(scroll);
+    }
+
+    if (catField) {
+      catField.addEventListener('click', e => {
+        const opt = e.target.closest('.sel-option');
+        if (!opt) return;
+        setCategory(opt.dataset.value, true);
+      });
     }
 
     pager.addEventListener('click', e => {
@@ -540,13 +633,19 @@
       const n = parseInt(btn.dataset.pg, 10);
       if (!isNaN(n) && n !== page) { page = n; render(true); }
     });
-    searchBtn.addEventListener('click', e => { e.preventDefault(); applyFilter(); });
-    nameInput.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); applyFilter(); } });
+    searchBtn.addEventListener('click', e => { e.preventDefault(); applyFilter(true); });
+    nameInput.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); applyFilter(true); } });
 
     let resizeT;
     window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(() => render(false), 150); });
 
-    render(false);
+    /* ---- honour ?category= deep-link from the homepage ---- */
+    const initCat = new URLSearchParams(location.search).get('category');
+    if (initCat && VALID_CATS.includes(initCat) && initCat !== 'All') {
+      setCategory(initCat, false);
+    } else {
+      render(false);
+    }
   })();
 </script>
 
