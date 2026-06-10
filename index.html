@@ -40,9 +40,30 @@
       <button class="icon-btn" aria-label="Account">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
       </button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false"><i class="ph ph-list"></i></button>
     </div>
   </div>
 </header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="nav-drawer-overlay" id="navOverlay"></div>
+<aside class="nav-drawer" id="navDrawer" aria-label="Mobile navigation">
+  <div class="nav-drawer-head">
+    <span class="logo" aria-hidden="true">
+      <svg viewBox="0 0 218 75" width="80" xmlns="http://www.w3.org/2000/svg"><path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312Z" fill="#fff"/></svg>
+    </span>
+    <button class="nav-drawer-close" id="navClose" aria-label="Close menu"><i class="ph ph-x"></i></button>
+  </div>
+  <a href="#">Explore</a>
+  <a href="events.html">Events</a>
+  <a href="flights-home.html">Flights</a>
+  <a href="#">Hotels</a>
+  <a href="#">Ticket resell</a>
+  <a href="#">Subscriptions</a>
+  <div class="nav-drawer-divider"></div>
+  <a href="#" class="muted">Business partners</a>
+  <a href="#" class="muted">Our blog</a>
+</aside>
 
 <main>
 
@@ -1337,6 +1358,31 @@
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       update();
+    }
+
+    // 3) Mobile nav drawer (hamburger)
+    const burger = document.getElementById('navHamburger');
+    const drawer = document.getElementById('navDrawer');
+    const overlay = document.getElementById('navOverlay');
+    const closeBtn = document.getElementById('navClose');
+    if (burger && drawer && overlay) {
+      const openDrawer = () => {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        burger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      };
+      const closeDrawer = () => {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      };
+      burger.addEventListener('click', openDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
     }
   })();
 </script>
