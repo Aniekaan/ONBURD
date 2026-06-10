@@ -1419,6 +1419,14 @@ h1, h2, h3, h4, p { margin: 0; }
   .card-row > .event-card {
     flex: 0 0 84%;
   }
+
+  /* --- Search widget buttons: give the icon button a full-height tap target
+     instead of collapsing to the icon size in the single-column layout --- */
+  .flight-search {
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 22px;
+  }
 }
 
 /* ============================================================
