@@ -132,28 +132,13 @@
     </div>
   </section>
 
-  <!-- ============ HERO BANNER CAROUSEL ============ -->
+  <!-- ============ EVENT TICKET BANNERS (scrollable, auto-advancing) ============ -->
   <section class="container">
-    <div class="hero-banners hero-parallax">
-      <button class="carousel-arrow left" aria-label="Previous">‹</button>
-
-      <article class="banner banner-fuji">
-        <img class="banner-img" src="images/banner-big.png" alt="Adekunle Gold live concert" />
-        <div class="banner-actions">
-          <button class="btn-light">Buy Ticket</button>
-          <button class="btn-ghost">+ Add Ride</button>
-        </div>
-      </article>
-
-      <article class="banner banner-deal">
-        <img class="banner-img" src="images/banner-small.png" alt="Catch a sweet deal on a ride to the concert" />
-      </article>
-
-      <button class="carousel-arrow right" aria-label="Next">›</button>
-    </div>
-
-    <div class="dots" aria-hidden="true">
-      <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+    <div class="tkt-slider" id="tktSlider">
+      <button class="tkt-arrow left" aria-label="Previous banner"><i class="ph ph-caret-left"></i></button>
+      <div class="tkt-row" id="tktRow"></div>
+      <button class="tkt-arrow right" aria-label="Next banner"><i class="ph ph-caret-right"></i></button>
+      <div class="tkt-dots" id="tktDots" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -1388,6 +1373,73 @@
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
     }
   })();
+</script>
+
+<script>
+/* Event ticket banners — scrollable, auto-advancing slider. Get Ticket hands
+   off to the live Nairabox site (new tab), matching the Events direction. */
+(() => {
+  const NB_URL = 'https://nairabox-web.vercel.app/';
+  const BANNERS = [
+    { artist: 'Burna Boy', sub: 'Live in Lagos',   tag: 'The African Giant — live on stage', day: 'SAT', date: '21', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Eko Hotel & Suites · Victoria Island, Lagos', amt: '₦75K', tier: 'Regular', img: 'images/burnaboy-concert.jpg', accent: 'red' },
+    { artist: 'Davido',    sub: 'Timeless Live',    tag: 'The Timeless Experience',           day: 'FRI', date: '19', mon: 'DEC 2026', doors: '6:30PM', main: '8:30PM', venue: 'Eagle Square · Abuja',                    amt: '₦65K', tier: 'Regular', img: 'images/davido.png',           accent: 'gold' },
+    { artist: 'Wizkid',    sub: 'Detty December',   tag: 'The Detty December finale',          day: 'TUE', date: '30', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Landmark Beach · Lagos',                  amt: '₦80K', tier: 'VIP',     img: 'images/wizkid.jpeg',          accent: 'green' }
+  ];
+
+  const bannerHTML = b => `<article class="tkt tkt--${b.accent}">
+      <div class="tkt-photo" style="background-image:url('${b.img}')"></div>
+      <div class="tkt-main">
+        <p class="tkt-presents"><span class="tkt-dotmark">◆</span> Onburd Live · Presents</p>
+        <h3 class="tkt-title">${b.artist}<span>${b.sub}</span></h3>
+        <p class="tkt-tag">${b.tag}</p>
+        <div class="tkt-meta">
+          <span class="tkt-when"><b>${b.date}</b><span class="tkt-when-dm">${b.day}<br>${b.mon}</span></span>
+          <span class="tkt-times">Red carpet ${b.doors}<br>Main event ${b.main}</span>
+        </div>
+        <p class="tkt-venue"><i class="ph ph-map-pin"></i> ${b.venue}</p>
+      </div>
+      <div class="tkt-perf" aria-hidden="true"></div>
+      <a class="tkt-price" href="${NB_URL}" target="_blank" rel="noopener" aria-label="Get ticket for ${b.artist} — ${b.sub}">
+        <span class="tkt-ticket-label">Event Ticket</span>
+        <span class="tkt-amt">${b.amt}</span>
+        <span class="tkt-tier">${b.tier}</span>
+        <span class="tkt-cta">Get Ticket</span>
+      </a>
+    </article>`;
+
+  const tktRow = document.getElementById('tktRow');
+  const tktDots = document.getElementById('tktDots');
+  const tktSlider = document.getElementById('tktSlider');
+  if (!tktRow) return;
+
+  tktRow.innerHTML = BANNERS.map(bannerHTML).join('');
+  tktDots.innerHTML = BANNERS.map((_, i) =>
+    `<button class="tkt-dot${i === 0 ? ' active' : ''}" type="button" aria-label="Go to banner ${i + 1}"></button>`).join('');
+
+  const slides = () => [...tktRow.querySelectorAll('.tkt')];
+  const currentIndex = () => {
+    const s = slides();
+    const center = tktRow.scrollLeft + tktRow.clientWidth / 2;
+    let best = 0, bd = Infinity;
+    s.forEach((el, i) => { const mid = el.offsetLeft + el.clientWidth / 2; const d = Math.abs(mid - center); if (d < bd) { bd = d; best = i; } });
+    return best;
+  };
+  const syncDots = () => { const cur = currentIndex(); [...tktDots.children].forEach((d, i) => d.classList.toggle('active', i === cur)); };
+  const goTo = i => { const s = slides(); const idx = (i + s.length) % s.length; tktRow.scrollTo({ left: s[idx].offsetLeft, behavior: 'smooth' }); setTimeout(syncDots, 60); };
+
+  tktRow.addEventListener('scroll', () => requestAnimationFrame(syncDots), { passive: true });
+  tktSlider.querySelector('.tkt-arrow.left').addEventListener('click', () => goTo(currentIndex() - 1));
+  tktSlider.querySelector('.tkt-arrow.right').addEventListener('click', () => goTo(currentIndex() + 1));
+  [...tktDots.children].forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+  let timer = null;
+  const start = () => { stop(); timer = setInterval(() => goTo(currentIndex() + 1), 5000); };
+  const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+  tktSlider.addEventListener('mouseenter', stop);
+  tktSlider.addEventListener('mouseleave', start);
+  tktRow.addEventListener('touchstart', stop, { passive: true });
+  start();
+})();
 </script>
 </body>
 </html>
