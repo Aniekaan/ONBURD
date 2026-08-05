@@ -640,7 +640,7 @@
         </div>
       </div>
       <button type="button" class="fc-expand" aria-expanded="false">
-        <span class="fc-expand-txt">Flight details</span> <i class="ph ph-caret-down fc-chevron"></i>
+        <span class="fc-expand-txt">View flight details</span> <i class="ph ph-caret-down fc-chevron"></i>
       </button>
       <div class="fc-fares" hidden>${itin}</div>
     </article>`;
@@ -726,8 +726,33 @@
     duration: (a, b) => a.out.dur - b.out.dur,
   };
 
+  const AG_INITIAL = 1;   // flights shown per airline before "Load more"
+  const AG_BATCH = 3;     // how many more each "Load more" click reveals
+
+  function groupHTML(al, opts) {
+    const a = AIRLINES[al];
+    const cheapest = Math.min(...opts.map(o => o.total));
+    const items = opts.map((o, i) =>
+      `<div class="ag-item${i >= AG_INITIAL ? ' ag-hidden' : ''}">${cardHTML(o)}</div>`).join('');
+    const remaining = opts.length - AG_INITIAL;
+    const moreBtn = remaining > 0
+      ? `<button type="button" class="ag-more" data-mode="more">Load more ${a.name} flights (${remaining}) <i class="ph ph-caret-down"></i></button>`
+      : '';
+    return `<section class="airline-group">
+      <header class="ag-head">
+        <div class="ag-airline">
+          <span class="al-badge" style="background:${a.color}">${initials(a.name)}</span>
+          <div><p class="ag-name">${a.name}</p><p class="ag-count">${opts.length} flight${opts.length !== 1 ? 's' : ''} available</p></div>
+        </div>
+        <div class="ag-from"><span>from</span><b>${fmtNaira(cheapest)}</b></div>
+      </header>
+      <div class="ag-flights">${items}</div>
+      ${moreBtn}
+    </section>`;
+  }
+
   function render() {
-    const list = OPTIONS.filter(passes).sort(sorters[state.sort]);
+    const list = OPTIONS.filter(passes);
     document.getElementById('resultCount').textContent =
       `${list.length} result${list.length !== 1 ? 's' : ''}`;
     const wrap = document.getElementById('flightList');
@@ -735,7 +760,14 @@
       wrap.innerHTML = `<p class="no-results">No flights match your filters. Try clearing a few.</p>`;
       return;
     }
-    wrap.innerHTML = list.map(cardHTML).join('');
+    // group by airline; sort flights within each group by the chosen sort
+    const groups = {};
+    list.forEach(o => { (groups[o.out.al] = groups[o.out.al] || []).push(o); });
+    Object.values(groups).forEach(arr => arr.sort(sorters[state.sort]));
+    // order airline sections by their cheapest fare (cheapest airline first)
+    const order = Object.keys(groups).sort((x, y) =>
+      Math.min(...groups[x].map(o => o.total)) - Math.min(...groups[y].map(o => o.total)));
+    wrap.innerHTML = order.map(al => groupHTML(al, groups[al])).join('');
   }
 
   /* ---------- wire filter events ---------- */
@@ -785,11 +817,38 @@
     const exp = card.querySelector('.fc-expand');
     if (exp) {
       exp.setAttribute('aria-expanded', String(open));
-      exp.querySelector('.fc-expand-txt').textContent = open ? 'Hide flight details' : 'Flight details';
+      exp.querySelector('.fc-expand-txt').textContent = open ? 'Hide flight details' : 'View flight details';
     }
   };
 
   flightList.addEventListener('click', e => {
+    // "Load more [airline] flights" — reveal the next batch within this airline section
+    const moreBtn = e.target.closest('.ag-more');
+    if (moreBtn) {
+      const group = moreBtn.closest('.airline-group');
+      const items = [...group.querySelectorAll('.ag-item')];
+      const name = group.querySelector('.ag-name').textContent;
+      if (moreBtn.dataset.mode === 'less') {
+        // collapse back to the first flight (grouped rows)
+        items.forEach((el, i) => el.classList.toggle('ag-hidden', i >= AG_INITIAL));
+        group.classList.remove('expanded');
+        group.querySelectorAll('.flight-card.open').forEach(c => toggleDetails(c));
+        moreBtn.dataset.mode = 'more';
+        moreBtn.innerHTML = `Load more ${name} flights (${items.length - AG_INITIAL}) <i class="ph ph-caret-down"></i>`;
+        group.scrollIntoView({ block: 'nearest' });
+      } else {
+        // reveal the next batch — the airline's flights now show as individual cards
+        items.filter(el => el.classList.contains('ag-hidden')).slice(0, AG_BATCH)
+          .forEach(el => el.classList.remove('ag-hidden'));
+        group.classList.add('expanded');
+        const left = items.filter(el => el.classList.contains('ag-hidden')).length;
+        moreBtn.dataset.mode = left === 0 ? 'less' : 'more';
+        moreBtn.innerHTML = left === 0
+          ? `Show less <i class="ph ph-caret-up"></i>`
+          : `Load more ${name} flights (${left}) <i class="ph ph-caret-down"></i>`;
+      }
+      return;
+    }
     // share button (round-trip rail OR one-way fare card) — opens the share sheet
     const shareBtn = e.target.closest('.fc-share, .fare-share');
     if (shareBtn) { e.stopPropagation(); openShareOption(shareBtn.closest('.flight-card')); return; }
