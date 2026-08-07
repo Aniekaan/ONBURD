@@ -1377,12 +1377,14 @@
 (() => {
   const NB_URL = 'https://nairabox-web.vercel.app/';
   const BANNERS = [
-    { artist: 'Burna Boy', sub: 'Live in Lagos',   tag: 'The African Giant — live on stage', day: 'SAT', date: '21', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Eko Hotel & Suites · Victoria Island, Lagos', amt: '₦75K', tier: 'Regular', img: 'images/burnaboy-concert.jpg', accent: 'red' },
-    { artist: 'Davido',    sub: 'Timeless Live',    tag: 'The Timeless Experience',           day: 'FRI', date: '19', mon: 'DEC 2026', doors: '6:30PM', main: '8:30PM', venue: 'Eagle Square · Abuja',                    amt: '₦65K', tier: 'Regular', img: 'images/davido.png',           accent: 'gold' },
-    { artist: 'Wizkid',    sub: 'Detty December',   tag: 'The Detty December finale',          day: 'TUE', date: '30', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Landmark Beach · Lagos',                  amt: '₦80K', tier: 'VIP',     img: 'images/wizkid.jpeg',          accent: 'green' }
+    { type: 'event', artist: 'Burna Boy', sub: 'Live in Lagos', tag: 'The African Giant — live on stage', day: 'SAT', date: '21', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Eko Hotel & Suites · Victoria Island, Lagos', amt: '₦75K', tier: 'Regular', img: 'images/burnaboy-concert.jpg', accent: 'red' },
+    { type: 'experience', title: 'Escape to Lakowe Lakes', tag: 'Golf, spa and lakeside calm — a 3-day getaway just outside Lagos.', amt: '₦450,000', img: 'images/lakowe.jpg', href: 'experiences.html' },
+    { type: 'event', artist: 'Davido', sub: 'Timeless Live', tag: 'The Timeless Experience', day: 'FRI', date: '19', mon: 'DEC 2026', doors: '6:30PM', main: '8:30PM', venue: 'Eagle Square · Abuja', amt: '₦65K', tier: 'Regular', img: 'images/davido.png', accent: 'gold' },
+    { type: 'flight', from: 'Lagos', fromCode: 'LOS', to: 'London', toCode: 'LHR', tag: 'Return fares from', amt: '₦1,250,000', img: 'images/london.jpg', href: 'flights-home.html' },
+    { type: 'event', artist: 'Wizkid', sub: 'Detty December', tag: 'The Detty December finale', day: 'TUE', date: '30', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Landmark Beach · Lagos', amt: '₦80K', tier: 'VIP', img: 'images/wizkid.jpeg', accent: 'green' }
   ];
 
-  const bannerHTML = b => `<article class="tkt tkt--${b.accent}">
+  const eventHTML = b => `<article class="tkt tkt--${b.accent}">
       <div class="tkt-photo" style="background-image:url('${b.img}')"></div>
       <div class="tkt-main">
         <p class="tkt-presents"><span class="tkt-dotmark">◆</span> Onburd Live · Presents</p>
@@ -1403,6 +1405,35 @@
       </a>
     </article>`;
 
+  const expHTML = b => `<article class="exp-banner" style="background-image:url('${b.img}')">
+      <div class="exp-content">
+        <span class="exp-eyebrow"><i class="ph ph-mountains"></i> Onburd Experiences · Things to do</span>
+        <h3 class="exp-title">${b.title}</h3>
+        <p class="exp-tag">${b.tag}</p>
+        <span class="exp-price">From <b>${b.amt}</b></span>
+      </div>
+      <a class="exp-cta" href="${b.href}">Explore <i class="ph ph-arrow-right"></i></a>
+    </article>`;
+
+  const flightHTML = b => `<article class="flight-banner" style="background-image:url('${b.img}')">
+      <div class="fb-content">
+        <span class="fb-eyebrow"><i class="ph ph-airplane-tilt"></i> Onburd Flights</span>
+        <div class="fb-route">
+          <span class="fb-city">${b.from}<small>${b.fromCode}</small></span>
+          <span class="fb-path"><i class="ph ph-airplane-tilt"></i></span>
+          <span class="fb-city">${b.to}<small>${b.toCode}</small></span>
+        </div>
+        <p class="fb-tag">${b.tag}</p>
+        <p class="fb-price">${b.amt}</p>
+      </div>
+      <a class="fb-cta" href="${b.href}">Book flight</a>
+    </article>`;
+
+  const bannerHTML = b =>
+    b.type === 'experience' ? expHTML(b) :
+    b.type === 'flight'     ? flightHTML(b) :
+                              eventHTML(b);
+
   const tktRow = document.getElementById('tktRow');
   const tktDots = document.getElementById('tktDots');
   const tktSlider = document.getElementById('tktSlider');
@@ -1412,7 +1443,7 @@
   tktDots.innerHTML = BANNERS.map((_, i) =>
     `<button class="tkt-dot${i === 0 ? ' active' : ''}" type="button" aria-label="Go to banner ${i + 1}"></button>`).join('');
 
-  const slides = () => [...tktRow.querySelectorAll('.tkt')];
+  const slides = () => [...tktRow.children];
   const currentIndex = () => {
     const s = slides();
     const center = tktRow.scrollLeft + tktRow.clientWidth / 2;

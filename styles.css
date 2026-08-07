@@ -5165,3 +5165,105 @@ input[type="range"].price-range::-moz-range-thumb {
 .airline-group:not(.expanded) .ag-more { border-top: 1px solid var(--border); }
 .airline-group.expanded .ag-more { border: 1px solid var(--border); border-radius: 12px; margin-top: 12px; }
 .ag-more:hover { background: var(--surface-3); }
+
+/* ============================================================
+   Homepage extra banner types in the ticket slider (index.html)
+   Experience + Flight banners — distinct designs, same slot size.
+   ============================================================ */
+.tkt-row > .exp-banner,
+.tkt-row > .flight-banner { flex: 0 0 90%; scroll-snap-align: start; }
+
+/* ---- Experience banner (image-forward, teal accent) ---- */
+.exp-banner {
+  position: relative;
+  min-height: 208px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 24px 30px;
+}
+.exp-banner::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6,8,10,.92) 0%, rgba(6,8,10,.6) 46%, rgba(6,8,10,.12) 100%),
+    linear-gradient(0deg, rgba(6,8,10,.82), transparent 62%);
+}
+.exp-content { position: relative; z-index: 2; max-width: 560px; }
+.exp-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: #5eead4; margin-bottom: 10px;
+}
+.exp-title { font-size: clamp(24px, 3vw, 34px); font-weight: 800; letter-spacing: -.02em; line-height: 1.05; color: #fff; }
+.exp-tag { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.82); margin-top: 8px; max-width: 440px; }
+.exp-price { font-size: 13px; color: rgba(255,255,255,.75); margin-top: 16px; display: inline-block; }
+.exp-price b { font-size: 20px; font-weight: 800; color: #fff; }
+.exp-cta {
+  position: relative; z-index: 2; flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 7px;
+  background: #fff; color: #0f766e; font-weight: 800; font-size: 13px;
+  padding: 12px 22px; border-radius: 999px; white-space: nowrap;
+  transition: filter .15s ease;
+}
+.exp-cta:hover { filter: brightness(.96); }
+
+/* ---- Flight banner (destination landmark backdrop, white CTA on the right) ---- */
+.flight-banner {
+  position: relative;
+  min-height: 208px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex; align-items: center; justify-content: space-between; gap: 22px;
+  padding: 24px 32px;
+}
+.flight-banner::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8,17,40,.94) 0%, rgba(8,17,40,.62) 48%, rgba(8,17,40,.12) 100%),
+    linear-gradient(0deg, rgba(8,17,40,.6), transparent 60%);
+}
+.fb-content { position: relative; z-index: 2; min-width: 0; }
+.fb-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: #9ccaff; margin-bottom: 12px;
+}
+.fb-route { display: flex; align-items: center; gap: 14px; color: #fff; }
+.fb-city {
+  display: flex; flex-direction: column;
+  font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; letter-spacing: -.02em; line-height: 1;
+}
+.fb-city small { font-size: 12px; font-weight: 700; opacity: .82; letter-spacing: .05em; margin-top: 5px; }
+.fb-path {
+  position: relative; flex: 0 0 70px; height: 2px; align-self: center;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,.6) 0 5px, transparent 5px 11px);
+}
+.fb-path i {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  font-size: 20px; color: #fff;
+}
+.fb-tag { font-size: 12px; color: rgba(255,255,255,.85); margin-top: 14px; }
+.fb-price { font-size: 26px; font-weight: 800; letter-spacing: -.02em; color: #fff; margin-top: 2px; }
+.fb-cta {
+  position: relative; z-index: 2; flex-shrink: 0;
+  background: #fff; color: #1d4ed8; font-weight: 800; font-size: 14px;
+  padding: 13px 26px; border-radius: 999px; white-space: nowrap;
+  transition: filter .15s ease;
+}
+.fb-cta:hover { filter: brightness(.96); }
+
+@media (max-width: 600px) {
+  .exp-banner, .flight-banner { min-height: 176px; padding: 18px 20px; gap: 12px; }
+  .fb-cta, .exp-cta { padding: 11px 16px; font-size: 12.5px; }
+  .exp-tag, .fb-tag { display: none; }
+}
