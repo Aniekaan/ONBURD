@@ -5254,6 +5254,10 @@ input[type="range"].price-range::-moz-range-thumb {
 }
 .fb-tag { font-size: 12px; color: rgba(255,255,255,.85); margin-top: 14px; }
 .fb-price { font-size: 26px; font-weight: 800; letter-spacing: -.02em; color: #fff; margin-top: 2px; }
+.fb-pss { display: inline-flex; align-items: center; gap: 7px; margin-top: 9px; }
+.fb-pss .pss-logo { width: 24px; }
+.fb-pss .pss-amount { color: #fff; font-size: 14px; font-weight: 700; }
+.fb-pss .pss-amount small { font-size: .78em; font-weight: 600; opacity: .8; margin-left: 1px; }
 .fb-cta {
   position: relative; z-index: 2; flex-shrink: 0;
   background: #fff; color: #1d4ed8; font-weight: 800; font-size: 14px;

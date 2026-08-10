@@ -27,14 +27,14 @@
 
     <nav class="primary-nav" aria-label="Primary">
       <a href="#">Explore</a>
-      <a href="https://nairabox-web.vercel.app/" target="_blank" rel="noopener">Events</a>
+      <a href="nairabox-events.html">Events</a>
       <a href="flights-home.html">Flights</a>
-      <a href="#">Hotels</a>
+      <a href="#" style="display:none">Hotels</a>
       <a href="create-event.html">Create event</a>
     </nav>
 
     <div class="nav-right">
-      <a href="#" class="muted">Business partners</a>
+      <a href="#" class="muted" style="display:none">Business partners</a>
       <a href="#" class="muted">Our blog</a>
       <button class="icon-btn" aria-label="Account">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
@@ -54,12 +54,12 @@
     <button class="nav-drawer-close" id="navClose" aria-label="Close menu"><i class="ph ph-x"></i></button>
   </div>
   <a href="#">Explore</a>
-  <a href="https://nairabox-web.vercel.app/" target="_blank" rel="noopener">Events</a>
+  <a href="nairabox-events.html">Events</a>
   <a href="flights-home.html">Flights</a>
-  <a href="#">Hotels</a>
+  <a href="#" style="display:none">Hotels</a>
   <a href="create-event.html">Create event</a>
   <div class="nav-drawer-divider"></div>
-  <a href="#" class="muted">Business partners</a>
+  <a href="#" class="muted" style="display:none">Business partners</a>
   <a href="#" class="muted">Our blog</a>
 </aside>
 
@@ -114,17 +114,17 @@
 
     <!-- ============ CATEGORY ICONS (Phosphor Icons) ============ -->
     <div class="cats">
+      <button class="cat" onclick="location.href='flights-home.html'"><i class="ph ph-airplane-tilt cat-ic"></i><span>Flights</span></button>
       <button class="cat" onclick="location.href='today.html'"><i class="ph ph-calendar-blank cat-ic"></i><span>Today</span></button>
       <button class="cat" onclick="location.href='weekend.html'"><i class="ph ph-calendar-dots cat-ic"></i><span>Weekend</span></button>
-      <button class="cat" onclick="location.href='experiences.html'"><i class="ph ph-ticket cat-ic"></i><span>Things to do</span></button>
+      <button class="cat" onclick="location.href='experiences.html'" style="display:none"><i class="ph ph-ticket cat-ic"></i><span>Things to do</span></button>
       <button class="cat" onclick="location.href='events.html?category=Sports'"><i class="ph ph-trophy cat-ic"></i><span>Sports</span></button>
       <button class="cat" onclick="location.href='events.html?category=Comedy'"><i class="ph ph-microphone-stage cat-ic"></i><span>Comedy</span></button>
-      <button class="cat" onclick="location.href='flights-home.html'"><i class="ph ph-airplane-tilt cat-ic"></i><span>Flights</span></button>
-      <button class="cat" onclick="window.open('https://nairabox-web.vercel.app/','_blank','noopener')"><i class="ph ph-calendar-star cat-ic"></i><span>Events</span></button>
-      <button class="cat"><i class="ph ph-buildings cat-ic"></i><span>Hotels</span></button>
+      <button class="cat" onclick="location.href='nairabox-events.html'"><i class="ph ph-calendar-star cat-ic"></i><span>Events</span></button>
+      <button class="cat" style="display:none"><i class="ph ph-buildings cat-ic"></i><span>Hotels</span></button>
       <button class="cat" onclick="location.href='events.html?category=Concerts'"><i class="ph ph-music-notes cat-ic"></i><span>Concerts</span></button>
       <button class="cat" onclick="location.href='cinema.html'"><i class="ph ph-mask-happy cat-ic"></i><span>Cinema</span></button>
-      <button class="cat" onclick="location.href='restaurants.html'"><i class="ph ph-fork-knife cat-ic"></i><span>Restaurants</span></button>
+      <button class="cat" onclick="location.href='restaurants.html'" style="display:none"><i class="ph ph-fork-knife cat-ic"></i><span>Restaurants</span></button>
     </div>
   </section>
 
@@ -144,7 +144,7 @@
       <button class="tab active" data-form="flight"><i class="ph ph-airplane-tilt tab-ic"></i>Flight</button>
       <button class="tab" data-form="event"><i class="ph ph-calendar-blank tab-ic"></i>Event</button>
       <button class="tab" data-form="experiences"><i class="ph ph-compass tab-ic"></i>Experiences</button>
-      <button class="tab" data-form="hotels"><i class="ph ph-buildings tab-ic"></i>Hotels</button>
+      <button class="tab" data-form="hotels" style="display:none"><i class="ph ph-buildings tab-ic"></i>Hotels</button>
       <button class="tab" data-form="cinema"><i class="ph ph-film-slate tab-ic"></i>Cinema</button>
     </div>
 
@@ -405,7 +405,7 @@
           <div class="field-popover field-popover-select" hidden>
             <button class="sel-option selected" type="button" data-value="All">All</button>
             <button class="sel-option" type="button" data-value="Tours">Tours</button>
-            <button class="sel-option" type="button" data-value="Dining">Dining</button>
+            <button class="sel-option" type="button" data-value="Dining" style="display:none">Dining</button>
             <button class="sel-option" type="button" data-value="Adventure">Adventure</button>
             <button class="sel-option" type="button" data-value="Nightlife">Nightlife</button>
             <button class="sel-option" type="button" data-value="Wellness">Wellness</button>
@@ -749,7 +749,7 @@
   <!-- ============ WHAT'S NEW ============ -->
   <section class="container section">
     <div class="section-head">
-      <h3>What's New</h3>
+      <h3>Featured Events</h3>
       <a href="#" class="link">View More</a>
     </div>
     <div class="row-wrap">
@@ -827,7 +827,7 @@
   </section>
 
   <!-- ============ DINING ============ -->
-  <section class="container section">
+  <section class="container section" style="display:none">
     <div class="section-head">
       <h3>Dining</h3>
       <a href="restaurants.html" class="link">View More</a>
@@ -882,7 +882,7 @@
   </section>
 
   <!-- ============ ONBURD YOUR BUSINESS ============ -->
-  <section class="container section">
+  <section class="container section" style="display:none">
     <div class="biz">
       <div class="biz-left">
         <h2>Onburd your<br/>business with us!</h2>
@@ -1375,14 +1375,17 @@
 /* Event ticket banners — scrollable, auto-advancing slider. Get Ticket hands
    off to the live Nairabox site (new tab), matching the Events direction. */
 (() => {
-  const NB_URL = 'https://nairabox-web.vercel.app/';
   const BANNERS = [
-    { type: 'event', artist: 'Burna Boy', sub: 'Live in Lagos', tag: 'The African Giant — live on stage', day: 'SAT', date: '21', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Eko Hotel & Suites · Victoria Island, Lagos', amt: '₦75K', tier: 'Regular', img: 'images/burnaboy-concert.jpg', accent: 'red' },
+    { type: 'flight', from: 'Lagos', fromCode: 'LOS', to: 'London', toCode: 'LHR', tag: 'Return fares from', amt: '₦1,250,000', pss: '₦104,000', img: 'images/london.jpg', href: 'flights-home.html' },
+    { type: 'event', artist: 'Burna Boy', sub: 'Live in Lagos', tag: 'The African Giant — live on stage', day: 'SAT', date: '21', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Eko Hotel & Suites · Victoria Island, Lagos', when: 'Sat, Dec 21 · 9:00 PM', amt: '₦75K', price: 75000, tier: 'Regular', img: 'images/burnaboy-concert.jpg', accent: 'red' },
     { type: 'experience', title: 'Escape to Lakowe Lakes', tag: 'Golf, spa and lakeside calm — a 3-day getaway just outside Lagos.', amt: '₦450,000', img: 'images/lakowe.jpg', href: 'experiences.html' },
-    { type: 'event', artist: 'Davido', sub: 'Timeless Live', tag: 'The Timeless Experience', day: 'FRI', date: '19', mon: 'DEC 2026', doors: '6:30PM', main: '8:30PM', venue: 'Eagle Square · Abuja', amt: '₦65K', tier: 'Regular', img: 'images/davido.png', accent: 'gold' },
-    { type: 'flight', from: 'Lagos', fromCode: 'LOS', to: 'London', toCode: 'LHR', tag: 'Return fares from', amt: '₦1,250,000', img: 'images/london.jpg', href: 'flights-home.html' },
-    { type: 'event', artist: 'Wizkid', sub: 'Detty December', tag: 'The Detty December finale', day: 'TUE', date: '30', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Landmark Beach · Lagos', amt: '₦80K', tier: 'VIP', img: 'images/wizkid.jpeg', accent: 'green' }
+    { type: 'event', artist: 'Davido', sub: 'Timeless Live', tag: 'The Timeless Experience', day: 'FRI', date: '19', mon: 'DEC 2026', doors: '6:30PM', main: '8:30PM', venue: 'Eagle Square · Abuja', when: 'Fri, Dec 19 · 8:30 PM', amt: '₦65K', price: 65000, tier: 'Regular', img: 'images/davido.png', accent: 'gold' },
+    { type: 'event', artist: 'Wizkid', sub: 'Detty December', tag: 'The Detty December finale', day: 'TUE', date: '30', mon: 'DEC 2026', doors: '7:00PM', main: '9:00PM', venue: 'Landmark Beach · Lagos', when: 'Tue, Dec 30 · 9:00 PM', amt: '₦80K', price: 80000, tier: 'VIP', img: 'images/wizkid.jpeg', accent: 'green' }
   ];
+
+  const eventHref = b => 'event-details.html?' + new URLSearchParams({
+    img: b.img, title: `${b.artist} ${b.sub}`, when: b.when, venue: b.venue, price: String(b.price)
+  }).toString();
 
   const eventHTML = b => `<article class="tkt tkt--${b.accent}">
       <div class="tkt-photo" style="background-image:url('${b.img}')"></div>
@@ -1397,7 +1400,7 @@
         <p class="tkt-venue"><i class="ph ph-map-pin"></i> ${b.venue}</p>
       </div>
       <div class="tkt-perf" aria-hidden="true"></div>
-      <a class="tkt-price" href="${NB_URL}" target="_blank" rel="noopener" aria-label="Get ticket for ${b.artist} — ${b.sub}">
+      <a class="tkt-price" href="${eventHref(b)}" aria-label="Get ticket for ${b.artist} — ${b.sub}">
         <span class="tkt-ticket-label">Event Ticket</span>
         <span class="tkt-amt">${b.amt}</span>
         <span class="tkt-tier">${b.tier}</span>
@@ -1425,6 +1428,7 @@
         </div>
         <p class="fb-tag">${b.tag}</p>
         <p class="fb-price">${b.amt}</p>
+        <div class="fb-pss"><img class="pss-logo" src="icons/pay-small-small.svg" alt="Pay Small Small" /><span class="pss-amount">${b.pss}<small>/mo</small></span></div>
       </div>
       <a class="fb-cta" href="${b.href}">Book flight</a>
     </article>`;
