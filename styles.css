@@ -218,10 +218,11 @@ h1, h2, h3, h4, p { margin: 0; }
 /* ============ CATEGORY ICONS ============ */
 .cats {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 4px;
-  max-width: 1040px;
+  gap: 14px;
+  width: fit-content;
+  max-width: 100%;
   margin: 0 auto 36px;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -4444,6 +4445,24 @@ input[type="range"].price-range::-moz-range-thumb {
   text-align: center;
   padding: 84px 0 40px;      /* tighter bottom so banners sit closer */
 }
+/* "Powered by nairabox" pill above the hero title — subtle dark glass */
+.nb-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 22px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,.92);
+  white-space: nowrap;
+}
+.nb-pill-logo { height: 18px; width: auto; display: block; }
+
 .nb-hero-title {
   display: flex;
   align-items: center;

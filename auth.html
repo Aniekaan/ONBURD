@@ -47,6 +47,20 @@
     box-shadow: inset 0 0 0 300px rgba(8, 11, 20, .30);
   }
 
+  /* ---- hover lift on the content tiles (not the photo windows) ---- */
+  .ag-stat, .ag-exp, .ag-logo, .ag-feat, .ag-pss {
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .ag-stat:hover, .ag-exp:hover, .ag-logo:hover, .ag-feat:hover, .ag-pss:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .42);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ag-stat, .ag-exp, .ag-logo, .ag-feat, .ag-pss { transition: none; }
+    .ag-stat:hover, .ag-exp:hover, .ag-logo:hover, .ag-feat:hover, .ag-pss:hover { transform: none; box-shadow: none; }
+  }
+
   /* Stat tile — dark glass */
   .ag-stat {
     grid-area: stat;
@@ -64,8 +78,9 @@
     grid-area: exp;
     background: var(--auth-green);
     color: #06210a;
-    padding: 16px; display: flex; flex-direction: column; justify-content: center;
+    padding: 16px; display: flex; flex-direction: column; justify-content: space-between;
   }
+  .ag-exp-logo { width: 100%; max-width: 118px; height: auto; display: block; filter: brightness(0) invert(1); }
   .ag-exp .num { font-size: 27px; font-weight: 900; color: #fff; line-height: 1; margin: 0; }
   .ag-exp .lbl { font-size: 15px; font-weight: 500; color: rgba(255,255,255,.62); margin: 6px 0 0; }
 
@@ -227,8 +242,11 @@
         <p class="lbl">Tickets booked</p>
       </div>
       <div class="ag-cell ag-exp">
-        <p class="num">18K+</p>
-        <p class="lbl">Events &amp; experiences</p>
+        <img class="ag-exp-logo" src="images/nairabox-logo.svg" alt="nairabox" />
+        <div class="ag-exp-stat">
+          <p class="num">18K+</p>
+          <p class="lbl">Events &amp; experiences</p>
+        </div>
       </div>
       <div class="ag-cell ag-logo">
         <svg><use href="#onburd-logo"/></svg>
