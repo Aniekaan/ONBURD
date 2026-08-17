@@ -5324,6 +5324,10 @@ body.home { background: #0A0A0A; }
 .light-zone .price-new,
 .light-zone .price-full { color: #101828; }
 .light-zone .price-full s { text-decoration-color: rgba(16,24,40,.45); }
+/* supporting text on cards — near-primary (was too muted) */
+.light-zone .meta { color: #111318; }
+/* social-proof avatars — white ring to match the light card (was black) */
+.light-zone .sp-av { border-color: #ffffff; }
 
 /* carousel arrows */
 .light-zone .carousel-arrow {
