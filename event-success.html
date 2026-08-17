@@ -6,6 +6,18 @@
 <title>Onburd — Booking Successful</title>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="styles.css?v=2" />
+<style>
+  .es-bookrow { display: inline-flex; align-items: stretch; gap: 10px; }
+  .es-share {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 50px; flex: 0 0 50px; padding: 0; box-sizing: border-box;
+    border-radius: 12px; border: 1px solid var(--border); background: var(--surface-2);
+    color: #fff; cursor: pointer; font-family: inherit;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .es-share:hover { border-color: var(--primary); background: rgba(44,144,255,.12); }
+  .es-share i { font-size: 18px; color: var(--primary); }
+</style>
 </head>
 <body>
 
@@ -51,9 +63,12 @@
       <div class="es-check"><i class="ph ph-check"></i></div>
       <h1>Booking Successful</h1>
       <p>Your booking has been confirmed. We've sent a confirmation email with your e-tickets and booking details.</p>
-      <div class="es-bookingid">
-        <span>Booking ID: <b id="esBookingId">—</b></span>
-        <button type="button" class="es-copy" id="esCopy"><i class="ph ph-copy"></i> Copy</button>
+      <div class="es-bookrow">
+        <div class="es-bookingid">
+          <span>Booking ID: <b id="esBookingId">—</b></span>
+          <button type="button" class="es-copy" id="esCopy"><i class="ph ph-copy"></i> Copy</button>
+        </div>
+        <button type="button" class="es-share" id="esShare" aria-label="Share event"><i class="ph ph-share-network"></i></button>
       </div>
     </div>
     <div class="es-refbar">
@@ -201,6 +216,90 @@
     document.body.appendChild(a); a.click(); a.remove();
     URL.revokeObjectURL(url);
   });
+</script>
+
+<!-- ============ SHARE SHEET (reused from homepage) ============ -->
+<div class="share-modal" id="shareModal" hidden>
+  <div class="share-backdrop" data-share-close></div>
+  <div class="share-dialog" role="dialog" aria-modal="true" aria-label="Share">
+    <button class="share-x" data-share-close aria-label="Close"><i class="ph ph-x"></i></button>
+    <h3 class="share-title">Invite your friends</h3>
+    <p class="share-desc">Send it to your group and pull up together.</p>
+    <div class="share-preview" id="sharePreview"></div>
+    <div class="share-channels">
+      <button class="share-ch wa" data-ch="whatsapp"><span class="ch-ic"><i class="ph ph-whatsapp-logo"></i></span>WhatsApp</button>
+      <button class="share-ch tg" data-ch="telegram"><span class="ch-ic"><i class="ph ph-telegram-logo"></i></span>Telegram</button>
+      <button class="share-ch x" data-ch="x"><span class="ch-ic"><i class="ph ph-x-logo"></i></span>X</button>
+      <button class="share-ch ig" data-ch="instagram"><span class="ch-ic"><i class="ph ph-instagram-logo"></i></span>Instagram</button>
+    </div>
+    <div class="share-link">
+      <input type="text" id="shareLinkInput" readonly />
+      <button class="share-copy" id="shareCopyBtn"><i class="ph ph-link"></i> <span>Copy link</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---- Share this event (reuses the homepage share sheet) ---- */
+(function () {
+  const modal = document.getElementById('shareModal');
+  if (!modal || typeof ev === 'undefined') return;
+  const preview   = document.getElementById('sharePreview');
+  const linkInput = document.getElementById('shareLinkInput');
+  const copyBtn   = document.getElementById('shareCopyBtn');
+  const shareBtn  = document.getElementById('esShare');
+  const ctx = { url: '', text: '' };
+
+  const evUrl = new URL('event-details.html', location.href);
+  evUrl.search = new URLSearchParams({
+    img: ev.img || '', title: ev.title || '', when: ev.when || '', venue: ev.venue || ''
+  }).toString();
+
+  const title = ev.title || 'this event';
+  const whenD = (typeof whenDate !== 'undefined' && whenDate) ? whenDate : (ev.when || '');
+  const sub   = [whenD, ev.venue].filter(Boolean).join(' · ');
+
+  const resetCopy = () => { copyBtn.querySelector('span').textContent = 'Copy link'; copyBtn.classList.remove('copied'); };
+  const open = () => {
+    preview.innerHTML =
+      `<div class="sp-top">
+        <span class="al-badge sp-badge"><i class="ph ph-ticket"></i></span>
+        <div><p class="sp-route">${title}</p><p class="sp-meta">${sub}</p></div>
+      </div>`;
+    ctx.url = evUrl.toString();
+    ctx.text = `🎟️ ${title} on onburd\n` + (sub ? sub + '\n' : '') + `Come with me 👇`;
+    linkInput.value = ctx.url;
+    resetCopy();
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  };
+  const close = () => { modal.setAttribute('hidden', ''); document.body.style.overflow = ''; };
+  const copyLink = label => {
+    const done = () => { copyBtn.querySelector('span').textContent = label || 'Copied!'; copyBtn.classList.add('copied'); setTimeout(resetCopy, 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ctx.url).then(done).catch(() => { linkInput.select(); document.execCommand('copy'); done(); });
+    } else { linkInput.select(); document.execCommand('copy'); done(); }
+  };
+
+  if (shareBtn) shareBtn.addEventListener('click', open);
+  modal.addEventListener('click', e => {
+    if (e.target.closest('[data-share-close]')) { close(); return; }
+    const ch = e.target.closest('.share-ch');
+    if (!ch) return;
+    const msg = encodeURIComponent(ctx.text + '\n' + ctx.url);
+    const u = encodeURIComponent(ctx.url);
+    const t = encodeURIComponent(ctx.text);
+    const links = {
+      whatsapp: `https://wa.me/?text=${msg}`,
+      telegram: `https://t.me/share/url?url=${u}&text=${t}`,
+      x:        `https://twitter.com/intent/tweet?text=${t}&url=${u}`,
+    };
+    if (ch.dataset.ch === 'instagram') copyLink('Link copied — paste in Instagram');
+    else window.open(links[ch.dataset.ch], '_blank', 'noopener');
+  });
+  copyBtn.addEventListener('click', () => copyLink());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hasAttribute('hidden')) close(); });
+})();
 </script>
 
 </body>
