@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onburd — My Tickets</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
+<style>
+  .mt-page { padding: 40px 0 80px; }
+  .mt-head { margin-bottom: 28px; }
+  .mt-head h1 { font-size: 34px; font-weight: 700; letter-spacing: -.02em; margin: 0 0 6px; }
+  .mt-head p { color: var(--muted); font-size: 15px; margin: 0; }
+
+  /* tabs */
+  .mt-tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--border); margin-bottom: 26px; overflow-x: auto; }
+  .mt-tabs::-webkit-scrollbar { display: none; }
+  .mt-tab {
+    display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
+    padding: 12px 6px; margin-bottom: -1px;
+    background: none; border: none; border-bottom: 2px solid transparent;
+    color: var(--muted); font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+    transition: color .15s ease;
+  }
+  .mt-tab:hover { color: #fff; }
+  .mt-tab.active { color: #fff; border-bottom-color: var(--primary); }
+  .mt-count {
+    min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--surface-2); color: var(--muted); font-size: 12px; font-weight: 700;
+  }
+  .mt-tab.active .mt-count { background: rgba(44,144,255,.18); color: var(--primary); }
+
+  /* list + cards */
+  .mt-list { display: flex; flex-direction: column; gap: 18px; }
+  .mt-card {
+    display: grid; grid-template-columns: 240px 1fr; gap: 0;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
+    transition: border-color .18s ease, transform .18s ease;
+  }
+  .mt-card:hover { border-color: rgba(255,255,255,.16); }
+  .mt-media { position: relative; background-size: cover; background-position: center; min-height: 190px; }
+  .mt-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.35)); }
+  .mt-body { padding: 22px 24px; display: flex; flex-direction: column; }
+
+  .mt-row1 { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+  .mt-title { font-size: 21px; font-weight: 700; letter-spacing: -.01em; margin: 0; }
+  .mt-status {
+    flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap;
+  }
+  .mt-status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .mt-status--active { color: var(--nb-green); background: rgba(77,201,55,.14); }
+  .mt-status--used { color: var(--muted); background: var(--surface-2); }
+  .mt-status--transferred { color: #d8a13a; background: rgba(216,161,58,.14); }
+
+  .mt-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 14px 0 0; }
+  .mt-meta span { display: inline-flex; align-items: center; gap: 8px; color: var(--muted-2, #cbd5e1); font-size: 13.5px; }
+  .mt-meta i { color: var(--muted); font-size: 16px; }
+
+  .mt-tags { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+  .mt-tier { padding: 4px 12px; border: 1px solid var(--border); border-radius: 999px; font-size: 12px; font-weight: 700; }
+  .mt-ref { color: var(--muted); font-size: 12.5px; }
+
+  .mt-attendee { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .mt-attendee-label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 5px; }
+  .mt-attendee-name { font-size: 14px; font-weight: 600; margin: 0; }
+  .mt-attendee-email { font-size: 13px; color: var(--muted); margin: 2px 0 0; }
+  .mt-recipient { font-size: 13px; color: #d8a13a; margin: 6px 0 0; }
+  .mt-recipient b { font-weight: 700; }
+
+  .mt-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .mt-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 11px; border: 1px solid var(--border);
+    background: var(--surface-2); color: #fff; font-family: inherit; font-size: 13.5px; font-weight: 600;
+    cursor: pointer; transition: border-color .15s, background .15s, color .15s;
+  }
+  .mt-btn i { font-size: 16px; }
+  .mt-btn:hover { border-color: rgba(255,255,255,.28); }
+  .mt-btn--view { border-color: rgba(77,201,55,.4); color: var(--nb-green); background: rgba(77,201,55,.08); }
+  .mt-btn--view:hover { background: rgba(77,201,55,.16); }
+  .mt-btn--upgrade { border-color: rgba(44,144,255,.45); color: var(--primary); background: rgba(44,144,255,.10); }
+  .mt-btn--upgrade:hover { background: rgba(44,144,255,.18); }
+
+  .mt-empty { text-align: center; padding: 72px 24px; }
+  .mt-empty-ic {
+    width: 76px; height: 76px; margin: 0 auto 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); font-size: 34px;
+  }
+  .mt-empty-title { font-size: 20px; font-weight: 700; margin: 0 0 8px; color: #fff; }
+  .mt-empty-text { margin: 0 auto 22px; font-size: 14.5px; color: var(--muted); max-width: 360px; line-height: 1.55; }
+  .mt-empty-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: 12px; background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 700; text-decoration: none; transition: filter .15s;
+  }
+  .mt-empty-cta:hover { filter: brightness(1.08); }
+  .mt-empty-cta i { font-size: 17px; }
+
+  /* ===== modal ===== */
+  .mtm-overlay {
+    position: fixed; inset: 0; z-index: 200; display: none;
+    align-items: center; justify-content: center; padding: 20px;
+    background: rgba(4,7,14,.66); backdrop-filter: blur(3px);
+  }
+  .mtm-overlay.open { display: flex; }
+  .mtm {
+    width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 26px;
+    box-shadow: 0 30px 70px rgba(0,0,0,.55);
+  }
+  .mtm-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 6px; }
+  .mtm-title { font-size: 20px; font-weight: 700; letter-spacing: -.01em; margin: 0; }
+  .mtm-x { background: none; border: none; color: var(--muted); font-size: 22px; cursor: pointer; line-height: 1; padding: 0; }
+  .mtm-x:hover { color: #fff; }
+  .mtm-sub { color: var(--muted); font-size: 13.5px; margin: 0 0 20px; }
+  .mtm-event { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 20px; }
+  .mtm-event-img { width: 44px; height: 44px; border-radius: 9px; background-size: cover; background-position: center; flex-shrink: 0; }
+  .mtm-event-name { font-size: 14px; font-weight: 700; margin: 0; }
+  .mtm-event-meta { font-size: 12px; color: var(--muted); margin: 2px 0 0; }
+
+  .mtm-label { display: block; font-size: 13px; font-weight: 600; margin: 0 0 8px; }
+  .mtm-input {
+    width: 100%; box-sizing: border-box; padding: 12px 14px; border-radius: 11px;
+    border: 1px solid var(--border); background: var(--surface-2); color: #fff;
+    font-family: inherit; font-size: 14px; outline: none; transition: border-color .15s;
+  }
+  .mtm-input::placeholder { color: var(--muted); }
+  .mtm-input:focus { border-color: var(--primary); }
+  .mtm-field { margin-bottom: 16px; }
+
+  .mtm-primary {
+    width: 100%; margin-top: 6px; padding: 13px; border: none; border-radius: 12px;
+    background: var(--primary); color: #fff; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer;
+    transition: filter .15s, opacity .15s;
+  }
+  .mtm-primary:hover { filter: brightness(1.07); }
+  .mtm-primary:disabled { opacity: .45; cursor: not-allowed; filter: none; }
+
+  /* upgrade tier options */
+  .mtm-tier {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    width: 100%; text-align: left; padding: 14px 16px; margin-bottom: 10px;
+    border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2);
+    color: #fff; font-family: inherit; cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  .mtm-tier:hover { border-color: rgba(44,144,255,.5); }
+  .mtm-tier.sel { border-color: var(--primary); background: rgba(44,144,255,.12); }
+  .mtm-tier-name { font-size: 14px; font-weight: 700; margin: 0; }
+  .mtm-tier-desc { font-size: 12px; color: var(--muted); margin: 3px 0 0; }
+  .mtm-tier-price { font-size: 14px; font-weight: 700; color: var(--primary); white-space: nowrap; }
+
+  /* view — mirrors the event-purchase (es-card) ticket design */
+  .mtm--wide { max-width: 520px; }
+  .mtm-es .es-h2 { font-size: 16px; margin: 0 0 16px; }
+  .mtm-es .es-event-img { width: 110px; height: 88px; }
+  .mtm-es .es-attendee { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .mtm-es .es-rule { margin: 20px 0; }
+
+  /* success state */
+  .mtm-success { text-align: center; padding: 8px 0 4px; }
+  .mtm-success .ic { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(77,201,55,.16); color: var(--nb-green); font-size: 34px; }
+  .mtm-success h3 { font-size: 19px; font-weight: 700; margin: 0 0 8px; }
+  .mtm-success p { color: var(--muted); font-size: 14px; margin: 0 0 20px; line-height: 1.55; }
+
+  /* toast */
+  .mt-toast {
+    position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px);
+    z-index: 300; display: flex; align-items: center; gap: 10px;
+    background: #12151c; border: 1px solid var(--border); border-radius: 12px; padding: 13px 18px;
+    color: #fff; font-size: 14px; font-weight: 600; box-shadow: 0 16px 40px rgba(0,0,0,.5);
+    opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .25s ease;
+  }
+  .mt-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .mt-toast i { color: var(--nb-green); font-size: 18px; }
+
+  @media (max-width: 720px) {
+    .mt-card { grid-template-columns: 1fr; }
+    .mt-media { min-height: 150px; }
+    .mt-head h1 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo" aria-label="Onburd">
+      <svg viewBox="0 0 218 75" width="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312M107.251 53.1581C107.251 58.4866 103.369 62.5035 98.2199 62.5035C93.0712 62.5035 89.1892 58.574 89.1892 53.1581C89.1892 47.7422 93.0712 43.8127 98.2199 43.8127C103.369 43.8127 107.251 47.8296 107.251 53.1581Z" fill="#fff"/><path d="M214.594 18.5281H205.308V35.6605C203.25 34.5547 199.858 33.5312 196.278 33.5312C190.735 33.5312 186.046 35.4753 182.328 39.302C178.599 43.0566 176.699 47.7216 176.699 53.1581C176.699 58.5946 178.594 63.1619 182.328 67.0142C186.133 70.846 190.822 72.785 196.278 72.785C201.733 72.785 206.156 71.0003 210.002 67.4874C213.884 63.9437 215.851 59.0369 215.851 52.9061V18.5281H214.589H214.594ZM205.308 53.1581C205.308 58.574 201.513 62.5035 196.278 62.5035C191.042 62.5035 187.247 58.4866 187.247 53.1581C187.247 47.8296 191.129 43.8127 196.278 43.8127C201.426 43.8127 205.308 47.8296 205.308 53.1581Z" fill="#fff"/><path d="M59.4984 33.5308C55.0954 33.5308 51.2083 35.0583 47.9443 38.0775C44.7264 41.1326 43.1021 45.7204 43.1021 51.7279V72.368H53.6498V51.7279C53.6498 48.7704 54.4109 43.8174 59.4984 43.8174C63.268 43.8174 65.4338 46.7028 65.4338 51.7279V72.368H75.9815V51.7279C75.9815 45.6844 74.3266 41.0915 71.0575 38.0775C67.7885 35.0635 63.9014 33.5308 59.5035 33.5308" fill="#fff"/><path d="M20.8999 33.5308C15.4293 33.5308 10.8935 35.4132 7.04725 39.2913C3.25209 43.1128 1.32642 47.7778 1.32642 53.1577C1.32642 58.5376 3.1959 63.2335 7.04725 67.1064C10.9344 70.9279 15.4651 72.7846 20.8999 72.7846C26.3346 72.7846 30.8347 70.8765 34.6605 67.1167C38.5221 63.2283 40.3916 58.6662 40.3916 53.1577C40.3916 47.6492 38.4659 43.1128 34.6707 39.2913C30.8756 35.4698 26.2427 33.5308 20.8999 33.5308ZM29.9255 53.1577C29.9255 55.9197 29.0623 58.1364 27.2847 59.9263C25.5634 61.6596 23.4742 62.5031 20.8999 62.5031C18.3255 62.5031 16.221 61.6545 14.4128 59.9109C12.717 58.1262 11.8742 55.9042 11.8742 53.1628C11.8742 50.4214 12.7374 48.1892 14.4333 46.4817C16.2108 44.6918 18.3255 43.8226 20.905 43.8226C23.4844 43.8226 25.5787 44.6866 27.2745 46.4662C29.0776 48.2098 29.9357 50.3854 29.9357 53.168" fill="#fff"/><path d="M170.804 33.9502C161.395 33.9502 155.996 39.6901 155.996 49.7042V72.3657H166.462V49.7042C166.462 45.9239 167.933 44.2368 171.223 44.2368H173.986V33.9553H170.804V33.9502Z" fill="#fff"/><path d="M144.055 33.9502H142.793V54.5852C142.793 59.6154 140.632 62.4957 136.858 62.4957C131.765 62.4957 131.009 57.5375 131.009 54.5852V33.9502H120.461V54.5852C120.461 60.6492 122.086 65.2679 125.288 68.3128C128.506 71.2856 132.393 72.7823 136.858 72.7823C141.322 72.7823 145.148 71.2547 148.412 68.2356C151.681 65.2216 153.336 60.6286 153.336 54.5852V33.9502H144.05H144.055Z" fill="#fff"/></svg>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="index.html">Explore</a>
+      <a href="nairabox-events.html">Events</a>
+      <a href="flights-home.html">Flights</a>
+      <a href="#" style="display:none">Hotels</a>
+      <a href="create-event.html">Create event</a>
+      <a href="https://vermillion-lolly-0ea5b0.netlify.app/" target="_blank" rel="noopener">Umrah</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#" class="muted" style="display:none">Business partners</a>
+      <a href="my-tickets.html" class="nav-tickets active">My Tickets</a>
+      <a href="#" class="muted">Our blog</a>
+      <a class="icon-btn" href="auth.html" aria-label="Sign in or create account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="nav-drawer-overlay" id="navOverlay"></div>
+<aside class="nav-drawer" id="navDrawer" aria-label="Mobile navigation">
+  <div class="nav-drawer-head">
+    <span class="logo" aria-hidden="true">
+      <svg viewBox="0 0 218 75" width="80" xmlns="http://www.w3.org/2000/svg"><path d="M98.2199 33.5312C96.2227 33.5312 94.1489 33.8758 92.2181 34.5238C90.9003 34.9662 89.9094 35.357 89.1943 35.7222V18.5281H78.6465V52.9061C78.6465 59.0369 80.613 63.9437 84.495 67.4874C88.3413 71.0003 92.9588 72.785 98.2199 72.785C103.481 72.785 108.369 70.8409 112.083 67.0142C115.868 63.203 117.793 58.5329 117.793 53.1581C117.793 47.7833 115.898 43.0617 112.154 39.2917C108.451 35.4702 103.757 33.5312 98.2148 33.5312Z" fill="#fff"/></svg>
+    </span>
+    <button class="nav-drawer-close" id="navClose" aria-label="Close menu"><i class="ph ph-x"></i></button>
+  </div>
+  <a href="index.html">Explore</a>
+  <a href="nairabox-events.html">Events</a>
+  <a href="flights-home.html">Flights</a>
+  <a href="#" style="display:none">Hotels</a>
+  <a href="create-event.html">Create event</a>
+  <a href="https://vermillion-lolly-0ea5b0.netlify.app/" target="_blank" rel="noopener">Umrah</a>
+  <div class="nav-drawer-divider"></div>
+  <a href="#" class="muted" style="display:none">Business partners</a>
+  <a href="my-tickets.html">My Tickets</a>
+  <a href="#" class="muted">Our blog</a>
+</aside>
+
+<main class="mt-page">
+  <div class="container">
+    <header class="mt-head">
+      <h1>My Tickets</h1>
+      <p>Manage your event tickets — transfer, upgrade or pull up your pass.</p>
+    </header>
+
+    <div class="mt-tabs" role="tablist">
+      <button class="mt-tab active" data-tab="upcoming" role="tab">Upcoming <span class="mt-count" data-count="upcoming">0</span></button>
+      <button class="mt-tab" data-tab="past" role="tab">Past <span class="mt-count" data-count="past">0</span></button>
+      <button class="mt-tab" data-tab="transferred" role="tab">Transferred <span class="mt-count" data-count="transferred">0</span></button>
+    </div>
+
+    <div class="mt-list" id="mtList"></div>
+    <div class="mt-empty" id="mtEmpty" hidden>
+      <div class="mt-empty-ic"><i class="ph ph-ticket"></i></div>
+      <h3 class="mt-empty-title" id="mtEmptyTitle">No tickets yet</h3>
+      <p class="mt-empty-text" id="mtEmptyText">When you book an event, your tickets show up right here.</p>
+      <a class="mt-empty-cta" href="nairabox-events.html"><i class="ph ph-magnifying-glass"></i> Browse events</a>
+    </div>
+  </div>
+</main>
+
+<!-- ============ MODAL ============ -->
+<div class="mtm-overlay" id="mtmOverlay">
+  <div class="mtm" role="dialog" aria-modal="true" id="mtmBox"></div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="mt-toast" id="mtToast"><i class="ph ph-check-circle"></i> <span id="mtToastMsg"></span></div>
+
+<script>
+(() => {
+  /* ---------- data ---------- */
+  const TICKETS = [
+    { id:'t1', cat:'upcoming', status:'active', event:'Burna Boy — Live in Lagos', img:'images/burnaboy-concert.jpg',
+      date:'Sat, Dec 21, 2026 · 9:00 PM', venue:'Eko Hotel & Suites · Victoria Island, Lagos',
+      tier:'VIP', ref:'ONB-2026-00123', name:'Tochi Egwuatu', email:'tochi@yopmail.com' },
+    { id:'t2', cat:'upcoming', status:'active', event:'Davido — Timeless Live', img:'images/davido.png',
+      date:'Fri, Dec 19, 2026 · 8:30 PM', venue:'Eagle Square, Abuja',
+      tier:'Regular', ref:'ONB-2026-00456', name:'Tochi Egwuatu', email:'tochi@yopmail.com' },
+    { id:'t3', cat:'upcoming', status:'active', event:'Wizkid — Detty December', img:'images/wizkid-lagos.jpeg',
+      date:'Tue, Dec 30, 2026 · 9:00 PM', venue:'Landmark Beach, Lagos',
+      tier:'Regular', ref:'ONB-2026-00789', name:'Tochi Egwuatu', email:'tochi@yopmail.com' },
+    { id:'t4', cat:'past', status:'used', event:'Ayra Starr — Sabi Girl Live', img:'images/ayra-starr-concert.jpeg',
+      date:'Sat, Feb 14, 2026 · 7:00 PM', venue:'Muri Okunola Park, Lagos',
+      tier:'Regular', ref:'ONB-2026-00021', name:'Tochi Egwuatu', email:'tochi@yopmail.com' },
+    { id:'t5', cat:'transferred', status:'transferred', event:'Burna Boy — I Told Them Tour', img:'images/burnaboy.jpg',
+      date:'Sun, Nov 30, 2026 · 8:00 PM', venue:'Landmark Centre, Lagos',
+      tier:'VIP', ref:'ONB-2026-00302', name:'Tochi Egwuatu', email:'tochi@yopmail.com', to:'ada@yopmail.com' }
+  ];
+
+  const UPGRADES = {
+    'Regular': [ { name:'VIP', desc:'Front section · dedicated bar', diff:55000 }, { name:'VVIP', desc:'Stage-side · lounge access', diff:185000 } ],
+    'VIP':     [ { name:'VVIP', desc:'Stage-side · lounge access', diff:130000 }, { name:'Table for 4', desc:'Private table · bottle service', diff:380000 } ]
+  };
+
+  const naira = n => '₦' + n.toLocaleString('en-NG');
+  const STATUS = { active:['mt-status--active','Active'], used:['mt-status--used','Used'], transferred:['mt-status--transferred','Transferred'] };
+
+  const list    = document.getElementById('mtList');
+  const empty   = document.getElementById('mtEmpty');
+  const overlay = document.getElementById('mtmOverlay');
+  const box     = document.getElementById('mtmBox');
+  let activeTab = 'upcoming';
+
+  /* ---------- render ---------- */
+  const cardHTML = t => {
+    const [scls, slbl] = STATUS[t.status];
+    const actions = t.cat === 'upcoming'
+      ? `<button class="mt-btn" data-action="transfer" data-id="${t.id}"><i class="ph ph-arrows-left-right"></i> Transfer</button>
+         <button class="mt-btn mt-btn--upgrade" data-action="upgrade" data-id="${t.id}"><i class="ph ph-arrow-up"></i> Upgrade</button>
+         <button class="mt-btn mt-btn--view" data-action="view" data-id="${t.id}"><i class="ph ph-eye"></i> View</button>`
+      : `<button class="mt-btn mt-btn--view" data-action="view" data-id="${t.id}"><i class="ph ph-eye"></i> View</button>`;
+    const recipient = t.to ? `<p class="mt-recipient"><i class="ph ph-paper-plane-tilt"></i> Transferred to <b>${t.to}</b></p>` : '';
+    return `<article class="mt-card">
+      <div class="mt-media" style="background-image:url('${t.img}')"></div>
+      <div class="mt-body">
+        <div class="mt-row1">
+          <h3 class="mt-title">${t.event}</h3>
+          <span class="mt-status ${scls}">${slbl}</span>
+        </div>
+        <div class="mt-meta">
+          <span><i class="ph ph-calendar-blank"></i> ${t.date}</span>
+          <span><i class="ph ph-map-pin"></i> ${t.venue}</span>
+        </div>
+        <div class="mt-tags">
+          <span class="mt-tier">${t.tier}</span>
+          <span class="mt-ref">Ref: ${t.ref}</span>
+        </div>
+        <div class="mt-attendee">
+          <p class="mt-attendee-label">Attendee</p>
+          <p class="mt-attendee-name">${t.name}</p>
+          <p class="mt-attendee-email">${t.email}</p>
+          ${recipient}
+        </div>
+        <div class="mt-actions">${actions}</div>
+      </div>
+    </article>`;
+  };
+
+  const updateCounts = () => {
+    document.querySelectorAll('.mt-count').forEach(el => {
+      el.textContent = TICKETS.filter(t => t.cat === el.dataset.count).length;
+    });
+  };
+
+  const EMPTY = {
+    upcoming:    ['No upcoming tickets', 'When you book an event, your tickets show up right here.'],
+    past:        ['No past tickets', "Events you've attended will be listed here."],
+    transferred: ['No transferred tickets', 'Tickets you send to someone else will appear here.']
+  };
+  const render = () => {
+    const rows = TICKETS.filter(t => t.cat === activeTab);
+    list.innerHTML = rows.map(cardHTML).join('');
+    empty.hidden = rows.length > 0;
+    if (!rows.length) {
+      const [tt, tx] = EMPTY[activeTab];
+      document.getElementById('mtEmptyTitle').textContent = tt;
+      document.getElementById('mtEmptyText').textContent = tx;
+    }
+    updateCounts();
+  };
+
+  /* ---------- tabs ---------- */
+  document.querySelectorAll('.mt-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.mt-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeTab = tab.dataset.tab;
+      render();
+    });
+  });
+
+  /* ---------- modal helpers ---------- */
+  const openModal = (html, wide) => { box.innerHTML = html; box.classList.toggle('mtm--wide', !!wide); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const closeModal = () => { overlay.classList.remove('open'); document.body.style.overflow = ''; box.innerHTML = ''; box.classList.remove('mtm--wide'); };
+  overlay.addEventListener('click', e => { if (e.target === overlay || e.target.closest('[data-close]')) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+  const eventStrip = t => `<div class="mtm-event">
+      <div class="mtm-event-img" style="background-image:url('${t.img}')"></div>
+      <div><p class="mtm-event-name">${t.event}</p><p class="mtm-event-meta">${t.tier} · ${t.date}</p></div>
+    </div>`;
+
+  const modalHead = title => `<div class="mtm-head"><h2 class="mtm-title">${title}</h2><button class="mtm-x" data-close aria-label="Close">&times;</button></div>`;
+
+  /* ---------- toast ---------- */
+  const toastEl = document.getElementById('mtToast');
+  const toastMsg = document.getElementById('mtToastMsg');
+  let toastT = null;
+  const toast = msg => {
+    toastMsg.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('show'), 2600);
+  };
+
+  /* ---------- Transfer ---------- */
+  const openTransfer = t => {
+    openModal(`${modalHead('Transfer ticket')}
+      <p class="mtm-sub">Send this ticket to someone else. They'll get an email to claim it.</p>
+      ${eventStrip(t)}
+      <div class="mtm-field">
+        <label class="mtm-label" for="trEmail">Recipient email</label>
+        <input class="mtm-input" id="trEmail" type="email" placeholder="name@email.com" />
+      </div>
+      <div class="mtm-field">
+        <label class="mtm-label" for="trMsg">Add a note <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+        <input class="mtm-input" id="trMsg" type="text" placeholder="Enjoy the show!" />
+      </div>
+      <button class="mtm-primary" id="trGo" disabled>Transfer ticket</button>`);
+    const email = box.querySelector('#trEmail'), go = box.querySelector('#trGo');
+    const ok = () => /\S+@\S+\.\S+/.test(email.value.trim());
+    email.addEventListener('input', () => go.disabled = !ok());
+    email.focus();
+    go.addEventListener('click', () => {
+      if (!ok()) return;
+      t.cat = 'transferred'; t.status = 'transferred'; t.to = email.value.trim();
+      openModal(`${modalHead('Ticket transferred')}
+        <div class="mtm-success">
+          <div class="ic"><i class="ph ph-paper-plane-tilt"></i></div>
+          <h3>On its way!</h3>
+          <p>${t.event} has been transferred to <b>${t.to}</b>. You'll find it under the Transferred tab.</p>
+          <button class="mtm-primary" data-close>Done</button>
+        </div>`);
+      render();
+      toast('Ticket transferred');
+    });
+  };
+
+  /* ---------- Upgrade ---------- */
+  const openUpgrade = t => {
+    const opts = UPGRADES[t.tier] || [];
+    openModal(`${modalHead('Upgrade your ticket')}
+      <p class="mtm-sub">You're on <b style="color:#fff">${t.tier}</b>. Pick a higher tier — you only pay the difference.</p>
+      ${eventStrip(t)}
+      <div id="tierList">${opts.map((o,i) => `
+        <button class="mtm-tier" data-i="${i}">
+          <div><p class="mtm-tier-name">${o.name}</p><p class="mtm-tier-desc">${o.desc}</p></div>
+          <span class="mtm-tier-price">+ ${naira(o.diff)}</span>
+        </button>`).join('')}</div>
+      <button class="mtm-primary" id="upGo" disabled>Confirm upgrade</button>`);
+    let sel = -1;
+    const go = box.querySelector('#upGo');
+    box.querySelectorAll('.mtm-tier').forEach(btn => btn.addEventListener('click', () => {
+      box.querySelectorAll('.mtm-tier').forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel'); sel = +btn.dataset.i; go.disabled = false;
+      go.textContent = `Upgrade to ${opts[sel].name} · ${naira(opts[sel].diff)}`;
+    }));
+    go.addEventListener('click', () => {
+      if (sel < 0) return;
+      const to = opts[sel].name; t.tier = to;
+      openModal(`${modalHead('Upgrade confirmed')}
+        <div class="mtm-success">
+          <div class="ic"><i class="ph ph-arrow-up"></i></div>
+          <h3>You're upgraded to ${to}!</h3>
+          <p>Your ${t.event} ticket is now <b>${to}</b>. Your pass has been updated.</p>
+          <button class="mtm-primary" data-close>Done</button>
+        </div>`);
+      render();
+      toast(`Upgraded to ${to}`);
+    });
+  };
+
+  /* ---------- View — mirrors the event-purchase (es-card) ticket design ---------- */
+  const openView = t => {
+    const [d, tm] = t.date.split(' · ');
+    openModal(`${modalHead('Your ticket')}
+      <div class="mtm-es">
+        <h3 class="es-h2">Event Details</h3>
+        <div class="es-event">
+          <div class="es-event-img" style="background-image:url('${t.img}')"></div>
+          <div class="es-detailgrid">
+            <div class="es-fact"><span>Event name</span><b>${t.event}</b></div>
+            <div class="es-fact"><span>Type</span><b>Concert</b></div>
+            <div class="es-fact"><span>Ticket tier</span><b>${t.tier}</b></div>
+            <div class="es-fact"><span>Date</span><b>${d || t.date}</b></div>
+            <div class="es-fact"><span>Time</span><b>${tm || '—'}</b></div>
+          </div>
+        </div>
+        <div class="es-location"><span>Location</span><p>${t.venue}</p></div>
+
+        <hr class="es-rule" />
+
+        <h3 class="es-h2">Attendee's Information</h3>
+        <div class="es-attendees">
+          <div class="es-attendee">
+            <div class="es-att-cell"><span>Attendee's name</span><b>${t.name}</b></div>
+            <div class="es-att-cell"><span>Email address</span><b>${t.email}</b></div>
+            <div class="es-att-cell"><span>Reference</span><b>${t.ref}</b></div>
+            <div class="es-att-cell es-att-tickets"><span>Tickets</span><b>1</b></div>
+          </div>
+        </div>
+
+        <hr class="es-rule" />
+
+        <span class="pb-nb pb-nb--block"><span class="pb-nb-label">Powered by</span><img class="pb-nb-logo" src="images/nairabox-logo.svg" alt="Nairabox" /></span>
+      </div>`, true);
+  };
+
+  /* ---------- action delegation ---------- */
+  list.addEventListener('click', e => {
+    const btn = e.target.closest('.mt-btn'); if (!btn) return;
+    const t = TICKETS.find(x => x.id === btn.dataset.id); if (!t) return;
+    if (btn.dataset.action === 'transfer') openTransfer(t);
+    else if (btn.dataset.action === 'upgrade') openUpgrade(t);
+    else if (btn.dataset.action === 'view') openView(t);
+  });
+
+  /* ---------- mobile drawer ---------- */
+  const burger = document.getElementById('navHamburger'), drawer = document.getElementById('navDrawer'),
+        ov = document.getElementById('navOverlay'), closeBtn = document.getElementById('navClose');
+  if (burger && drawer && ov) {
+    const open = () => { drawer.classList.add('open'); ov.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    const close = () => { drawer.classList.remove('open'); ov.classList.remove('open'); document.body.style.overflow = ''; };
+    burger.addEventListener('click', open); ov.addEventListener('click', close);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>

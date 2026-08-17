@@ -168,6 +168,20 @@
   .auth-primary:hover { filter: brightness(1.05); }
   .auth-primary:disabled { opacity: .4; cursor: not-allowed; filter: none; }
 
+  /* profile-details step */
+  .auth-field { margin-bottom: 16px; }
+  .auth-name-row { display: flex; gap: 12px; }
+  .auth-name-row .auth-field { flex: 1; min-width: 0; }
+  .auth-password { position: relative; }
+  .auth-password .auth-input { padding-right: 46px; }
+  .auth-eye {
+    position: absolute; top: 50%; right: 8px; transform: translateY(-50%);
+    display: flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; padding: 0; font-size: 18px;
+    background: none; border: none; cursor: pointer; color: #94a3b8;
+  }
+  .auth-eye:hover { color: #475569; }
+
   .auth-terms { font-size: 12px; color: #94a3b8; text-align: center; margin: 18px 0 0; line-height: 1.5; }
   .auth-terms a { color: #64748b; text-decoration: underline; }
 
@@ -311,6 +325,33 @@
         <p class="auth-resend" id="resendWrap">Resend code in <span id="resendTimer">20</span>s</p>
       </div>
 
+      <!-- Step 3 — profile details -->
+      <div class="auth-step auth-step-details" hidden>
+        <h1>Create your account</h1>
+        <p class="auth-sub">Just a few details to finish setting up.</p>
+
+        <div class="auth-name-row">
+          <div class="auth-field">
+            <label class="auth-field-label" for="firstName">First name</label>
+            <input class="auth-input" id="firstName" type="text" autocomplete="given-name" placeholder="First name" />
+          </div>
+          <div class="auth-field">
+            <label class="auth-field-label" for="lastName">Last name</label>
+            <input class="auth-input" id="lastName" type="text" autocomplete="family-name" placeholder="Last name" />
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label class="auth-field-label" for="newPassword">Create password (optional)</label>
+          <div class="auth-password">
+            <input class="auth-input" id="newPassword" type="password" autocomplete="new-password" placeholder="Create a password" />
+            <button class="auth-eye" id="pwToggle" type="button" aria-label="Show password"><i class="ph ph-eye"></i></button>
+          </div>
+        </div>
+
+        <button class="auth-primary" id="createBtn" type="button">Create account</button>
+      </div>
+
     </div>
   </section>
 </div>
@@ -327,12 +368,19 @@
   const googleBtn  = document.getElementById('googleBtn');
   const codeInputs = [...document.querySelectorAll('#codeInputs input')];
   const resendWrap = document.getElementById('resendWrap');
+  const stepDetails= card.querySelector('.auth-step-details');
+  const firstName  = document.getElementById('firstName');
+  const lastName   = document.getElementById('lastName');
+  const newPassword= document.getElementById('newPassword');
+  const pwToggle   = document.getElementById('pwToggle');
+  const createBtn  = document.getElementById('createBtn');
 
   let timerId = null;
 
   const showStep = which => {
-    stepEmail.hidden = which !== 'email';
-    stepCode.hidden  = which !== 'code';
+    stepEmail.hidden   = which !== 'email';
+    stepCode.hidden    = which !== 'code';
+    stepDetails.hidden = which !== 'details';
   };
 
   const startResendTimer = () => {
@@ -361,6 +409,12 @@
     setTimeout(() => codeInputs[0].focus(), 60);
   };
 
+  const goToDetails = () => {
+    clearInterval(timerId);
+    showStep('details');
+    setTimeout(() => firstName.focus(), 60);
+  };
+
   // simple email presence check (prototype)
   const validEmail = () => /\S+@\S+\.\S+/.test((emailInput.value || '').trim());
   const syncContinue = () => { continueBtn.disabled = !validEmail(); };
@@ -381,7 +435,7 @@
       input.classList.toggle('filled', !!input.value);
       if (input.value && idx < codeInputs.length - 1) codeInputs[idx + 1].focus();
       if (codeInputs.every(i => i.value)) {
-        setTimeout(() => { location.href = 'index.html'; }, 250); // signed in
+        setTimeout(goToDetails, 250); // verified -> collect profile details
       }
     });
     input.addEventListener('keydown', e => {
@@ -393,9 +447,25 @@
       digits.forEach((d, i) => { if (codeInputs[i]) { codeInputs[i].value = d; codeInputs[i].classList.add('filled'); } });
       const next = Math.min(digits.length, codeInputs.length - 1);
       codeInputs[next].focus();
-      if (codeInputs.every(i => i.value)) setTimeout(() => { location.href = 'index.html'; }, 250);
+      if (codeInputs.every(i => i.value)) setTimeout(goToDetails, 250);
     });
   });
+
+  // Step 3 — profile details
+  const detailsReady = () =>
+    !!firstName.value.trim() && !!lastName.value.trim();
+  const syncCreate = () => { createBtn.disabled = !detailsReady(); };
+  syncCreate();
+  [firstName, lastName, newPassword].forEach(el => el.addEventListener('input', syncCreate));
+
+  pwToggle.addEventListener('click', () => {
+    const show = newPassword.type === 'password';
+    newPassword.type = show ? 'text' : 'password';
+    pwToggle.querySelector('i').className = show ? 'ph ph-eye-slash' : 'ph ph-eye';
+    pwToggle.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+  });
+
+  createBtn.addEventListener('click', () => { if (detailsReady()) location.href = 'index.html'; });
 })();
 </script>
 </body>
