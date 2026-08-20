@@ -375,6 +375,9 @@
   const pwToggle   = document.getElementById('pwToggle');
   const createBtn  = document.getElementById('createBtn');
 
+  // where to go after signing in — honours ?next= (e.g. Create event -> organizer portal)
+  const nextUrl = new URLSearchParams(location.search).get('next') || 'index.html';
+
   let timerId = null;
 
   const showStep = which => {
@@ -424,7 +427,7 @@
   continueBtn.addEventListener('click', () => { if (validEmail()) goToCode(); });
 
   // Google — prototype: treat as signed in
-  googleBtn.addEventListener('click', () => { location.href = 'index.html'; });
+  googleBtn.addEventListener('click', () => { location.href = nextUrl; });
 
   codeBack.addEventListener('click', () => { clearInterval(timerId); showStep('email'); });
 
@@ -465,7 +468,7 @@
     pwToggle.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
   });
 
-  createBtn.addEventListener('click', () => { if (detailsReady()) location.href = 'index.html'; });
+  createBtn.addEventListener('click', () => { if (detailsReady()) location.href = nextUrl; });
 })();
 </script>
 </body>
